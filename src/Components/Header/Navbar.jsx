@@ -61,14 +61,14 @@ const Navbar = () => {
           <div className="flex items-center justify-between py-2 px-6 rounded-[14px] shadow-inner shadow-fuchsia-700/50">
             {/* Mobile Menu */}
             <div
-              className={`absolute left-0 w-full z-50 bg-gradient-to-br from-[#1e112c] via-[#180d2a] to-[#0a0312] rounded-b-xl duration-500 ${
+              className={`absolute left-0 w-full z-50 bg-gradient-to-br from-[#1e112c] via-[#180d2a] to-[#0a0312] rounded-xl duration-500 ${
                 open ? "top-0" : "-top-96"
               }`}
             >
               <ul className="flex flex-col p-6 space-y-3 relative">
                 <button
                   onClick={() => setOpen(false)}
-                  className="absolute top-4 right-4  transition"
+                  className="absolute top-4 right-4  transition cursor-pointer"
                 >
                   <GrClose className="text-xl" />
                 </button>
@@ -138,7 +138,7 @@ const Navbar = () => {
               </a>
               <button
                 onClick={() => setOpen(true)}
-                className=" text-xl lg:hidden"
+                className=" text-xl lg:hidden cursor-pointer"
               >
                 <RiMenu2Fill />
               </button>
