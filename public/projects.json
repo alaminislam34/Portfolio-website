@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "name": "JobHive Hiring Agency Platform",
+    "images": "https://i.ibb.co.com/Q3cK856y/team-Project-jpg.png",
+    "image": "https://i.ibb.co.com/Q3cK856y/team-Project-jpg.png",
+    "stack": [
+      "React Js",
+      "DaisyUi",
+      "Tailwind CSS",
+      "Next.js",
+      "MongoDB",
+      "NextAuth",
+      "ZegoCloud",
+      "Socket.io"
+    ],
+    "description": "A Hiring Agency & Communication Platform connects job seekers, employers, freelancers, and recruiters in various industries. Job seekers can create profiles, apply for jobs, and communicate with employers. Employers can post job listings, shortlist candidates, and conduct interviews. ",
+    "liveLink": "https://jobhive-agency.vercel.app/",
+    "github": "https://github.com/alaminislam34/Hiring-Agency-Communication-Platform",
+    "challenges": "Securing the user API based on roles was a significant challenge for me.",
+    "improvements": "I have implemented robust security measures for all buyer and admin features, ensuring that unauthorized access is completely prevented."
+  },
+  {
+    "id": 2,
+    "name": "WorkFlow Earning Platform",
+    "images": "https://i.ibb.co.com/7xWZHG4m/asignment12-jpg.png",
+    "image": "https://i.ibb.co.com/7xWZHG4m/asignment12-jpg.png",
+    "stack": [
+      "React Js",
+      "DaisyUi",
+      "Tailwind CSS",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Node.js",
+      "Firebase"
+    ],
+    "description": "This platform is designed for micro-tasking and earning, where users take on specific roles to complete tasks, submit reviews, withdraw coins, and receive notifications. The platform consists of three key roles: Worker, Buyer, and Admin. ",
+    "liveLink": "https://workflow-bd.web.app/",
+    "github": "https://github.com/alaminislam34/Workflow-Earning-Platform",
+    "challenges": "Securing the user API based on roles was a significant challenge for me.",
+    "improvements": "I have implemented robust security measures for all buyer and admin features, ensuring that unauthorized access is completely prevented."
+  },
+  {
+    "id": 3,
+    "name": "Home Repair Service",
+    "image": "https://i.ibb.co.com/LdbgdT6Z/home-Service-jpg.png",
+    "stack": [
+      "React Js",
+      "DaisyUi",
+      "Tailwind CSS",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Node.js",
+      "Firebase"
+    ],
+    "description": "The home repair service website is a platform where users can easily purchase home services. Additionally, anyone can act as an admin to post their own services and provide them, while also being able to avail other services. However, users cannot purchase the services they have posted themselves.",
+    "liveLink": "https://homerepairservicesbd.web.app/",
+    "github": "https://github.com/alaminislam34/Home-Repair-Service",
+    "challenges": "Developing an API to efficiently manage services posed a considerable challenge for me.",
+    "improvements": "I have implemented JWT token-based authentication to secure all essential APIs, ensuring robust security."
+  },
+  {
+    "id": 4,
+    "name": "Blood Donor Camp",
+    "image": "https://i.ibb.co.com/2JBFGtD/blood-Donor.png",
+    "stack": [
+      "React Js",
+      "DaisyUi",
+      "Tailwind CSS",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Node.js",
+      "Firebase"
+    ],
+    "description": "It’s a comprehensive blood donation platform where users can create accounts to register as blood donors or recipients. In times of need, users can directly contact blood donors based on their location. The platform aims to provide an efficient and secure way for individuals to find and connect with potential blood donors, ensuring timely access to blood donations in critical situations.",
+    "liveLink": "https://blood-donor-ar.web.app/",
+    "github": "https://github.com/alaminislam34/Blood-Donor-Champ",
+    "challenges": "I didn’t face any major problems, but developing the APIs did present some challenges.",
+    "improvements": "I implemented a feedback form to allow users to submit their suggestions and opinions, ensuring valuable input for continuous improvement."
+  }
+]
