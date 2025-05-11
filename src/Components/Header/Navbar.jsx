@@ -25,7 +25,7 @@ const Navbar = () => {
         });
       },
       {
-        threshold: 0.1, // At least 10% visible
+        threshold: 0.5, // At least 10% visible
         rootMargin: "-5% 0px -5% 0px", // Triggers when 90% of viewport contains the section
       }
     );
