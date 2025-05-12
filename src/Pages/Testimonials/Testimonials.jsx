@@ -150,7 +150,7 @@ const Testimonials = () => {
               <div key={index} className="p-4">
                 <div className="bg-[#1a0d1f] border border-fuchsia-900/20 rounded-2xl shadow-lg text-center p-6 mx-2">
                   <img
-                    src="/src/assets/logo/user.png"
+                    src="/assets/logo/user.png"
                     className="w-14 h-14 rounded-full object-cover border-2 border-fuchsia-400 mx-auto mb-3 p-1"
                   />
                   <h3 className="text-lg font-semibold text-white mb-1">
