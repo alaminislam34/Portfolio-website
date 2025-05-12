@@ -1,7 +1,7 @@
 import { FaReact } from "react-icons/fa";
 import { LuLinkedin, LuFacebook, LuGithub } from "react-icons/lu";
 // import image from "../../../assets/Image/alamin1.jpg";
-import image from "../../../assets/Image/alaminRemovebg.webp";
+import image from "../../../assets/Image/alaminBW.jpg";
 import { MdFileDownload } from "react-icons/md";
 import { Link } from "react-scroll";
 import { VscGithubProject } from "react-icons/vsc";
@@ -196,14 +196,14 @@ const Banner = () => {
               ease: "easeInOut",
             }}
           >
-            <div className="relative w-[300px] h-[300px] md:w-[380px] md:h-[380px] overflow-hidden rounded-3xl bg-purple-700/10">
+            <div className="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] overflow-hidden rounded-3xl bg-purple-700/10">
               <div className="absolute inset-0 z-0 scale-105">
                 <Lottie
                   options={{ animationData: bg, autoplay: true, loop: true }}
                 ></Lottie>
               </div>
               <img
-                className="w-full h-full object-cover lg:bg-top bg-right bg-cover scale-105 z-10 relative"
+                className="w-full h-full object-cover lg:bg-top bg-right bg-cover scale-125 z-10 relative"
                 src={image}
                 alt="image"
               />

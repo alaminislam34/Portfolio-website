@@ -173,7 +173,7 @@ const Testimonials = () => {
       </div>
 
       {/* Give Feedback Button */}
-      <div className="flex items-center justify-center mt-8">
+      <div className="flex items-center justify-center mt-4 lg:mt-6">
         <button
           onClick={() => setOpen(true)}
           className="border border-[#66426b] px-3 lg:px-4 py-2 rounded-lg relative z-20 group hover:shadow-lg shadow-[#3b1441]/40 bg-gradient-to-tr from-[#1c0922] to-[#7e057f] overflow-hidden flex items-center gap-2 text-[#e2c9e8] group-hover:text-white transition duration-300 cursor-pointer"
