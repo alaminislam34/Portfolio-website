@@ -105,7 +105,7 @@ const AnimatedBackground = () => {
               width: "40vw",
               height: "40vw",
               background:
-                "linear-gradient(40deg, rgba(255, 0, 128, 0.1), rgba(255, 102, 0, 0.1))",
+                "linear-gradient(40deg, rgba(128, 0, 255, 0.1), rgba(102, 0, 204, 0.1))",
               top: "-10%",
               left: "-10%",
               animation: "moveGradient1 15s ease-in-out infinite alternate",
@@ -117,7 +117,8 @@ const AnimatedBackground = () => {
               width: "45vw",
               height: "45vw",
               background:
-                "linear-gradient(240deg, rgba(72, 0, 255, 0.1), rgba(0, 183, 255, 0.1))",
+                "linear-gradient(40deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
+
               bottom: "-20%",
               right: "-10%",
               animation: "moveGradient2 18s ease-in-out infinite alternate",
@@ -129,7 +130,7 @@ const AnimatedBackground = () => {
               width: "30vw",
               height: "30vw",
               background:
-                "linear-gradient(120deg, rgba(133, 89, 255, 0.1), rgba(98, 216, 249, 0.1))",
+                "radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent 70%)",
               top: "60%",
               left: "20%",
               animation: "moveGradient3 20s ease-in-out infinite alternate",
@@ -147,12 +148,6 @@ const AnimatedBackground = () => {
 
           {/* Grid lines */}
           <div className="absolute inset-0 z-10 bg-[length:40px_40px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
-
-          {/* Particles */}
-          <div
-            ref={particlesRef}
-            className="absolute inset-0 z-20 pointer-events-none"
-          />
 
           {/* Noise texture */}
           <div
