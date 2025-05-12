@@ -17,7 +17,7 @@ const Form = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_MONGO_URL}/send-email`,
+        `${import.meta.env.VITE_SERVER_URL}/send-email`,
         data
       );
 
