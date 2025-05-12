@@ -56,7 +56,7 @@ export default function Skill() {
               data-aos="fade-up"
               data-aos-delay={(index + 1) * 200}
               data-aos-anchor-placement="top-bottom"
-              className="p-8 cursor-pointer border-2 rounded-2xl bg-fuchsia-950/5 border-fuchsia-800/40 hover:border-fuchsia-500/90 duration-300 group"
+              className="px-8 py-6 cursor-pointer border-2 rounded-2xl bg-fuchsia-950/5 border-fuchsia-800/30 shadow-xl hover:shadow-fuchsia-700/10 hover:scale-105 duration-500 group"
             >
               <div className="w-24 h-24 mx-auto relative">
                 <img
@@ -64,7 +64,7 @@ export default function Skill() {
                   src={skill.img}
                   alt={skill.name}
                 />
-                <div className="absolute inset-0 bg-fuchsia-600/50 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
+                <div className="absolute inset-0 bg-fuchsia-700/40 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
               </div>
               <h2 className="text-lg md:text-xl font-medium text-transparent bg-clip-text bg-gradient-to-tr from-fuchsia-400 to-fuchsia-500 text-center">
                 {skill.name}
