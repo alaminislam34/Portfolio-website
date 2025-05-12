@@ -4,7 +4,7 @@ const Title = ({ title, des }) => {
       <h1
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
-        className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-fuchsia-500 py-4 inline-block"
+        className="text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500 py-4 inline-block"
       >
         {title}
       </h1>

@@ -18,7 +18,10 @@ const Testimonials = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, overview } = formData;
-    if (!name || !overview) return;
+    if (!name || !overview) {
+      toast.warn("Please fill out all fields.");
+      return;
+    }
 
     try {
       const res = await axios.post(
@@ -29,8 +32,8 @@ const Testimonials = () => {
       if (res.data?.insertedId) {
         toast.success("Thanks for your feedback!", {
           style: {
-            background: "linear-gradient(to top right, #48284d, #8d13a0)",
-            color: "#ffffff",
+            background: "linear-gradient(to right, #4b0082, #8a2be2)",
+            color: "#fff",
           },
         });
         fetchFeedbacks();
@@ -39,7 +42,7 @@ const Testimonials = () => {
       }
     } catch (error) {
       console.error("Failed to submit feedback:", error);
-      toast.error("Something went wrong.");
+      toast.error("Something went wrong. Please try again later.");
     }
   };
 
@@ -66,7 +69,7 @@ const Testimonials = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -75,41 +78,37 @@ const Testimonials = () => {
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 768,
         settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 680,
+        breakpoint: 768,
         settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <div className="">
+    <div className="py-12 px-4 sm:px-6 lg:px-8">
       <Title
         title="Testimonials"
-        des="I'd love to hear your thoughts on my portfolio. Please feel free to share your honest feedback."
+        des="I'd love to hear your thoughts. Feel free to leave honest feedback!"
       />
 
       {/* Feedback Modal */}
       {open && (
-        <div className="fixed bg-black/50 w-screen h-screen top-0 left-0 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
           <form
             onSubmit={handleSubmit}
-            className="max-w-xl mx-auto p-6 rounded-xl space-y-4 md:space-y-6 mb-12 border bg-fuchsia-700/10 border-fuchsia-500/10 backdrop-blur-xl relative shadow-2xl shadow-fuchsia-500/10"
+            className="bg-[#1a0e25] border border-purple-700/30 shadow-xl shadow-purple-800/20 rounded-xl max-w-xl w-full p-6 space-y-4 relative backdrop-blur-md"
           >
             <button
               onClick={() => setOpen(false)}
               type="button"
-              className="btn btn-sm btn-circle bg-fuchsia-950 absolute right-2 top-2"
+              className="btn btn-sm btn-circle bg-purple-900 text-white absolute right-3 top-3"
             >
-              <X />
+              <X size={18} />
             </button>
-            <h2 className="text-3xl font-bold text-fuchsia-400 text-center mb-4">
+            <h2 className="text-2xl font-bold text-purple-300 text-center mb-2">
               Give Feedback
             </h2>
             <input
@@ -118,25 +117,24 @@ const Testimonials = () => {
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-fuchsia-600/20 rounded-md outline-none focus:ring-2 focus:ring-fuchsia-400"
+              className="w-full px-4 py-2 rounded-md bg-[#2d1b3d] border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
             <textarea
               name="overview"
               rows="4"
-              placeholder="Your Overview..."
+              placeholder="Your Feedback..."
               value={formData.overview}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-fuchsia-600/20 rounded-md outline-none focus:ring-2 focus:ring-fuchsia-400"
+              className="w-full px-4 py-2 rounded-md bg-[#2d1b3d] border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
-            <div className="flex items-center justify-center">
+            <div className="flex justify-center">
               <button
                 type="submit"
-                className="border border-[#66426b] px-3 lg:px-4 py-2 rounded-lg relative z-20 group hover:shadow-lg shadow-[#3b1441]/40 bg-gradient-to-tr from-[#1c0922] to-[#7e057f] overflow-hidden flex items-center gap-2 text-[#e2c9e8] group-hover:text-white transition duration-300 cursor-pointer"
+                className="bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 px-6 py-2 rounded-md text-white font-semibold hover:brightness-110 transition duration-300 shadow-md"
               >
                 Submit Feedback
-                <span className="w-40 h-20 left-1/2 -translate-x-1/2 bg-gradient-to-bl from-[#1d0c1f] via-[#550a5f] to-[#920597] block absolute -bottom-24 group-hover:-bottom-4 duration-700 shadow-lg shadow-[#501858]/30 z-[-1] border border-[#39133f] rotate-6 blur-sm"></span>
               </button>
             </div>
           </form>
@@ -144,23 +142,24 @@ const Testimonials = () => {
       )}
 
       {/* Feedback Slider */}
-      <div className="my-6">
+      <div className="mt-8">
         {feedbacks.length > 0 ? (
-          <Slider {...sliderSettings} className="">
+          <Slider {...sliderSettings}>
             {feedbacks.map((item, index) => (
-              <div key={index} className="p-4">
-                <div className="bg-[#1a0d1f] border space-y-2 border-fuchsia-900/20 rounded-2xl shadow-lg text-center p-6 mx-2">
+              <div key={index} className="px-3 py-6">
+                <div className="bg-[#1d1128]/20 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-300">
                   <img
                     src={user}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-fuchsia-400 mx-auto mb-3 p-1"
+                    alt="User"
+                    className="w-14 h-14 rounded-full border-2 border-purple-400 mx-auto mb-4"
                   />
                   <h3 className="text-lg font-semibold text-white mb-1">
                     {item.name}
                   </h3>
-                  <p className="text-gray-400 text-sm">
-                    {item.overview?.slice(0, 100)}
+                  <p className="text-sm text-gray-300">
+                    {item.overview?.slice(0, 120)}
                   </p>
-                  <p className="text-gray-400 text-xs pt-2">
+                  <p className="text-xs text-gray-500 mt-2">
                     {new Date(item.createdAt).toLocaleDateString()}
                   </p>
                 </div>
@@ -168,18 +167,15 @@ const Testimonials = () => {
             ))}
           </Slider>
         ) : (
-          <div className="text-center text-gray-400">No Feedback Yet</div>
+          <div className="text-center text-gray-500">No feedback yet.</div>
         )}
       </div>
 
       {/* Give Feedback Button */}
-      <div className="flex items-center justify-center pt-6">
-        <button
-          onClick={() => setOpen(true)}
-          className="border border-[#66426b] px-3 lg:px-4 py-2 rounded-lg relative z-20 group hover:shadow-lg shadow-[#3b1441]/40 bg-gradient-to-tr from-[#1c0922] to-[#7e057f] overflow-hidden flex items-center gap-2 text-[#e2c9e8] group-hover:text-white transition duration-300 cursor-pointer"
-        >
+      <div className="flex justify-center mt-12">
+        <button onClick={() => setOpen(true)} className="buttonClass group">
           Give Feedback
-          <span className="w-40 h-20 left-1/2 -translate-x-1/2 bg-gradient-to-bl from-[#1d0c1f] via-[#550a5f] to-[#920597] block absolute -bottom-24 group-hover:-bottom-4 duration-700 shadow-lg shadow-[#501858]/30 z-[-1] border border-[#39133f] rotate-6 blur-sm"></span>
+          <span className="buttonAnimationColor group-hover:-top-4"></span>
         </button>
       </div>
     </div>
