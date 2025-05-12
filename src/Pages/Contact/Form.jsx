@@ -15,14 +15,11 @@ const Form = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      const response = await fetch(
-        "https://my-portfolio-server4.vercel.app/send-email",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
       const result = await response.json();
       if (result.success) {
@@ -60,7 +57,7 @@ const Form = () => {
           type="text"
           placeholder="Your Name"
           {...register("name", { required: "Name is required" })}
-          className="w-full py-2 px-4 text-xs lg:text-sm border border-fuchsia-900/50 rounded-lg focus:outline-none focus:border-fuchsia-600/80 bg-transparent text-white"
+          className="w-full py-2 px-4 text-xs lg:text-sm border border-fuchsia-600/50 focus:outline focus:outline-fuchsia-600/50 rounded-lg bg-transparent text-white"
         />
         {errors.name && (
           <p className="text-red-500 text-xs">{errors.name.message}</p>
@@ -76,7 +73,7 @@ const Form = () => {
               message: "Invalid email address",
             },
           })}
-          className="w-full py-2 px-4 text-xs lg:text-sm border border-fuchsia-900/50 rounded-lg focus:outline-none focus:border-fuchsia-600/80 bg-transparent text-white"
+          className="w-full py-2 px-4 border border-fuchsia-600/30 focus:outline-2 focus:outline-fuchsia-600/50 rounded-lg bg-transparent text-white"
         />
         {errors.email && (
           <p className="text-red-500 text-xs">{errors.email.message}</p>
@@ -86,7 +83,7 @@ const Form = () => {
           rows="4"
           placeholder="Your Message"
           {...register("message", { required: "Message is required" })}
-          className="w-full py-2 px-4 text-xs lg:text-sm border border-fuchsia-900/50 rounded-lg focus:outline-none focus:border-fuchsia-600/80 bg-transparent text-white"
+          className="w-full py-2 px-4 border border-fuchsia-600/30 focus:outline-2 focus:outline-fuchsia-600/50 rounded-lg bg-transparent text-white"
         ></textarea>
         {errors.message && (
           <p className="text-red-500 text-xs">{errors.message.message}</p>

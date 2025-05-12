@@ -5,7 +5,7 @@ import Form from "./Form";
 const Contact = () => {
   return (
     <div>
-      <Title title={"About Me"} />
+      <Title title={"Contact Me"} />
       <div
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
