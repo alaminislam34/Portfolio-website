@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -15,14 +16,12 @@ const Form = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_MONGO_URL}/send-email`,
+        data
+      );
 
-      const result = await response.json();
-      if (result.success) {
+      if (res.status === 200) {
         toast.success("Email sent successfully!", {
           style: {
             background: "linear-gradient(to top right, #48284d, #8d13a0)",

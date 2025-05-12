@@ -22,7 +22,7 @@ const Testimonials = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_MONGO_URL}/postReview`,
+        `${import.meta.env.VITE_SERVER_URL}/postReview`,
         formData
       );
 
@@ -45,7 +45,7 @@ const Testimonials = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_MONGO_URL}/reviews`);
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/reviews`);
       const data = res.data;
       if (Array.isArray(data)) {
         setFeedbacks(data);
@@ -149,7 +149,7 @@ const Testimonials = () => {
           <Slider {...sliderSettings}>
             {feedbacks.map((item, index) => (
               <div key={index} className="p-4">
-                <div className="bg-[#1a0d1f] border border-fuchsia-900/20 rounded-2xl shadow-lg text-center p-6 mx-2">
+                <div className="bg-[#1a0d1f] border space-y-2 border-fuchsia-900/20 rounded-2xl shadow-lg text-center p-6 mx-2">
                   <img
                     src={user}
                     className="w-14 h-14 rounded-full object-cover border-2 border-fuchsia-400 mx-auto mb-3 p-1"
@@ -159,6 +159,9 @@ const Testimonials = () => {
                   </h3>
                   <p className="text-gray-400 text-sm">
                     {item.overview?.slice(0, 150)}
+                  </p>
+                  <p className="text-gray-400 text-xs pt-2">
+                    {new Date(item.createdAt).toLocaleDateString()}
                   </p>
                 </div>
               </div>

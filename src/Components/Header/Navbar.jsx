@@ -26,7 +26,7 @@ const Navbar = () => {
       },
       {
         threshold: 0.1,
-        rootMargin: "-5% 0px -5% 0px",
+        rootMargin: "-8% 0px -8% 0px",
       }
     );
 
