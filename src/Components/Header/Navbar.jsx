@@ -25,8 +25,8 @@ const Navbar = () => {
         });
       },
       {
-        threshold: 0.5, // At least 10% visible
-        rootMargin: "-5% 0px -5% 0px", // Triggers when 90% of viewport contains the section
+        threshold: 0.1,
+        rootMargin: "-5% 0px -5% 0px",
       }
     );
 
@@ -37,10 +37,8 @@ const Navbar = () => {
       duration: 1500,
     });
 
-    // Observe all sections
     sections.forEach((section) => observer.observe(section));
 
-    // Cleanup
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 

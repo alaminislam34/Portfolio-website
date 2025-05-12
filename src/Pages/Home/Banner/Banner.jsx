@@ -1,7 +1,7 @@
 import { FaReact } from "react-icons/fa";
 import { LuLinkedin, LuFacebook, LuGithub } from "react-icons/lu";
 // import image from "../../../assets/Image/alamin1.jpg";
-import image from "../../../assets/Image/alaminRemovebg.png";
+import image from "../../../assets/Image/alaminRemovebg.webp";
 import { MdFileDownload } from "react-icons/md";
 import { Link } from "react-scroll";
 import { VscGithubProject } from "react-icons/vsc";
@@ -219,8 +219,8 @@ const Banner = () => {
               }}
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-fuchsia-500 opacity-0 group-hover:opacity-80 transition-opacity duration-300 blur-xl -z-10"></div>
-                <FaReact className="text-6xl text-blue-400 group-hover:scale-105 rounded-full" />
+                <div className="absolute inset-0 bg-fuchsia-500/50 opacity-0 group-hover:opacity-80 transition-opacity duration-300 blur-xl -z-10"></div>
+                <FaReact className="text-6xl text-fuchsia-600 group-hover:scale-105 rounded-full" />
               </div>
             </motion.button>
 
@@ -236,8 +236,8 @@ const Banner = () => {
               }}
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-fuchsia-500 opacity-0 group-hover:opacity-80 transition-opacity duration-300 blur-xl -z-10"></div>
-                <RiTailwindCssFill className="text-6xl text-blue-500 z-10" />
+                <div className="absolute inset-0 bg-fuchsia-500/50 opacity-0 group-hover:opacity-80 transition-opacity duration-300 blur-xl -z-10"></div>
+                <RiTailwindCssFill className="text-6xl text-fuchsia-600 z-10" />
               </div>
             </motion.button>
           </motion.div>
