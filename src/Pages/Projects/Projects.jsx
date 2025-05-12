@@ -31,7 +31,7 @@ const Projects = () => {
             data-aos-delay={i * 100}
             data-aos-anchor-placement="top-bottom"
             key={project.id}
-            className="rounded-2xl shadow-xl shadow-fuchsia-200/10 transition-all flex flex-col justify-between duration-300 hover:shadow-xl overflow-hidden"
+            className="rounded-2xl shadow-xl shadow-purple-400/10 transition-all flex flex-col justify-between duration-300 hover:shadow-xl overflow-hidden"
           >
             <div>
               {/* Image with Hover Effect */}
