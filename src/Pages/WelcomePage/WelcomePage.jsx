@@ -1,27 +1,20 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 const WelcomePage = () => {
-  const navigate = useNavigate();
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setHide(true);
-    }, 6000);
-
-    const redirectTimer = setTimeout(() => {
-      navigate("/");
     }, 5000);
 
     return () => {
       clearTimeout(fadeTimer);
-      clearTimeout(redirectTimer);
     };
-  }, [navigate]);
+  }, []);
 
   return (
     <div
@@ -100,22 +93,17 @@ const WelcomePage = () => {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 1 }}
-            className="text-3xl md:text-5xl font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-300 via-fuchsia-400 to-fuchsia-500"
+            style={{ WebkitTextStroke: "1px #9810fa" }}
+            className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-center tracking-wide text-purple-500/10"
           >
-            <Typewriter
-              words={["<Hello World! />"]}
-              loop={1}
-              typeSpeed={120}
-              deleteSpeed={80}
-              delaySpeed={1000}
-            />
+            <Typewriter words={["<Hello World! /> ....."]} />
           </motion.h1>
 
           <motion.h2
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
-            className="text-xl md:text-3xl font-medium text-white"
+            className="text-xl md:text-3xl font-semibold text-center text-white"
           >
             <Typewriter
               words={["Welcome to my Portfolio."]}
