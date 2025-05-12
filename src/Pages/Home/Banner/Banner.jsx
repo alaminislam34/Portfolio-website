@@ -26,7 +26,7 @@ const Banner = () => {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row justify-around items-center min-h-[550px] mt-8 lg:mt-0`}
+      className={`flex flex-col md:flex-row justify-around items-center min-h-[550px] mt-8 lg:mt-0`}
     >
       <div className="flex flex-1 justify-start items-center">
         <div className="space-y-8">

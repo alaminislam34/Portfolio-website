@@ -82,14 +82,14 @@ const Testimonials = () => {
         settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 520,
+        breakpoint: 680,
         settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <div className="px-4 md:px-10">
+    <div className="">
       <Title
         title="Testimonials"
         des="I'd love to hear your thoughts on my portfolio. Please feel free to share your honest feedback."
@@ -144,9 +144,9 @@ const Testimonials = () => {
       )}
 
       {/* Feedback Slider */}
-      <div className="my-12">
+      <div className="my-6">
         {feedbacks.length > 0 ? (
-          <Slider {...sliderSettings}>
+          <Slider {...sliderSettings} className="">
             {feedbacks.map((item, index) => (
               <div key={index} className="p-4">
                 <div className="bg-[#1a0d1f] border space-y-2 border-fuchsia-900/20 rounded-2xl shadow-lg text-center p-6 mx-2">
@@ -158,7 +158,7 @@ const Testimonials = () => {
                     {item.name}
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    {item.overview?.slice(0, 150)}
+                    {item.overview?.slice(0, 100)}
                   </p>
                   <p className="text-gray-400 text-xs pt-2">
                     {new Date(item.createdAt).toLocaleDateString()}
@@ -173,7 +173,7 @@ const Testimonials = () => {
       </div>
 
       {/* Give Feedback Button */}
-      <div className="flex items-center justify-center mt-4 lg:mt-6">
+      <div className="flex items-center justify-center pt-6">
         <button
           onClick={() => setOpen(true)}
           className="border border-[#66426b] px-3 lg:px-4 py-2 rounded-lg relative z-20 group hover:shadow-lg shadow-[#3b1441]/40 bg-gradient-to-tr from-[#1c0922] to-[#7e057f] overflow-hidden flex items-center gap-2 text-[#e2c9e8] group-hover:text-white transition duration-300 cursor-pointer"

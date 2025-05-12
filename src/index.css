@@ -27,9 +27,24 @@ body {
   .navbarDarkBG {
     @apply bg-gradient-to-br from-[#1e112c] via-[#180d2a] to-[#0a0312];
   }
+  .buttonAnimationColor {
+    @apply w-[150%] h-[200%] rounded-xl left-1/2 -translate-x-1/2 bg-gradient-to-b from-purple-950/60 to-purple-600 block absolute -top-24 duration-500 z-[-1] border border-white/50 rotate-15;
+  }
 }
 @layer components {
   .navbarLightBG {
+    @apply bg-white;
+  }
+  .buttonClass {
+    @apply overflow-hidden border border-purple-800 px-3 lg:px-4 py-2 rounded-lg relative z-20 hover:shadow-lg shadow-fuchsia-800/40 bg-gradient-to-b from-purple-600 to-purple-900 flex items-center gap-2 text-white transition duration-300 cursor-pointer;
+  }
+  .slick-dots {
+    @apply bg-transparent  mb-4;
+  }
+  .slick-dots li {
+    @apply bg-[#342944] rounded-full;
+  }
+  .slick-dots li.slick-active {
     @apply bg-white;
   }
 }

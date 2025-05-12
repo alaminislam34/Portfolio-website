@@ -1,21 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { GrClose, GrContactInfo } from "react-icons/gr";
 import { Link } from "react-scroll";
 import Aos from "aos";
+import "aos/dist/aos.css";
 import logo from "../../assets/logo/name-logo-white.svg";
 import { GoHome } from "react-icons/go";
 import { IoCodeSlashOutline, IoMailUnreadOutline } from "react-icons/io5";
 import { BsFolder2Open } from "react-icons/bs";
+import { X } from "lucide-react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(false);
+  const lastScrollY = useRef(0);
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const sections = document.querySelectorAll("[data-section]");
 
-    // Intersection Observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -30,7 +33,6 @@ const Navbar = () => {
       }
     );
 
-    // AOS init
     Aos.init({
       once: false,
       delay: 300,
@@ -40,6 +42,25 @@ const Navbar = () => {
     sections.forEach((section) => observer.observe(section));
 
     return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 10) {
+        setScrollY(false);
+      } else if (currentScrollY > lastScrollY.current) {
+        setScrollY(true);
+      } else {
+        setScrollY(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const links = [
@@ -52,24 +73,115 @@ const Navbar = () => {
 
   return (
     <div className="h-[76px]">
-      <div className="w-full fixed top-0 left-0 z-50 duration-700">
+      <div
+        className={`w-full fixed left-0 z-50 duration-700 ${
+          scrollY ? "-top-52" : "top-0"
+        } `}
+      >
         <nav
-          className={`my-4 rounded-2xl shadow-xl shadow-fuchsia-700/10 backdrop-blur-xl max-w-7xl w-11/12 mx-auto`}
+          className={`my-4 rounded-2xl shadow-lg shadow-fuchsia-700/10 backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto`}
         >
-          <div className="flex items-center justify-between py-2 px-6 rounded-[14px] shadow-inner shadow-fuchsia-700/50">
+          <div className="flex items-center justify-between py-2 px-6 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-xl shadow-purple-800/20 backdrop-blur-md relative">
+            {/*  *******************************Gradient Motion Layers Start****************************** */}
+            <div className="absolute inset-0 -z-10 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
+            <div
+              className="absolute rounded-full blur-3xl"
+              style={{
+                width: "40vw",
+                height: "40vw",
+                background:
+                  "linear-gradient(40deg, rgba(128, 0, 255, 0.1), rgba(102, 0, 204, 0.1))",
+                top: "-10%",
+                left: "-10%",
+                animation: "moveGradient1 15s ease-in-out infinite alternate",
+              }}
+            />
+            <div
+              className="absolute rounded-full blur-3xl"
+              style={{
+                width: "45vw",
+                height: "45vw",
+                background:
+                  "linear-gradient(40deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
+
+                bottom: "-20%",
+                right: "-10%",
+                animation: "moveGradient2 18s ease-in-out infinite alternate",
+              }}
+            />
+            <div
+              className="absolute rounded-full blur-3xl"
+              style={{
+                width: "30vw",
+                height: "30vw",
+                background:
+                  "radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent 70%)",
+                top: "60%",
+                left: "20%",
+                animation: "moveGradient3 20s ease-in-out infinite alternate",
+              }}
+            />
+
+            {/*  *******************************Gradient Motion Layers END****************************** */}
             {/* Mobile Menu */}
             <div
-              className={`absolute left-0 w-full z-50 bg-gradient-to-br from-[#1e112c] via-[#180d2a] to-[#0a0312] rounded-xl duration-500 ${
+              className={`absolute left-0 w-full z-50 bg-gradient-to-r from-[#1f1f2e] via-[#2b1b36] to-[#1f1f2e] backdrop-blur-2xl text-white rounded-xl duration-500 ${
                 open ? "top-0" : "-top-96"
               }`}
             >
-              <ul className="flex flex-col p-6 space-y-3 relative">
-                <button
-                  onClick={() => setOpen(false)}
-                  className="absolute top-4 right-4  transition cursor-pointer"
-                >
-                  <GrClose className="text-xl" />
-                </button>
+              <ul className="flex flex-col p-6 space-y-4 relative">
+                {/*  *******************************Gradient Motion Layers Start****************************** */}
+                <div className="absolute inset-0 -z-10 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
+                <div
+                  className="absolute -z-10 rounded-full blur-3xl"
+                  style={{
+                    width: "40vw",
+                    height: "40vw",
+                    background:
+                      "linear-gradient(40deg, rgba(128, 0, 255, 0.1), rgba(102, 0, 204, 0.1))",
+                    top: "-10%",
+                    left: "-10%",
+                    animation:
+                      "moveGradient1 15s ease-in-out infinite alternate",
+                  }}
+                />
+                <div
+                  className="absolute -z-10 rounded-full blur-3xl"
+                  style={{
+                    width: "45vw",
+                    height: "45vw",
+                    background:
+                      "linear-gradient(40deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
+
+                    bottom: "-20%",
+                    right: "-10%",
+                    animation:
+                      "moveGradient2 18s ease-in-out infinite alternate",
+                  }}
+                />
+                <div
+                  className="absolute -z-10 rounded-full blur-3xl"
+                  style={{
+                    width: "30vw",
+                    height: "30vw",
+                    background:
+                      "radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent 70%)",
+                    top: "60%",
+                    left: "20%",
+                    animation:
+                      "moveGradient3 20s ease-in-out infinite alternate",
+                  }}
+                />
+
+                {/*  *******************************Gradient Motion Layers END****************************** */}
+                <div className="absolute top-4 right-4 text-xl transition z-10">
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="btn btn-sm cursor-pointer"
+                  >
+                    <X />
+                  </button>
+                </div>
                 {links.map((item) => (
                   <li
                     key={item.path}
@@ -81,7 +193,7 @@ const Navbar = () => {
                       smooth={true}
                       duration={500}
                       onClick={() => setOpen(false)}
-                      className=" text-base px-4 py-2 rounded-md transition-all duration-300"
+                      className="text-base px-4 py-2 rounded-md transition-all hover:bg-fuchsia-700/20"
                     >
                       {item.name}
                     </Link>
@@ -103,18 +215,19 @@ const Navbar = () => {
 
             {/* Desktop Links */}
             <div>
-              <ul className="hidden lg:flex items-center gap-6">
+              <ul className="hidden lg:flex items-center gap-4 hover:gap-6 duration-300 text-sm">
                 {links.map(({ name, path }) => (
                   <li key={path} className="relative group">
                     <Link
                       to={path}
                       smooth={true}
                       duration={500}
-                      className={` text-sm lg:text-base py-2 px-4 rounded-md transition-colors ease-in-out duration-500 cursor-pointer ${
-                        activeSection === path
-                          ? "bg-gradient-to-br from-fuchsia-500/40 via-fuchsia-600/40 to-fuchsia-700/40 text-white"
-                          : "hover:bg-gradient-to-br from-fuchsia-500/40 via-fuchsia-600/40 to-fuchsia-700/40 duration-300"
-                      }`}
+                      className={`py-3 px-4 cursor-pointer 
+                        ${
+                          activeSection === path
+                            ? "border-b text-white shadow-md"
+                            : "hover:border-b "
+                        }`}
                     >
                       {name}
                     </Link>
@@ -129,14 +242,14 @@ const Navbar = () => {
                 href="https://drive.google.com/file/d/1Cm3ACSBCaR6Q_PMKmNAQSu3rfuQonG5W/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-[#66426b] px-3 lg:px-4 py-2 rounded-lg relative z-20 group hover:shadow-lg shadow-[#3b1441]/40 bg-gradient-to-tr from-[#1c0922] to-[#7e057f] overflow-hidden flex items-center gap-2 text-[#e2c9e8] group-hover:text-white transition duration-300"
+                className="buttonClass group"
               >
                 Resume
-                <span className="w-40 h-20 left-1/2 -translate-x-1/2 bg-gradient-to-bl from-[#1d0c1f] via-[#550a5f] to-[#920597] block absolute -bottom-24 group-hover:-bottom-4 duration-700 shadow-lg shadow-[#501858]/30 z-[-1] border border-[#39133f] rotate-6 blur-sm"></span>
+                <span className="buttonAnimationColor group-hover:-top-4 "></span>
               </a>
               <button
                 onClick={() => setOpen(true)}
-                className=" text-xl lg:hidden cursor-pointer"
+                className="text-xl lg:hidden text-fuchsia-200 btn"
               >
                 <RiMenu2Fill />
               </button>

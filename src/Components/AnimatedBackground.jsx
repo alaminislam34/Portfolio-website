@@ -149,6 +149,11 @@ const AnimatedBackground = () => {
           {/* Grid lines */}
           <div className="absolute inset-0 z-10 bg-[length:40px_40px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
 
+          {/* Particles */}
+          <div
+            ref={particlesRef}
+            className="absolute inset-0 z-20 pointer-events-none"
+          />
           {/* Noise texture */}
           <div
             className="absolute inset-0 z-10 opacity-5"
