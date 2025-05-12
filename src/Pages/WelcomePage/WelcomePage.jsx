@@ -38,7 +38,7 @@ const WelcomePage = () => {
               width: "40vw",
               height: "40vw",
               background:
-                "linear-gradient(40deg, rgba(128, 0, 255, 0.1), rgba(102, 0, 204, 0.1))",
+                "linear-gradient(40deg, rgba(128, 0, 255, 0.01), rgba(102, 0, 204, 0.01))",
               top: "-10%",
               left: "-10%",
               animation: "moveGradient1 15s ease-in-out infinite alternate",
