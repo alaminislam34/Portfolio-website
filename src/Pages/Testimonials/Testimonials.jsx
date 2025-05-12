@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Slider from "react-slick";
+import user from "../../assets/logo/user.png";
 
 const Testimonials = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -150,7 +151,7 @@ const Testimonials = () => {
               <div key={index} className="p-4">
                 <div className="bg-[#1a0d1f] border border-fuchsia-900/20 rounded-2xl shadow-lg text-center p-6 mx-2">
                   <img
-                    src="/assets/logo/user.png"
+                    src={user}
                     className="w-14 h-14 rounded-full object-cover border-2 border-fuchsia-400 mx-auto mb-3 p-1"
                   />
                   <h3 className="text-lg font-semibold text-white mb-1">
