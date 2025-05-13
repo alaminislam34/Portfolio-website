@@ -81,7 +81,7 @@ const AnimatedBackground = () => {
 
       gsap.to(particle, {
         opacity: 0,
-        duration: 1,
+        duration: 0.6,
         onComplete: () => {
           if (particlesContainer.contains(particle)) {
             particlesContainer.removeChild(particle);
@@ -105,10 +105,10 @@ const AnimatedBackground = () => {
               width: "40vw",
               height: "40vw",
               background:
-                "linear-gradient(40deg, rgba(128, 0, 255, 0.01), rgba(102, 0, 204, 0.01))",
+                "linear-gradient(40deg, #06010d, rgba(102, 0, 204, 0.01))",
               top: "-10%",
               left: "-10%",
-              animation: "moveGradient1 15s ease-in-out infinite alternate",
+              animation: "moveGradient1 10s ease-in-out infinite alternate",
             }}
           />
           <div
@@ -117,7 +117,7 @@ const AnimatedBackground = () => {
               width: "45vw",
               height: "45vw",
               background:
-                "linear-gradient(40deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
+                "linear-gradient(40deg, #06010d, rgba(118, 75, 162, 0.1))",
 
               bottom: "-20%",
               right: "-10%",
@@ -129,8 +129,7 @@ const AnimatedBackground = () => {
             style={{
               width: "30vw",
               height: "30vw",
-              background:
-                "radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent 70%)",
+              background: "radial-gradient(circle, #06010d, transparent 70%)",
               top: "60%",
               left: "20%",
               animation: "moveGradient3 20s ease-in-out infinite alternate",

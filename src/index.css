@@ -13,9 +13,7 @@ body {
   --color-Base: #121212;
   --color-Primary: #1e1e1e;
   --color-Secondary: #0a0a0a;
-  /* --color-Glow: oklch(74% 0.238 322.16); */
   --color-Text: #ffffff;
-  /* --color-Soft: oklch(95.2% 0.037 318.852); */
 }
 
 #myName {
