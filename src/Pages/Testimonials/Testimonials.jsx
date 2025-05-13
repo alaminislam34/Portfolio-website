@@ -147,7 +147,12 @@ const Testimonials = () => {
         {feedbacks.length > 0 ? (
           <Slider {...sliderSettings}>
             {feedbacks.map((item, index) => (
-              <div key={index} className="px-3 py-6">
+              <div
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                key={index}
+                className="px-3 py-6"
+              >
                 <div className="bg-[#1d1128]/20 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-300">
                   <img
                     src={user}
@@ -173,7 +178,11 @@ const Testimonials = () => {
       </div>
 
       {/* Give Feedback Button */}
-      <div className="flex justify-center mt-12">
+      <div
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        className="flex justify-center mt-12"
+      >
         <button onClick={() => setOpen(true)} className="buttonClass group">
           Give Feedback
           <span className="buttonAnimationColor group-hover:-top-4"></span>

@@ -93,10 +93,10 @@ const WelcomePage = () => {
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 1 }}
-            style={{ WebkitTextStroke: "1px #9810fa" }}
+            style={{ WebkitTextStroke: "1px white" }}
             className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-center tracking-wide text-purple-500/10"
           >
-            <Typewriter words={["<Hello World! /> ....."]} />
+            <Typewriter words={["<Hello World! />..."]} />
           </motion.h1>
 
           <motion.h2

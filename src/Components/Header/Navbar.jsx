@@ -15,7 +15,7 @@ const Navbar = () => {
   const [scrollY, setScrollY] = useState(false);
   const lastScrollY = useRef(0);
   const [activeSection, setActiveSection] = useState("home");
-
+  console.log(scrollY);
   useEffect(() => {
     const sections = document.querySelectorAll("[data-section]");
 
@@ -73,11 +73,7 @@ const Navbar = () => {
 
   return (
     <div className="h-[76px]">
-      <div
-        className={`w-full fixed left-0 z-50 duration-700 ${
-          scrollY ? "-top-52" : "top-0"
-        } `}
-      >
+      <div className={`w-full fixed left-0 z-50 duration-700 top-0  `}>
         <nav
           className={`my-4 rounded-2xl backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto`}
         >

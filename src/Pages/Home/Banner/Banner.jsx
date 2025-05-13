@@ -112,7 +112,11 @@ const Banner = () => {
           </ul>
 
           {/* Buttons */}
-          <div className="flex flex-row flex-wrap gap-4 md:gap-6 items-center my-4">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            className="flex flex-row flex-wrap gap-4 md:gap-6 items-center my-4"
+          >
             <a
               href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
               target="_blank"
