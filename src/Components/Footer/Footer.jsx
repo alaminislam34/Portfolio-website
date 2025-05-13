@@ -4,7 +4,7 @@ const Footer = () => {
       data-aos="fade-in-up"
       data-aos-offset="0"
       data-aos-anchor-placement="top-bottom"
-      className="footer bg-Base pb-6 pt-8 text-center flex justify-center items-center"
+      className="footer bg-[#120727]/30 pb-6 pt-8 text-center flex justify-center items-center"
     >
       <p
         data-aos="fade-in-up"
@@ -14,6 +14,7 @@ const Footer = () => {
       >
         MD Al Amin Islam <br />
         Email: alaminislam43.bd@email.com <br />
+        <br />
         Copyright MD Al Amin Islam © 2025 - All right reserved
       </p>
     </footer>

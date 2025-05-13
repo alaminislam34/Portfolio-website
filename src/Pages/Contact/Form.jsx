@@ -87,25 +87,27 @@ const Form = () => {
         {errors.message && (
           <p className="text-red-500 text-xs">{errors.message.message}</p>
         )}
-
-        <button
-          type="submit"
-          disabled={loading}
-          className={` relative py-3 w-full text-xs lg:text-sm text-white duration-300 border border-fuchsia-900/50 hover:border-fuchsia-500 bg-gradient-to-tr from-[#1d0c1f] to-[#920597] rounded-lg group z-20 overflow-hidden ${
-            loading
-              ? "opacity-50 cursor-not-allowed pointer-events-none border-fuchsia-500/20"
-              : ""
-          }`}
-        >
-          {loading ? (
-            <div className="flex items-center justify-center flex-row gap-2">
-              Sending <span className="loading loading-dots loading-md"></span>
-            </div>
-          ) : (
-            "Send Message"
-          )}
-          <span className="w-[120%] h-40 left-1/2 -translate-x-1/2 bg-gradient-to-br rotate-12 from-[#1d0c1f] to-[#920597] block absolute -bottom-24 group-hover:-bottom-6 duration-300 shadow-[0px_0px_35px_0px_#501858] border z-[-1] border-[#39133f] blur-lg"></span>
-        </button>
+        <div className="flex justify-end">
+          <button
+            type="submit"
+            disabled={loading}
+            className={`buttonClass group justify-end ${
+              loading
+                ? "opacity-50 cursor-not-allowed pointer-events-none border-fuchsia-500/20"
+                : ""
+            }`}
+          >
+            {loading ? (
+              <div className="flex items-center justify-center flex-row gap-2">
+                Sending{" "}
+                <span className="loading loading-dots loading-md"></span>
+              </div>
+            ) : (
+              "Send Message"
+            )}
+            <span className="buttonAnimationColor"></span>
+          </button>
+        </div>
       </form>
     </div>
   );

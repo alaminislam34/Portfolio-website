@@ -20,7 +20,7 @@ const ViewDetails = () => {
       <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <button onClick={() => navigate("/")} className="buttonClass group">
           <IoCaretBackOutline /> Back
-          <span className="buttonAnimationColor group-hover:-top-4"></span>
+          <span className="buttonAnimationColor"></span>
         </button>
       </div>
       <div

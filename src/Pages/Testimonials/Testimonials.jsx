@@ -102,16 +102,16 @@ const Testimonials = () => {
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
           <form
             onSubmit={handleSubmit}
-            className="bg-[#1a0e25] border border-purple-700/30 shadow-xl shadow-purple-800/20 rounded-xl max-w-xl w-full p-6 space-y-4 relative backdrop-blur-md"
+            className="bg-[#1a0e25]/80 border border-purple-700/30 shadow-xl shadow-purple-800/20 rounded-xl max-w-xl w-full p-6 space-y-4 relative backdrop-blur-md"
           >
             <button
               onClick={() => setOpen(false)}
               type="button"
-              className="btn btn-sm btn-circle bg-purple-900 text-white absolute right-3 top-3"
+              className="btn btn-sm btn-circle bg-purple-900/50 text-white absolute right-3 top-3"
             >
               <X size={18} />
             </button>
-            <h2 className="text-2xl font-bold text-purple-300 text-center mb-2">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl pb-4 lg:pb-6 font-bold text-purple-300 text-center mb-2">
               Give Feedback
             </h2>
             <input
@@ -120,7 +120,7 @@ const Testimonials = () => {
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-[#2d1b3d] border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 rounded-md bg-transparent border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
             <textarea
@@ -129,15 +129,13 @@ const Testimonials = () => {
               placeholder="Your Feedback..."
               value={formData.overview}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-[#2d1b3d] border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full px-4 py-2 rounded-md bg-transparent border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
             <div className="flex justify-center">
-              <button
-                type="submit"
-                className="bg-gradient-to-r from-purple-800 via-purple-700 to-purple-600 px-6 py-2 rounded-md text-white font-semibold hover:brightness-110 transition duration-300 shadow-md"
-              >
+              <button type="submit" className="buttonClass group">
                 Submit Feedback
+                <span className="buttonAnimationColor"></span>
               </button>
             </div>
           </form>

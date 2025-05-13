@@ -64,7 +64,7 @@ const Banner = () => {
               data-aos-delay="500"
               className="overflow-hidden h-14 md:h-16 flex items-center"
             >
-              <h2 className="text-4xl md:text-5xl font-extrabold">
+              <h2 className="text-4xl md:text-5xl text-purple-400 font-extrabold">
                 <TypingAnimation />
               </h2>
             </div>
