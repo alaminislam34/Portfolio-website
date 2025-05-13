@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import Slider from "react-slick";
 import user from "../../assets/logo/user.png";
+// import ColorPlates from "../../Components/ColorPlates";
 
 const Testimonials = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -69,12 +70,14 @@ const Testimonials = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     arrows: false,
+    dotsClass: "slick-dots slick-thumb",
+    dotsClassActive: "slick-active",
     responsive: [
       {
         breakpoint: 1024,
@@ -93,7 +96,7 @@ const Testimonials = () => {
         title="Testimonials"
         des="I'd love to hear your thoughts. Feel free to leave honest feedback!"
       />
-
+      {/* <ColorPlates /> */}
       {/* Feedback Modal */}
       {open && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">

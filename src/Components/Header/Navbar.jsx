@@ -4,7 +4,7 @@ import { GrClose, GrContactInfo } from "react-icons/gr";
 import { Link } from "react-scroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import logo from "../../assets/logo/name-logo-white.svg";
+import logo from "../../assets/logo/AA.png";
 import { GoHome } from "react-icons/go";
 import { IoCodeSlashOutline, IoMailUnreadOutline } from "react-icons/io5";
 import { BsFolder2Open } from "react-icons/bs";
@@ -242,7 +242,7 @@ const Navbar = () => {
                 href="https://drive.google.com/file/d/1Cm3ACSBCaR6Q_PMKmNAQSu3rfuQonG5W/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="buttonClass group"
+                className="buttonClass bg-purple-500 group"
               >
                 Resume
                 <span className="buttonAnimationColor group-hover:-top-4 "></span>

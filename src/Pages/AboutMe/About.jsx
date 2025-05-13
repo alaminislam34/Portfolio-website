@@ -84,7 +84,7 @@ const About = () => {
               {skills.map(({ href, icon }, i) => (
                 <motion.li
                   key={i}
-                  className="cursor-pointer rounded-lg p-2 duration-300 bg-fuchsia-600/40"
+                  className="cursor-pointer rounded-lg p-2 duration-300  border border-white/50"
                   animate={{ y: [0, -8, 0] }}
                   transition={{
                     delay: i * 0.2,
@@ -110,20 +110,20 @@ const About = () => {
               to="contact"
               smooth={true}
               duration={500}
-              className="border border-[#66426b] px-3 lg:px-4 py-2 rounded-lg relative z-20 group hover:shadow-lg shadow-[#3b1441]/40 bg-gradient-to-tr from-[#1c0922] to-[#7e057f] overflow-hidden flex items-center gap-2 text-[#e2c9e8] group-hover:text-white transition duration-300 cursor-pointer"
+              className="buttonClass group"
             >
               Hire Me
-              <span className="w-40 h-20 left-1/2 -translate-x-1/2 bg-gradient-to-bl from-[#1d0c1f] via-[#550a5f] to-[#920597] block absolute -bottom-24 group-hover:-bottom-4 duration-700 shadow-lg shadow-[#501858]/30 z-[-1] border border-[#39133f] rotate-6 blur-sm"></span>
+              <span className="buttonAnimationColor"></span>
             </Link>
 
             <Link
               to="contact"
               smooth={true}
               duration={500}
-              className="border border-[#66426b] px-3 lg:px-4 py-2 rounded-lg relative z-20 group hover:shadow-lg shadow-[#3b1441]/40 bg-gradient-to-tr from-[#1c0922] to-[#7e057f] overflow-hidden flex items-center gap-2 text-[#e2c9e8] group-hover:text-white transition duration-300 cursor-pointer"
+              className="buttonClass group"
             >
               Contact Now <MdContactEmergency className="text-xl" />
-              <span className="w-40 h-20 left-1/2 -translate-x-1/2 bg-gradient-to-bl from-[#1d0c1f] via-[#550a5f] to-[#920597] block absolute -bottom-24 group-hover:-bottom-4 duration-700 shadow-lg shadow-[#501858]/30 z-[-1] border border-[#39133f] rotate-6 blur-sm"></span>
+              <span className="buttonAnimationColor"></span>
             </Link>
           </div>
         </div>
