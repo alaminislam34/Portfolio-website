@@ -245,7 +245,7 @@ const Navbar = () => {
               </a>
               <button
                 onClick={() => setOpen(true)}
-                className="text-xl lg:hidden text-fuchsia-200 btn"
+                className="text-xl lg:hidden btn"
               >
                 <RiMenu2Fill />
               </button>

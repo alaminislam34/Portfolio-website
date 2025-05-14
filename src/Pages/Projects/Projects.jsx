@@ -43,6 +43,7 @@ const Projects = () => {
               >
                 <img
                   src={project.image}
+                  loading="lazy"
                   alt="image"
                   className="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
