@@ -8,10 +8,10 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import logo from "../../../assets/logo/name-logo.svg";
 import TypingAnimation from "./TypingText";
 import Lottie from "react-lottie";
 import bg from "../../../assets/Image/lottie.json";
+// import nameLogo from "../../../assets/logo/AA.png";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -39,18 +39,14 @@ const Banner = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row justify-around lg:mx-12 items-center min-h-[550px] mt-8 lg:mt-0 text-white">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:mx-12 items-center min-h-[550px] mt-8 lg:mt-0 text-white relative">
+      {/* <div className="fixed opacity-10 -z-10 top-0 left-0 w-full h-full flex items-center justify-center">
+        <img src={nameLogo} alt="logo" className="scale-125" />
+      </div> */}
       {/* Left Content */}
-      <div className="flex flex-1 justify-start items-center relative z-10">
-        <div className="space-y-6 lg:space-y-8">
-          <div
-            style={{
-              backgroundImage: `url(${logo})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-            }}
-            className="text-left space-y-6"
-          >
+      <div className="flex justify-start items-center relative z-10">
+        <div className="space-y-4 md:space-y-6 lg:space-y-8">
+          <div className="text-left space-y-6 space-y-4 md:space-y-6 lg:space-y-8">
             <h1
               data-aos="fade-up"
               data-aos-delay="300"
@@ -59,15 +55,9 @@ const Banner = () => {
               Hello, I`m Al Amin
             </h1>
 
-            <div
-              data-aos="fade-up"
-              data-aos-delay="500"
-              className="overflow-hidden h-14 md:h-16 flex items-center"
-            >
-              <h2 className="text-4xl md:text-5xl text-purple-400 font-extrabold">
-                <TypingAnimation />
-              </h2>
-            </div>
+            <h2 className="h-[35px] md:h-[46px] lg:h-[58px] text-purple-400 font-extrabold">
+              <TypingAnimation />
+            </h2>
 
             <p
               data-aos="fade-up"
@@ -140,17 +130,17 @@ const Banner = () => {
       </div>
 
       {/* Right Image and Animations */}
-      <div className="flex flex-1 justify-center items-center h-full w-full relative my-6">
+      <div className="flex justify-center items-center h-full w-full relative my-6">
         <div
           data-aos="zoom-in"
           className="h-full w-full flex justify-center items-center px-4 relative"
         >
           <motion.div
-            className="relative lg:w-[80%] mx-auto flex items-center justify-center"
+            className="relative lg:w-[80%] mx-auto flex items-center justify-center border border-white/10 rounded-full"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
           >
-            <div className="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] overflow-hidden rounded-3xl bg-main/30">
+            <div className="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] overflow-hidden rounded-full bg-main/30">
               <div className="absolute inset-0 z-0 scale-105">
                 <Lottie
                   options={{ animationData: bg, autoplay: true, loop: true }}
@@ -162,32 +152,52 @@ const Banner = () => {
                 alt="alamin"
               />
             </div>
-
             {/* React Icon */}
             <motion.button
-              className="group p-2 absolute top-2 left-2 lg:top-4 lg:left-4 z-10"
+              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between rotate-90"
               animate={{ rotate: 360 }}
-              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             >
-              <div className="relative">
-                <div className="absolute inset-0 bg-Glow/50 opacity-0 group-hover:opacity-80 transition duration-300 blur-xl -z-10" />
+              <span className="relative">
                 <FaReact className="text-6xl text-Accent" />
+              </span>
+              <div className="relative">
+                <RiTailwindCssFill className="text-6xl text-Accent" />
               </div>
             </motion.button>
-
-            {/* Tailwind Icon */}
             <motion.button
-              className="group p-2 absolute bottom-2 right-2 lg:bottom-4 lg:right-4 z-10"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{
-                duration: 0.6,
-                repeat: Infinity,
-                repeatDelay: 2,
-                ease: "easeInOut",
-              }}
+              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             >
+              <span className="relative">
+                <FaReact className="text-6xl text-Accent" />
+              </span>
               <div className="relative">
-                <div className="absolute inset-0 bg-Glow/50 opacity-0 group-hover:opacity-80 transition duration-300 blur-xl -z-10" />
+                <RiTailwindCssFill className="text-6xl text-Accent" />
+              </div>
+            </motion.button>
+            <motion.button
+              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between rotate-45"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            >
+              <span className="relative">
+                <FaReact className="text-6xl text-Accent" />
+              </span>
+              <div className="relative">
+                <RiTailwindCssFill className="text-6xl text-Accent" />
+              </div>
+            </motion.button>
+            <motion.button
+              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between rotate-135"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            >
+              <span className="relative">
+                <FaReact className="text-6xl text-Accent" />
+              </span>
+              <div className="relative">
                 <RiTailwindCssFill className="text-6xl text-Accent" />
               </div>
             </motion.button>

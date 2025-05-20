@@ -144,28 +144,33 @@ const Testimonials = () => {
 
       {/* Feedback Slider */}
       <div className="mt-8">
-        {feedbacks.length > 0 ? (
+        {feedbacks?.length > 0 ? (
           <Slider {...sliderSettings}>
-            {feedbacks.map((item, index) => (
+            {feedbacks?.map((item, index) => (
               <div
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
                 key={index}
-                className="px-3 py-6"
+                className="px-3 py-6 relative group"
               >
-                <div className="bg-[#1d1128]/20 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-300">
+                {/* Card with Shine Effect */}
+                <div className="relative bg-[#1d1128]/20 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-500 overflow-hidden">
+                  {/* Shine Effect */}
+                  <div className="absolute -top-20 left-[-30%] w-[150%] h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent -rotate-45 animation z-10" />
+
+                  {/* Content */}
                   <img
                     src={user}
                     alt="User"
-                    className="w-14 h-14 rounded-full border-2 border-purple-400 mx-auto mb-4"
+                    className="w-14 h-14 rounded-full border-2 border-purple-400 mx-auto mb-4 relative z-20"
                   />
-                  <h3 className="text-lg font-semibold text-white mb-1">
+                  <h3 className="text-lg font-semibold text-white mb-1 relative z-20">
                     {item.name}
                   </h3>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-300 relative z-20">
                     {item.overview?.slice(0, 120)}
                   </p>
-                  <p className="text-xs text-gray-500 mt-2">
+                  <p className="text-xs text-gray-500 mt-2 relative z-20">
                     {new Date(item.createdAt).toLocaleDateString()}
                   </p>
                 </div>

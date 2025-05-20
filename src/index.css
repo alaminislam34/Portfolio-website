@@ -45,3 +45,17 @@ body {
     @apply overflow-hidden border border-purple-800 px-3 lg:px-4 py-2 rounded-lg relative z-20 hover:shadow-lg shadow-fuchsia-800/40 duration-300 flex items-center gap-2 text-white transition-all cursor-pointer;
   }
 }
+
+.animation:hover {
+  animation: shine 3s once linear;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
+}

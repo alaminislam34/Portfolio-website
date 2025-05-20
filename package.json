@@ -30,6 +30,7 @@
     "react-toastify": "^11.0.5",
     "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
+    "split-type": "^0.3.4",
     "tailwindcss": "^4.1.6"
   },
   "devDependencies": {

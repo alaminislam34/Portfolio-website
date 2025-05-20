@@ -3,63 +3,58 @@ import gsap from "gsap";
 
 const AnimatedBackground = () => {
   const particlesRef = useRef(null);
+  const particlePool = useRef([]);
+  const maxParticles = 20;
 
   useEffect(() => {
-    const particlesContainer = particlesRef.current;
-    const particleCount = 20;
+    const container = particlesRef.current;
 
-    const createParticle = () => {
+    // Create particle pool once
+    for (let i = 0; i < maxParticles; i++) {
       const particle = document.createElement("div");
-      const size = Math.random() * 3 + 1;
-
       Object.assign(particle.style, {
-        width: `${size}px`,
-        height: `${size}px`,
+        width: `${Math.random() * 3 + 1}px`,
+        height: `${Math.random() * 3 + 1}px`,
         position: "absolute",
         borderRadius: "9999px",
         backgroundColor: "#fff",
         pointerEvents: "none",
-        opacity: "0",
+        opacity: 0,
       });
-
-      particlesContainer.appendChild(particle);
+      container.appendChild(particle);
+      particlePool.current.push(particle);
       animateParticle(particle);
-    };
+    }
 
-    const resetParticle = (particle) => {
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
+    function animateParticle(particle) {
+      const startX = Math.random() * 100;
+      const startY = Math.random() * 100;
+      const moveX = startX + (Math.random() * 20 - 10);
+      const moveY = startY - Math.random() * 30;
+
       Object.assign(particle.style, {
-        left: `${x}%`,
-        top: `${y}%`,
-        opacity: "0",
+        left: `${startX}%`,
+        top: `${startY}%`,
+        opacity: 0.2,
+        transition: `all 10s linear`,
       });
-      return { x, y };
-    };
 
-    const animateParticle = (particle) => {
-      const { x, y } = resetParticle(particle);
-      const duration = Math.random() * 10 + 10;
-      const delay = Math.random() * 5;
+      requestAnimationFrame(() => {
+        particle.style.left = `${moveX}%`;
+        particle.style.top = `${moveY}%`;
+        particle.style.opacity = 0.1 + Math.random() * 0.3;
 
-      setTimeout(() => {
-        const moveX = x + (Math.random() * 20 - 10);
-        const moveY = y - Math.random() * 30;
+        setTimeout(() => animateParticle(particle), 10000);
+      });
+    }
 
-        Object.assign(particle.style, {
-          transition: `all ${duration}s linear`,
-          opacity: Math.random() * 0.3 + 0.1,
-          left: `${moveX}%`,
-          top: `${moveY}%`,
-        });
-
-        setTimeout(() => animateParticle(particle), duration * 1000);
-      }, delay * 1000);
-    };
-
-    for (let i = 0; i < particleCount; i++) createParticle();
-
+    // Throttle mouse particles
+    let lastMove = 0;
     const mouseHandler = (e) => {
+      const now = Date.now();
+      if (now - lastMove < 100) return;
+      lastMove = now;
+
       const mouseX = (e.clientX / window.innerWidth) * 100;
       const mouseY = (e.clientY / window.innerHeight) * 100;
 
@@ -77,14 +72,14 @@ const AnimatedBackground = () => {
         pointerEvents: "none",
       });
 
-      particlesContainer.appendChild(particle);
+      container.appendChild(particle);
 
       gsap.to(particle, {
         opacity: 0,
         duration: 0.6,
         onComplete: () => {
-          if (particlesContainer.contains(particle)) {
-            particlesContainer.removeChild(particle);
+          if (container.contains(particle)) {
+            container.removeChild(particle);
           }
         },
       });
@@ -98,7 +93,7 @@ const AnimatedBackground = () => {
     <div className="fixed top-0 left-0 w-screen h-screen -z-50">
       <div className="relative w-full h-full bg-black text-white font-sans">
         <div className="absolute inset-0 z-0">
-          {/* Gradient Motion Layers */}
+          {/* Motion Gradients */}
           <div
             className="absolute rounded-full blur-3xl"
             style={{
@@ -118,7 +113,6 @@ const AnimatedBackground = () => {
               height: "45vw",
               background:
                 "linear-gradient(40deg, #06010d, rgba(118, 75, 162, 0.1))",
-
               bottom: "-20%",
               right: "-10%",
               animation: "moveGradient2 18s ease-in-out infinite alternate",
@@ -136,7 +130,7 @@ const AnimatedBackground = () => {
             }}
           />
 
-          {/* Radial center glow */}
+          {/* Center Glow */}
           <div
             className="absolute w-[40vw] h-[40vh] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 blur-3xl"
             style={{
@@ -145,15 +139,16 @@ const AnimatedBackground = () => {
             }}
           />
 
-          {/* Grid lines */}
+          {/* Grid */}
           <div className="absolute inset-0 z-10 bg-[length:40px_40px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
 
-          {/* Particles */}
+          {/* Particles Container */}
           <div
             ref={particlesRef}
             className="absolute inset-0 z-20 pointer-events-none"
           />
-          {/* Noise texture */}
+
+          {/* Optional: Noise layer */}
           <div
             className="absolute inset-0 z-10 opacity-5"
             style={{
@@ -162,7 +157,8 @@ const AnimatedBackground = () => {
           />
         </div>
       </div>
-      {/* Custom animations using CSS */}
+
+      {/* Animations */}
       <style>{`
         @keyframes moveGradient1 {
           0% { transform: translateX(0%); }
