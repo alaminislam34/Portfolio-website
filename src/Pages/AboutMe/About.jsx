@@ -42,13 +42,12 @@ const About = () => {
         des={"✨ Building Scalable & Interactive Web Solutions ✨"}
       />
       <div className="flex flex-col-reverse md:flex-row justify-center items-center *:flex-1">
-        <div className="flex flex-col m-4 md:m-6 space-y-6">
+        <div
+          data-aos="fade-right"
+          className="flex flex-col m-4 md:m-6 space-y-6"
+        >
           <div>
-            <p
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-bottom"
-              className="text-justify leading-loose"
-            >
+            <p data-aos="fade-up" className="text-justify leading-loose">
               Motivated Frontend Developer skilled in HTML, CSS3, JavaScript,
               React.js, and Tailwind CSS, focusing on responsive, pixel-perfect
               designs from Figma. Eager to learn CMS platforms like WordPress
@@ -127,7 +126,10 @@ const About = () => {
             </Link>
           </div>
         </div>
-        <div className="relative overflow-hidden h-full pointer-events-none">
+        <div
+          data-aos="fade-left"
+          className="relative overflow-hidden h-full pointer-events-none"
+        >
           <div
             data-aos="fade-up"
             data-aos-delay="1200"

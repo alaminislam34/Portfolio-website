@@ -143,10 +143,10 @@ const Testimonials = () => {
       )}
 
       {/* Feedback Slider */}
-      <div className="mt-8">
+      <div data-aos="fade-up" className="mt-8">
         {feedbacks?.length > 0 ? (
           <Slider {...sliderSettings}>
-            {feedbacks?.map((item, index) => (
+            {feedbacks?.slice(0, 6).map((item, index) => (
               <div
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
@@ -183,11 +183,7 @@ const Testimonials = () => {
       </div>
 
       {/* Give Feedback Button */}
-      <div
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
-        className="flex justify-center mt-12"
-      >
+      <div data-aos="fade-up" className="flex justify-center mt-12">
         <button onClick={() => setOpen(true)} className="buttonClass group">
           Give Feedback
           <span className="buttonAnimationColor group-hover:-top-4"></span>

@@ -90,7 +90,7 @@ const AnimatedBackground = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen -z-50">
+    <div className="fixed top-0 left-0 w-screen h-screen z-[-999]">
       <div className="relative w-full h-full bg-black text-white font-sans">
         <div className="absolute inset-0 z-0">
           {/* Motion Gradients */}

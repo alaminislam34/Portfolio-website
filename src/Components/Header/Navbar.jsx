@@ -33,12 +33,6 @@ const Navbar = () => {
       }
     );
 
-    Aos.init({
-      once: false,
-      delay: 300,
-      duration: 1500,
-    });
-
     sections.forEach((section) => observer.observe(section));
 
     return () => sections.forEach((section) => observer.unobserve(section));
@@ -75,6 +69,7 @@ const Navbar = () => {
     <div className="h-[76px]">
       <div className={`w-full fixed left-0 z-50 duration-700 top-0  `}>
         <nav
+          data-aos="fade-down"
           className={`my-4 rounded-2xl backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto`}
         >
           <div className="flex items-center justify-between py-2 px-6 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">

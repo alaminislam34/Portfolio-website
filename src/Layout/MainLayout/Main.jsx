@@ -8,7 +8,6 @@ import AnimatedBackground from "../../Components/AnimatedBackground";
 import { ArrowUp } from "lucide-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
-import WelcomePage from "../../Pages/WelcomePage/WelcomePage";
 
 const Main = () => {
   const [show, setShow] = useState(false);
@@ -33,7 +32,7 @@ const Main = () => {
       </section>
       <Footer />
       <AnimatedBackground />
-      <WelcomePage />
+
       <ToastContainer autoClose={3000} hideProgressBar={true} />
       <div className="relative">
         <motion.div

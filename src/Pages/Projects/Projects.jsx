@@ -10,10 +10,6 @@ const Projects = () => {
     fetch("projects.json")
       .then((res) => res.json())
       .then((data) => setProjects(data));
-
-    Aos.init({
-      offset: 200,
-    });
   }, []);
 
   return (
@@ -29,7 +25,6 @@ const Projects = () => {
           <div
             data-aos="fade-up"
             data-aos-delay={i * 100}
-            data-aos-anchor-placement="top-bottom"
             key={project.id}
             className="rounded-2xl shadow-xl shadow-purple-400/10 transition-all flex flex-col justify-between duration-300 hover:shadow-xl overflow-hidden"
           >
@@ -38,7 +33,6 @@ const Projects = () => {
               <div
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
-                data-aos-anchor-placement="top-bottom"
                 className="overflow-hidden group"
               >
                 <img
