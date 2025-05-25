@@ -20,13 +20,13 @@ const Projects = () => {
           "Showcases my web development skills, including HTML, CSS, JavaScript, and React-based projects."
         }
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 my-12">
+      <div className="grid grid-cols-1  gap-8 lg:gap-12 my-12">
         {projects?.map((project, i) => (
           <div
             data-aos="fade-up"
             data-aos-delay={i * 100}
             key={project.id}
-            className="rounded-2xl shadow-xl shadow-purple-400/10 transition-all flex flex-col justify-between duration-300 hover:shadow-xl overflow-hidden"
+            className="rounded-2xl shadow-xl shadow-purple-400/10 transition-all grid grid-cols-1 md:grid-cols-2 duration-300 hover:shadow-xl overflow-hidden"
           >
             <div>
               {/* Image with Hover Effect */}
@@ -42,7 +42,9 @@ const Projects = () => {
                   className="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="space-y-4 p-4">
+            </div>
+            <div className="flex justify-between flex-col">
+              <div className="space-y-4 px-4">
                 <h1
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
@@ -77,30 +79,30 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Buttons */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay={i * 100}
-              data-aos-anchor-placement="top-bottom"
-              className="flex justify-between items-center mt-4 p-4"
-            >
-              <a
-                href={project.liveLink}
-                target="_blank"
-                className="buttonClass group"
+              {/* Buttons */}
+              <div
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+                data-aos-anchor-placement="top-bottom"
+                className="flex justify-between items-center mt-4 p-4"
               >
-                Live Demo
-                <span className="buttonAnimationColor"></span>
-              </a>
-              <button
-                onClick={() => navigate(`/details/${project.id}`)}
-                className="buttonClass group"
-              >
-                View Details
-                <span className="buttonAnimationColor"></span>
-              </button>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  className="buttonClass group"
+                >
+                  Live Demo
+                  <span className="buttonAnimationColor"></span>
+                </a>
+                <button
+                  onClick={() => navigate(`/details/${project.id}`)}
+                  className="buttonClass group"
+                >
+                  View Details
+                  <span className="buttonAnimationColor"></span>
+                </button>
+              </div>
             </div>
           </div>
         ))}
