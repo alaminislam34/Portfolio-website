@@ -60,6 +60,7 @@ export default function Skill() {
             >
               <div className="w-24 h-24 mx-auto relative">
                 <img
+                  loading="lazy"
                   className="w-full h-full object-cover p-4 lg:p-6"
                   src={skill.img}
                   alt={skill.name}

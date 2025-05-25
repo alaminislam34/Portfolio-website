@@ -27,6 +27,7 @@ const SkillSlider = ({ skills }) => {
           >
             <div className="p-4 flex justify-center items-center">
               <img
+                loading="lazy"
                 src={skills[index].image}
                 alt={skills[index].name}
                 className="h-32 rounded-md mb-4"

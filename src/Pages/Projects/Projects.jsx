@@ -21,7 +21,7 @@ const Projects = () => {
         }
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 my-12">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div
             data-aos="fade-up"
             data-aos-delay={i * 100}

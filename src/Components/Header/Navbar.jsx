@@ -197,6 +197,7 @@ const Navbar = () => {
             <div>
               <Link to="home" smooth={true} duration={500}>
                 <img
+                  loading="lazy"
                   src={logo}
                   alt="logo"
                   className="h-12 md:h-14 cursor-pointer"

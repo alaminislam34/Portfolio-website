@@ -10,12 +10,11 @@ const Footer = () => {
         data-aos="fade-in-up"
         data-aos-offset="0"
         data-aos-anchor-placement="top-bottom"
-        className="text-xs md:text-sm text-center"
+        className="text-xs md:text-sm text-center text-white/60"
       >
         MD Al Amin Islam <br />
         Email: alaminislam43.bd@email.com <br />
-        <br />
-        Copyright MD Al Amin Islam © 2025 - All right reserved
+        <br />© MD Al Amin Islam 2025 - All right reserved
       </p>
     </footer>
   );

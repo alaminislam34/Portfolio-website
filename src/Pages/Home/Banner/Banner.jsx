@@ -41,7 +41,11 @@ const Banner = () => {
       link: "https://www.facebook.com/alaminislam",
     },
   ];
-
+  const orbitTransition = {
+    duration: 20,
+    repeat: Infinity,
+    ease: "linear",
+  };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:mx-12 items-center min-h-[550px] mt-10 lg:mt-4 text-white relative">
       {/* <div className="fixed opacity-10 -z-10 top-0 left-0 w-full h-full flex items-center justify-center">
@@ -142,76 +146,73 @@ const Banner = () => {
 
       {/* Right Image and Animations */}
       <div
-        data-aos="fade-left"
-        className="flex justify-center items-center h-full w-full relative my-6"
+        data-aos="zoom-in"
+        className="flex justify-center items-center h-full w-full relative my-10"
       >
         <div className="h-full w-full flex justify-center items-center px-4 relative">
           <motion.div
-            className="relative lg:w-[80%] mx-auto flex items-center justify-center border border-white/10 rounded-full shadow-white/10 shadow-xl"
+            className="relative w-[240px] sm:w-[300px] md:w-[420px] aspect-square flex items-center justify-center rounded-full border border-white/10 shadow-2xl shadow-white/10"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
           >
-            <div className="relative w-[320px] h-[320px] md:w-[420px] md:h-[420px] overflow-hidden rounded-full bg-main/30">
-              <div className="absolute inset-0 z-0 scale-105">
-                <Lottie
-                  options={{ animationData: bg, autoplay: true, loop: true }}
-                />
-              </div>
-              <img
-                className="w-full h-full object-cover scale-125 z-10 relative"
-                src={image}
-                alt="alamin"
+            {/* Animated Gradient Ring */}
+            <div className="absolute inset-0 rounded-full"></div>
+
+            {/* Lottie Background */}
+            <div className="absolute z-0 scale-105 rounded-full overflow-hidden">
+              <Lottie
+                options={{ animationData: bg, autoplay: true, loop: true }}
               />
             </div>
-            {/* React Icon */}
-            <motion.button
-              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between rotate-90"
+
+            {/* Profile Image */}
+            <img
+              src={image}
+              alt="alamin"
+              className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_60px_rgba(125,5,255,0.2)]"
+              loading="lazy"
+            />
+
+            {/* Orbit Icons */}
+            {/* React + Node */}
+            <motion.div
+              className="absolute top-0 left-1/2 -translate-x-1/2 flex gap-4 items-center"
               animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              transition={orbitTransition}
             >
-              <span className="relative">
-                <RiNextjsLine className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-Accent" />
-              </span>
-              <div className="relative">
-                <RiTailwindCssFill className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-blue-400" />
-              </div>
-            </motion.button>
-            <motion.button
-              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between"
+              <FaReact className="text-4xl p-1 text-blue-400 hover:scale-110 transition" />
+              <FaNodeJs className="text-4xl p-1 text-green-500 hover:scale-110 transition" />
+            </motion.div>
+
+            {/* Next.js + Tailwind */}
+            <motion.div
+              className="absolute right-0 top-1/2 -translate-y-1/2 flex gap-4 items-center"
               animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              transition={{ ...orbitTransition, delay: 2 }}
             >
-              <span className="relative">
-                <FaReact className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-blue-500" />
-              </span>
-              <div className="relative">
-                <FaNodeJs className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-green-500" />
-              </div>
-            </motion.button>
-            <motion.button
-              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between rotate-45"
+              <RiNextjsLine className="text-4xl p-1 text-Accent hover:scale-110 transition" />
+              <RiTailwindCssFill className="text-4xl p-1 text-blue-400 hover:scale-110 transition" />
+            </motion.div>
+
+            {/* MongoDB + TypeScript */}
+            <motion.div
+              className="absolute z-10 bottom-0 left-1/2 -translate-x-1/2 flex gap-4 items-center"
               animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              transition={{ ...orbitTransition, delay: 4 }}
             >
-              <span className="relative">
-                <DiMongodb className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-green-500" />
-              </span>
-              <div className="relative">
-                <TbBrandTypescript className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-yellow-500" />
-              </div>
-            </motion.button>
-            <motion.button
-              className="group p-2 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[120%] flex items-center justify-between rotate-135"
+              <DiMongodb className="text-4xl p-1 text-green-400 hover:scale-110 transition" />
+              <TbBrandTypescript className="text-4xl p-1 text-yellow-400 hover:scale-110 transition" />
+            </motion.div>
+
+            {/* Firebase + HTML5 */}
+            <motion.div
+              className="absolute left-0 top-1/2 -translate-y-1/2 flex gap-4 items-center"
               animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              transition={{ ...orbitTransition, delay: 6 }}
             >
-              <span className="relative">
-                <SiFirebase className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-orange-500" />
-              </span>
-              <div className="relative">
-                <AiFillHtml5 className="text-5xl p-2 rounded-full backdrop-blur shadow-xl shadow-white/10 text-red-500" />
-              </div>
-            </motion.button>
+              <SiFirebase className="text-4xl p-1 text-orange-500 hover:scale-110 transition" />
+              <AiFillHtml5 className="text-4xl p-1 text-red-500 hover:scale-110 transition" />
+            </motion.div>
           </motion.div>
         </div>
       </div>

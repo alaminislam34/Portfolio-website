@@ -43,7 +43,7 @@ const ViewDetails = () => {
               data-aos-anchor-placement="top-bottom"
               className="rounded-lg overflow-hidden"
             >
-              <img src={image} alt="image" />
+              <img loading="lazy" src={image} alt="image" />
             </div>
           </div>
         </div>

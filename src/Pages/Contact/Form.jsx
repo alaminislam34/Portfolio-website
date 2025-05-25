@@ -56,7 +56,7 @@ const Form = () => {
           type="text"
           placeholder="Your Name"
           {...register("name", { required: "Name is required" })}
-          className="w-full py-2 px-4 text-xs lg:text-sm border border-fuchsia-600/50 focus:outline focus:outline-fuchsia-600/50 rounded-lg bg-transparent text-white"
+          className="w-full py-2 px-4 text-xs lg:text-sm border border-purple-600/50 focus:outline focus:outline-purple-600/50 rounded-lg bg-transparent text-white"
         />
         {errors.name && (
           <p className="text-red-500 text-xs">{errors.name.message}</p>
@@ -72,7 +72,7 @@ const Form = () => {
               message: "Invalid email address",
             },
           })}
-          className="w-full py-2 px-4 border border-fuchsia-600/30 focus:outline-2 focus:outline-fuchsia-600/50 rounded-lg bg-transparent text-white"
+          className="w-full py-2 px-4 border border-purple-600/30 focus:outline-2 focus:outline-purple-600/50 rounded-lg bg-transparent text-white"
         />
         {errors.email && (
           <p className="text-red-500 text-xs">{errors.email.message}</p>
@@ -82,7 +82,7 @@ const Form = () => {
           rows="4"
           placeholder="Your Message"
           {...register("message", { required: "Message is required" })}
-          className="w-full py-2 px-4 border border-fuchsia-600/30 focus:outline-2 focus:outline-fuchsia-600/50 rounded-lg bg-transparent text-white"
+          className="w-full py-2 px-4 border border-purple-600/30 focus:outline-2 focus:outline-purple-600/50 rounded-lg bg-transparent text-white"
         ></textarea>
         {errors.message && (
           <p className="text-red-500 text-xs">{errors.message.message}</p>
@@ -93,7 +93,7 @@ const Form = () => {
             disabled={loading}
             className={`buttonClass group justify-end ${
               loading
-                ? "opacity-50 cursor-not-allowed pointer-events-none border-fuchsia-500/20"
+                ? "opacity-50 cursor-not-allowed pointer-events-none border-purple-500/20"
                 : ""
             }`}
           >

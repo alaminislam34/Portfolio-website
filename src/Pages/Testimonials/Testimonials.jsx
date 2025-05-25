@@ -160,6 +160,7 @@ const Testimonials = () => {
 
                   {/* Content */}
                   <img
+                    loading="lazy"
                     src={user}
                     alt="User"
                     className="w-14 h-14 rounded-full border-2 border-purple-400 mx-auto mb-4 relative z-20"
