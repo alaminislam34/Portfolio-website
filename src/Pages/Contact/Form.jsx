@@ -91,21 +91,26 @@ const Form = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`buttonClass group justify-end ${
+            className={`bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 ${
               loading
                 ? "opacity-50 cursor-not-allowed pointer-events-none border-purple-500/20"
                 : ""
             }`}
           >
-            {loading ? (
-              <div className="flex items-center justify-center flex-row gap-2">
-                Sending{" "}
-                <span className="loading loading-dots loading-md"></span>
-              </div>
-            ) : (
-              "Send Message"
-            )}
-            <span className="buttonAnimationColor"></span>
+            <div className="absolute top-0 -right-48 w-1/4 h-full bg-white/20 blur-sm group-hover:right-64 duration-700"></div>
+            <button className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+              <span className="relative z-10">
+                {loading ? (
+                  <div className="flex items-center justify-center flex-row gap-2">
+                    Sending
+                    <span className="loading loading-dots loading-md"></span>
+                  </div>
+                ) : (
+                  "Send Message"
+                )}
+              </span>
+              <span className="absolute top-0 w-1/4 h-full -left-44 bg-white/20 blur-sm group-hover:left-60 duration-1000 transition-all ease-out z-0"></span>
+            </button>
           </button>
         </div>
       </form>

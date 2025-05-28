@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import html from "../../assets/logo/html.png";
-import css from "../../assets/logo/css.png";
-import js from "../../assets/logo/js.png";
-import mongodb from "../../assets/logo/mongodb.png";
-import tailwind from "../../assets/logo/tailwind-css.png";
-import react from "../../assets/logo/react.png";
-import node from "../../assets/logo/node-js.png";
-import firebase from "../../assets/logo/firebase.png";
-import nextjs from "../../assets/logo/nextjs.png";
-import express from "../../assets/logo/expressjs.png";
+import html from "../../assets/logo/html.jpg";
+import css from "../../assets/logo/css.jpg";
+import js from "../../assets/logo/js.jpg";
+import mongodb from "../../assets/logo/mongodb.jpg";
+import tailwind from "../../assets/logo/tailwind-css.jpg";
+import react from "../../assets/logo/react.jpg";
+import node from "../../assets/logo/node-js.jpg";
+import firebase from "../../assets/logo/firebase.jpg";
+import nextjs from "../../assets/logo/nextjs.jpg";
+import express from "../../assets/logo/expressjs.jpg";
 import Title from "../../Components/Shared/Title";
 
 const skills = [

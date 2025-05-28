@@ -4,7 +4,7 @@ import { GrClose, GrContactInfo } from "react-icons/gr";
 import { Link } from "react-scroll";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import logo from "../../assets/logo/AA.png";
+import logo from "../../assets/logo/AA.jpg";
 import { GoHome } from "react-icons/go";
 import { IoCodeSlashOutline, IoMailUnreadOutline } from "react-icons/io5";
 import { BsFolder2Open } from "react-icons/bs";
@@ -66,20 +66,18 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="h-[76px]">
-      <div className={`w-full fixed left-0 z-50 duration-700 top-0  `}>
+    <div className="h-[76px] overflow-hidden">
+      <div className={`w-full fixed left-0 z-50 duration-700 top-0`}>
         <nav
           data-aos="fade-down"
-          className={`my-4 rounded-2xl backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto`}
+          className={`my-4 rounded-2xl backdrop-blur-xl duration-300 max-w-7xl mx-2 lg:w-11/12 mx-auto border border-white/20`}
         >
-          <div className="flex items-center justify-between py-2 px-6 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
+          <div className="flex items-center justify-between py-2 px-4 lg:px-6 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
             {/*  *******************************Gradient Motion Layers Start****************************** */}
             <div className="absolute inset-0 -z-10 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
             <div
               className="absolute rounded-full blur-3xl"
               style={{
-                width: "40vw",
-                height: "40vw",
                 background:
                   "linear-gradient(40deg, rgba(128, 0, 255, 0.1), rgba(102, 0, 204, 0.1))",
                 top: "-10%",
@@ -90,8 +88,6 @@ const Navbar = () => {
             <div
               className="absolute rounded-full blur-3xl"
               style={{
-                width: "45vw",
-                height: "45vw",
                 background:
                   "linear-gradient(40deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
 
@@ -103,8 +99,6 @@ const Navbar = () => {
             <div
               className="absolute rounded-full blur-3xl"
               style={{
-                width: "30vw",
-                height: "30vw",
                 background:
                   "radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent 70%)",
                 top: "60%",
@@ -126,8 +120,6 @@ const Navbar = () => {
                 <div
                   className="absolute -z-10 rounded-full blur-3xl"
                   style={{
-                    width: "40vw",
-                    height: "40vw",
                     background:
                       "linear-gradient(40deg, rgba(128, 0, 255, 0.1), rgba(102, 0, 204, 0.1))",
                     top: "-10%",
@@ -139,8 +131,6 @@ const Navbar = () => {
                 <div
                   className="absolute -z-10 rounded-full blur-3xl"
                   style={{
-                    width: "45vw",
-                    height: "45vw",
                     background:
                       "linear-gradient(40deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))",
 
@@ -153,8 +143,6 @@ const Navbar = () => {
                 <div
                   className="absolute -z-10 rounded-full blur-3xl"
                   style={{
-                    width: "30vw",
-                    height: "30vw",
                     background:
                       "radial-gradient(circle, rgba(102, 126, 234, 0.15), transparent 70%)",
                     top: "60%",
@@ -190,6 +178,19 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ))}
+                <li className="flex items-center justify-center">
+                  <div className="bg-white/10 border border-white/20 py-1.5 px-1.5 lg:px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 flex items-center justify-center">
+                    <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
+                    <a
+                      href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
+                      target="_blank"
+                      className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
+                    >
+                      <span className="relative z-10">Resume</span>
+                      <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
+                    </a>
+                  </div>
+                </li>
               </ul>
             </div>
 
@@ -206,7 +207,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Links */}
-            <div>
+            <div className="relative z-50">
               <ul className="hidden lg:flex items-center gap-4 hover:gap-6 duration-300 text-sm">
                 {links.map(({ name, path }) => (
                   <li key={path} className="relative group">
@@ -229,22 +230,30 @@ const Navbar = () => {
             </div>
 
             {/* Resume + Toggle */}
-            <div className="flex items-center gap-4">
-              <a
-                href="https://drive.google.com/file/d/1Cm3ACSBCaR6Q_PMKmNAQSu3rfuQonG5W/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="buttonClass bg-purple-500 group"
-              >
-                Resume
-                <span className="buttonAnimationColor group-hover:-top-4 "></span>
-              </a>
-              <button
+            <div className="flex items-center gap-2 lg:gap-4">
+              <div className="bg-white/10 border hidden md:flex border-white/20 py-1.5 px-1.5 lg:px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 items-center justify-center">
+                <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
+                <a
+                  href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
+                  target="_blank"
+                  className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
+                >
+                  <span className="relative z-10">Resume</span>
+                  <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
+                </a>
+              </div>
+              <div
                 onClick={() => setOpen(true)}
-                className="text-xl lg:hidden btn"
+                className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 lg:hidden flex items-center justify-center"
               >
-                <RiMenu2Fill />
-              </button>
+                <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
+                <a className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block">
+                  <span className="relative z-10">
+                    <RiMenu2Fill className="text-xl" />
+                  </span>
+                  <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
+                </a>
+              </div>
             </div>
           </div>
         </nav>

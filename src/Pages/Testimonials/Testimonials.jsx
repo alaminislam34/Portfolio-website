@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Slider from "react-slick";
-import user from "../../assets/logo/user.png";
+import user from "../../assets/logo/user.jpg";
 // import ColorPlates from "../../Components/ColorPlates";
 
 const Testimonials = () => {

@@ -41,17 +41,9 @@ const Banner = () => {
       link: "https://www.facebook.com/alaminislam",
     },
   ];
-  const orbitTransition = {
-    duration: 20,
-    repeat: Infinity,
-    ease: "linear",
-  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:mx-12 items-center min-h-[550px] mt-10 lg:mt-4 text-white relative">
-      {/* <div className="fixed opacity-10 -z-10 top-0 left-0 w-full h-full flex items-center justify-center">
-        <img src={nameLogo} alt="logo" className="scale-125" />
-      </div> */}
-      {/* Left Content */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:mx-12 items-center min-h-[550px] mt-10 lg:mt-4 text-white relative overflow-hidden">
       <div
         data-aos="fade-right"
         className="flex justify-start items-center relative z-10"
@@ -65,15 +57,7 @@ const Banner = () => {
             >
               Hello, I`m Al Amin
             </h1>
-
-            <h2
-              data-aos="fade-up"
-              data-aos-delay="500"
-              className="h-[35px] md:h-[46px] lg:h-[58px] text-purple-400 font-extrabold"
-            >
-              <TypingAnimation />
-            </h2>
-
+            <TypingAnimation />
             <p
               data-aos="fade-up"
               data-aos-delay="700"
@@ -122,24 +106,29 @@ const Banner = () => {
             data-aos-delay="1100"
             className="flex flex-row flex-wrap gap-4 md:gap-6 items-center my-4"
           >
-            <a
-              href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
-              target="_blank"
-              className="buttonClass group"
-            >
-              Resume <MdFileDownload className="text-xl" />
-              <span className="buttonAnimationColor group-hover:-top-4"></span>
-            </a>
-
             <Link
               to="projects"
               smooth={true}
               duration={500}
-              className="buttonClass group"
+              className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
             >
-              Projects <VscGithubProject className="text-xl" />
-              <span className="buttonAnimationColor group-hover:-top-4"></span>
+              <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
+              <button className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+                <span className="relative z-10">Projects</span>
+                <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
+              </button>
             </Link>
+            <div className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 flex items-center justify-center">
+              <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
+              <a
+                href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
+                target="_blank"
+                className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
+              >
+                <span className="relative z-10">Resume</span>
+                <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -172,47 +161,6 @@ const Banner = () => {
               className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_60px_rgba(125,5,255,0.2)]"
               loading="lazy"
             />
-
-            {/* Orbit Icons */}
-            {/* React + Node */}
-            <motion.div
-              className="absolute top-0 left-1/2 -translate-x-1/2 flex gap-4 items-center"
-              animate={{ rotate: 360 }}
-              transition={orbitTransition}
-            >
-              <FaReact className="text-4xl p-1 text-blue-400 hover:scale-110 transition" />
-              <FaNodeJs className="text-4xl p-1 text-green-500 hover:scale-110 transition" />
-            </motion.div>
-
-            {/* Next.js + Tailwind */}
-            <motion.div
-              className="absolute right-0 top-1/2 -translate-y-1/2 flex gap-4 items-center"
-              animate={{ rotate: 360 }}
-              transition={{ ...orbitTransition, delay: 2 }}
-            >
-              <RiNextjsLine className="text-4xl p-1 text-Accent hover:scale-110 transition" />
-              <RiTailwindCssFill className="text-4xl p-1 text-blue-400 hover:scale-110 transition" />
-            </motion.div>
-
-            {/* MongoDB + TypeScript */}
-            <motion.div
-              className="absolute z-10 bottom-0 left-1/2 -translate-x-1/2 flex gap-4 items-center"
-              animate={{ rotate: 360 }}
-              transition={{ ...orbitTransition, delay: 4 }}
-            >
-              <DiMongodb className="text-4xl p-1 text-green-400 hover:scale-110 transition" />
-              <TbBrandTypescript className="text-4xl p-1 text-yellow-400 hover:scale-110 transition" />
-            </motion.div>
-
-            {/* Firebase + HTML5 */}
-            <motion.div
-              className="absolute left-0 top-1/2 -translate-y-1/2 flex gap-4 items-center"
-              animate={{ rotate: 360 }}
-              transition={{ ...orbitTransition, delay: 6 }}
-            >
-              <SiFirebase className="text-4xl p-1 text-orange-500 hover:scale-110 transition" />
-              <AiFillHtml5 className="text-4xl p-1 text-red-500 hover:scale-110 transition" />
-            </motion.div>
           </motion.div>
         </div>
       </div>

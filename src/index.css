@@ -6,7 +6,7 @@
 @plugin "daisyui";
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "conthrax", sans-serif;
   color: white;
 }
 @theme {
@@ -58,4 +58,9 @@ body {
   100% {
     transform: translateX(200%);
   }
+}
+
+@font-face {
+  font-family: "conthrax";
+  src: url("../src/assets/font/conthrax/conthrax-sb.ttf");
 }

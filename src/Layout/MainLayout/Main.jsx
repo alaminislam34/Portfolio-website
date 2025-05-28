@@ -8,6 +8,7 @@ import AnimatedBackground from "../../Components/AnimatedBackground";
 import { ArrowUp } from "lucide-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import GradientBackground from "../../Components/MatrixRain/Matrix";
 
 const Main = () => {
   const [show, setShow] = useState(false);
@@ -43,6 +44,7 @@ const Main = () => {
         <Outlet />
       </section>
       <Footer />
+      <GradientBackground />
       <AnimatedBackground />
       <ToastContainer autoClose={3000} hideProgressBar={true} />
 

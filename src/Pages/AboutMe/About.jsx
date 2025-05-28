@@ -109,20 +109,25 @@ const About = () => {
               to="contact"
               smooth={true}
               duration={500}
-              className="buttonClass group"
+              className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
             >
-              Hire Me
-              <span className="buttonAnimationColor"></span>
+              <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
+              <button className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+                <span className="relative z-10">Hire Me</span>
+                <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
+              </button>
             </Link>
-
             <Link
               to="contact"
               smooth={true}
               duration={500}
-              className="buttonClass group"
+              className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
             >
-              Contact Now <MdContactEmergency className="text-xl" />
-              <span className="buttonAnimationColor"></span>
+              <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
+              <button className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+                <span className="relative z-10">Contact Now</span>
+                <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
+              </button>
             </Link>
           </div>
         </div>
