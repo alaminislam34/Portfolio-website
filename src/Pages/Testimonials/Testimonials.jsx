@@ -133,9 +133,15 @@ const Testimonials = () => {
               required
             />
             <div className="flex justify-center">
-              <button type="submit" className="buttonClass group">
-                Submit Feedback
-                <span className="buttonAnimationColor"></span>
+              <button
+                type="submit"
+                className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
+              >
+                <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
+                <button className="py-2.5 active:scale-95 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+                  <span className="relative z-10">Submit Feedback</span>
+                  <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
+                </button>
               </button>
             </div>
           </form>
@@ -185,9 +191,15 @@ const Testimonials = () => {
 
       {/* Give Feedback Button */}
       <div data-aos="fade-up" className="flex justify-center mt-12">
-        <button onClick={() => setOpen(true)} className="buttonClass group">
-          Give Feedback
-          <span className="buttonAnimationColor group-hover:-top-4"></span>
+        <button
+          onClick={() => setOpen(true)}
+          className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
+        >
+          <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
+          <button className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+            <span className="relative z-10">Give Feedback</span>
+            <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
+          </button>
         </button>
       </div>
     </div>

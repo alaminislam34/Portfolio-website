@@ -1,23 +1,15 @@
-import { FaNodeJs, FaReact } from "react-icons/fa";
 import { LuLinkedin, LuFacebook, LuGithub } from "react-icons/lu";
 import image from "../../../assets/Image/alaminBW.jpg";
-import { MdFileDownload } from "react-icons/md";
 import { Link } from "react-scroll";
-import { VscGithubProject } from "react-icons/vsc";
-import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import TypingAnimation from "./TypingText";
 import Lottie from "react-lottie";
-import bg from "../../../assets/Image/lottie.json";
+// import bg from "../../../assets/Image/lottie.json";
 // import nameLogo from "../../../assets/logo/AA.png";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { SiExpress, SiFirebase, SiTypescript } from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
-import { AiFillHtml5 } from "react-icons/ai";
-import { TbBrandTypescript } from "react-icons/tb";
 
 const Banner = () => {
   useEffect(() => {
@@ -43,7 +35,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:mx-12 items-center min-h-[550px] mt-10 lg:mt-4 text-white relative overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:mx-12 items-center min-h-[90vh] mt-10 lg:mt-4 text-white relative overflow-hidden">
       <div
         data-aos="fade-right"
         className="flex justify-start items-center relative z-10"
@@ -113,7 +105,7 @@ const Banner = () => {
               className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
             >
               <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
-              <button className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+              <button className="py-2.5 px-8 active:scale-95 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
                 <span className="relative z-10">Projects</span>
                 <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
               </button>
@@ -123,7 +115,7 @@ const Banner = () => {
               <a
                 href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
                 target="_blank"
-                className="py-2.5 px-8 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
+                className="py-2.5 px-8 active:scale-95 rounded-lg cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
               >
                 <span className="relative z-10">Resume</span>
                 <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
@@ -139,29 +131,35 @@ const Banner = () => {
         className="flex justify-center items-center h-full w-full relative my-10"
       >
         <div className="h-full w-full flex justify-center items-center px-4 relative">
-          <motion.div
-            className="relative w-[240px] sm:w-[300px] md:w-[420px] aspect-square flex items-center justify-center rounded-full border border-white/10 shadow-2xl shadow-white/10"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-          >
+          <div className="relative w-2/3 h-3/4 aspect-square flex items-center justify-center rounded-3xl bg-gradient-to-r from-purple-400/80 via-purple-300/80 to-purple-100/80 shadow-2xl shadow-white/10">
             {/* Animated Gradient Ring */}
-            <div className="absolute inset-0 rounded-full"></div>
-
-            {/* Lottie Background */}
-            <div className="absolute z-0 scale-105 rounded-full overflow-hidden">
-              <Lottie
-                options={{ animationData: bg, autoplay: true, loop: true }}
-              />
-            </div>
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              className="absolute -z-10 top-0 w-full h-full rotate-12 aspect-square rounded-3xl scale-105 bg-purple-200/10 backdrop-blur"
+            ></motion.div>
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: [0, -15, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                delay: 1,
+                ease: "linear",
+              }}
+              className="absolute -z-10 top-0 w-full h-full rotate-[24deg] aspect-square rounded-3xl scale-105 bg-purple-200/10 backdrop-blur"
+            ></motion.div>
 
             {/* Profile Image */}
+
             <img
               src={image}
               alt="alamin"
-              className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_60px_rgba(125,5,255,0.2)]"
+              className="relative scale-105 z-10 w-full h-full object-cover rounded-3xl shadow-[0_0_60px_rgba(125,5,255,0.2)]"
               loading="lazy"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

@@ -34,7 +34,7 @@ const WelcomePage = () => {
   return (
     <div
       className={`fixed top-0 left-0 z-[999] h-screen w-screen flex items-center justify-center transition-opacity duration-1000 ${
-        hide ? "opacity-0 pointer-events-none" : "opacity-100"
+        hide ? "opacity-0 pointer-events-none hidden" : "opacity-100"
       }`}
     >
       <div className="relative w-full h-full bg-black text-white flex justify-center items-center">

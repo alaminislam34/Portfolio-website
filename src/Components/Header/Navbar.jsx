@@ -70,9 +70,9 @@ const Navbar = () => {
       <div className={`w-full fixed left-0 z-50 duration-700 top-0`}>
         <nav
           data-aos="fade-down"
-          className={`my-4 rounded-2xl backdrop-blur-xl duration-300 max-w-7xl mx-2 lg:w-11/12 mx-auto border border-white/20`}
+          className={`my-2 rounded-xl border backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto border-white/20`}
         >
-          <div className="flex items-center justify-between py-2 px-4 lg:px-6 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
+          <div className="flex items-center justify-between py-2 px-4 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
             {/*  *******************************Gradient Motion Layers Start****************************** */}
             <div className="absolute inset-0 -z-10 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
             <div
@@ -210,20 +210,24 @@ const Navbar = () => {
             <div className="relative z-50">
               <ul className="hidden lg:flex items-center gap-4 hover:gap-6 duration-300 text-sm">
                 {links.map(({ name, path }) => (
-                  <li key={path} className="relative group">
+                  <li
+                    key={path}
+                    className="relative py-3 px-4 cursor-pointer group overflow-hidden"
+                  >
                     <Link
                       to={path}
                       smooth={true}
                       duration={500}
-                      className={`py-3 px-4 cursor-pointer 
+                      className={` 
                         ${
                           activeSection === path
-                            ? "border-b text-white shadow-md"
-                            : "hover:border-b "
+                            ? "bg-gradient-to-r from-[#a48af0] via-[#b297f1] to-[#c4b0f3] bg-clip-text text-transparent shadow-md"
+                            : "text-white"
                         }`}
                     >
                       {name}
                     </Link>
+                    <span className="absolute -z-10 top-0 -left-[120%] group-hover:left-[120%] w-full h-full bg-white"></span>
                   </li>
                 ))}
               </ul>
@@ -236,7 +240,7 @@ const Navbar = () => {
                 <a
                   href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
                   target="_blank"
-                  className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
+                  className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 active:scale-95 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
                 >
                   <span className="relative z-10">Resume</span>
                   <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>

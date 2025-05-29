@@ -9,6 +9,7 @@ import { ArrowUp } from "lucide-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import GradientBackground from "../../Components/MatrixRain/Matrix";
+import WelcomePage from "../../Pages/WelcomePage/WelcomePage";
 
 const Main = () => {
   const [show, setShow] = useState(false);
