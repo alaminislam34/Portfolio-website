@@ -2,34 +2,22 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import { useNavigate } from "react-router-dom";
-
 const WelcomePage = () => {
   const [hide, setHide] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const visited = localStorage.getItem("visited");
-
-    if (visited) {
-      navigate("/"); // আগে দেখে ফেললে সরাসরি হোমে নিয়ে যাবে
-      return;
-    }
-
-    const fadeTimer = setTimeout(() => {
-      setHide(true);
-    }, 5000);
-
+    const fadeTimer = setTimeout(() => setHide(true), 5000);
     const navTimer = setTimeout(() => {
-      localStorage.setItem("visited", "true");
-      navigate("/");
+      setHide(true);
+      // No need to navigate since App.jsx will now render Home automatically
+      window.location.reload(); // Reload triggers App.jsx to re-render without WelcomePage
     }, 6000);
 
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(navTimer);
     };
-  }, [navigate]);
+  }, []);
 
   return (
     <div

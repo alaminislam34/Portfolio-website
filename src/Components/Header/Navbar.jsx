@@ -156,7 +156,7 @@ const Navbar = () => {
                 <div className="absolute top-4 right-4 text-xl transition z-10">
                   <button
                     onClick={() => setOpen(false)}
-                    className="btn btn-sm cursor-pointer"
+                    className="btn btn-sm cursor-pointer bg-purple-400"
                   >
                     <X />
                   </button>

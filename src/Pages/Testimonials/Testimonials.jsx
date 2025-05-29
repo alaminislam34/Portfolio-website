@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import Slider from "react-slick";
 import user from "../../assets/logo/user.jpg";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 // import ColorPlates from "../../Components/ColorPlates";
 
 const Testimonials = () => {
@@ -74,7 +76,7 @@ const Testimonials = () => {
     slidesToShow: 3,
     slidesToScroll: 3,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 8000,
     arrows: false,
     dotsClass: "slick-dots slick-thumb",
     dotsClassActive: "slick-active",
@@ -160,26 +162,35 @@ const Testimonials = () => {
                 className="px-3 py-6 relative group"
               >
                 {/* Card with Shine Effect */}
-                <div className="relative bg-[#1d1128]/20 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-500 overflow-hidden">
+                <div className="relative min-h-[300px] bg-[#1d1128]/20 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-500 overflow-hidden">
                   {/* Shine Effect */}
-                  <div className="absolute -top-20 left-[-30%] w-[150%] h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent -rotate-45 animation z-10" />
-
-                  {/* Content */}
-                  <img
-                    loading="lazy"
-                    src={user}
-                    alt="User"
-                    className="w-14 h-14 rounded-full border-2 border-purple-400 mx-auto mb-4 relative z-20"
-                  />
-                  <h3 className="text-lg font-semibold text-white mb-1 relative z-20">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-300 relative z-20">
-                    {item.overview?.slice(0, 120)}
-                  </p>
-                  <p className="text-xs text-gray-500 mt-2 relative z-20">
-                    {new Date(item.createdAt).toLocaleDateString()}
-                  </p>
+                  <div className="absolute top-0 left-0 w-full h-full">
+                    <div className="w-full h-full flex items-center justify-center relative p-2">
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 10 }}
+                        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-[40%] h-[200%] bg-gradient-to-r from-[#5e3bc9] via-[#816ead] to-[#dbd0f5] blur-3xl"
+                      ></motion.div>
+                      <div className="bg-black/50 backdrop-blur-xl w-full z-10 h-full rounded-xl flex flex-col items-center justify-center">
+                        {/* Content */}
+                        <img
+                          loading="lazy"
+                          src={user}
+                          alt="User"
+                          className="w-14 h-14 rounded-full border-2 border-purple-400 mx-auto mb-4 relative z-20"
+                        />
+                        <h3 className="text-lg font-semibold text-white mb-1 relative z-20">
+                          {item.name}
+                        </h3>
+                        <p className="text-sm text-gray-300 relative z-20">
+                          {item.overview?.slice(0, 120)}
+                        </p>
+                        <p className="text-xs text-gray-500 mt-2 relative z-20">
+                          {new Date(item.createdAt).toLocaleDateString()}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
