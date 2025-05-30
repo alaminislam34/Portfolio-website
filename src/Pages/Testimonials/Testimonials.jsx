@@ -93,7 +93,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8">
+    <div className="py-12">
       <Title
         title="Testimonials"
         des="I'd love to hear your thoughts. Feel free to leave honest feedback!"

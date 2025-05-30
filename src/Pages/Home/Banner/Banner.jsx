@@ -40,31 +40,28 @@ const Banner = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:mx-12 items-center min-h-[90vh] mt-8 sm:mt-0 md:mt-6 text-white relative overflow-hidden">
-      <div
-        data-aos="fade-right"
-        className="flex justify-start items-center relative z-10"
-      >
+    <div className="grid grid-cols-1 md:grid-cols-5 items-center min-h-[90vh] mt-8 sm:mt-0 md:mt-6 text-white relative overflow-hidden">
+      <div className="flex justify-start items-center relative z-10 md:col-span-3">
         <div className="space-y-4 md:space-y-6 ">
           <div className="text-left space-y-6 space-y-4 md:space-y-6 ">
             <h1
               data-aos="fade-up"
-              data-aos-delay="300"
-              className="text-2xl md:text-3xl lg:text-4xl font-semibold"
+              className="text-xl md:text-2xl font-semibold"
             >
               Hello, I`m Al Amin
             </h1>
-            <TypingAnimation />
+            <div data-aos="fade-up" data-aos-duration="200">
+              <TypingAnimation />
+            </div>
             <p
               data-aos="fade-up"
-              data-aos-delay="700"
-              className="leading-relaxed max-w-md"
+              data-aos-delay="400"
+              className="leading-relaxed max-w-md text-sm"
             >
               A Full Stack Web Developer Passionate About Building Professional
               and Interactive Websites.
             </p>
           </div>
-
           {/* Social Icons */}
           <ul
             data-aos="fade-up"
@@ -72,28 +69,27 @@ const Banner = () => {
             className="flex flex-row gap-6 items-center"
           >
             {socialLinks.map(({ link, icon, label }, i) => (
-              <motion.li
+              <li
                 key={i}
                 initial={{ y: 0 }}
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: i * 0.2,
-                }}
-                className="cursor-pointer transition"
+                className="cursor-pointer transition w-12 h-12"
               >
                 <a
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-xl text-white inline-block p-2 rounded-xl border border-white/50"
+                  className="w-full h-full text-white inline-block p-2 rounded-full border border-white/50 duration-300 relative group hover:-translate-y-1.5 hover:translate-x-1.5 z-10"
                 >
-                  {icon}
+                  <div className="absolute top-0 left-0 w-full h-full border border-white/50 rounded-full group-hover:-translate-y-1 group-hover:translate-x-1 duration-300 -z-10">
+                    <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur rounded-full  hover:shadow-[-2px_2px_6px_0px_rgba(255,255,255,0.5)]">
+                      {icon}
+                    </div>
+                  </div>
+                  <span className="absolute top-0 left-0 w-full h-full border border-white/50 rounded-full opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 duration-300 -z-20"></span>
+                  <span className="absolute top-0 left-0 w-full h-full border border-white/50 rounded-full opacity-0 group-hover:opacity-100 group-hover:-translate-y-0 group-hover:translate-x-0 duration-300 -z-30"></span>
                 </a>
-              </motion.li>
+              </li>
             ))}
           </ul>
 
@@ -135,7 +131,7 @@ const Banner = () => {
       {/* Right Image and Animations */}
       <div
         data-aos="zoom-in"
-        className="flex justify-center items-center h-full w-full relative my-10"
+        className="flex justify-center items-center h-full w-full relative my-10 md:col-span-2"
       >
         <div className="w-full max-h-[700px] h-full flex justify-center items-center px-4 relative">
           <div className="relative w-2/3 h-3/4 aspect-square flex items-center justify-center rounded-3xl shadow-2xl shadow-white/10">

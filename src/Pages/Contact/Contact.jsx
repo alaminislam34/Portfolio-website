@@ -9,7 +9,7 @@ const Contact = () => {
       <div
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
-        className=" p-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-purple-400/10 rounded-xl shadow-2xl"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-purple-400/10 rounded-xl shadow-2xl"
       >
         <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <h2 className="text-xl md:text-2xl font-bold text-purple-400 mb-4">

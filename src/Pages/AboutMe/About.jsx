@@ -42,10 +42,7 @@ const About = () => {
         des={"✨ Building Scalable & Interactive Web Solutions ✨"}
       />
       <div className="flex flex-col-reverse md:flex-row justify-center items-center *:flex-1">
-        <div
-          data-aos="fade-right"
-          className="flex flex-col m-4 md:m-6 space-y-6"
-        >
+        <div data-aos="fade-right" className="flex flex-col space-y-6">
           <div>
             <p data-aos="fade-up" className="text-justify leading-loose">
               Motivated Frontend Developer skilled in HTML, CSS3, JavaScript,
@@ -60,9 +57,9 @@ const About = () => {
               data-aos="fade-up"
               data-aos-delay="300"
               data-aos-anchor-placement="top-bottom"
-              className="text-lg md:text-xl font-bold text-fuchsia-400"
+              className="text-lg md:text-xl font-bold text-purple-400"
             >
-              My Goals:{" "}
+              My Goals:
             </h4>
             <p
               data-aos="fade-up"
