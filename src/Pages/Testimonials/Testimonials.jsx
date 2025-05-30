@@ -151,7 +151,7 @@ const Testimonials = () => {
       )}
 
       {/* Feedback Slider */}
-      <div data-aos="fade-up" className="mt-8">
+      <div data-aos="fade-up" className="">
         {feedbacks?.length > 0 ? (
           <Slider {...sliderSettings}>
             {feedbacks?.slice(0, 6).map((item, index) => (

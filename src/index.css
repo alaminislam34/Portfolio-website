@@ -5,9 +5,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-body {
+.conthrax,
+button,
+a {
   font-family: "conthrax", sans-serif;
   color: white;
+}
+body {
+  font-family: "Manrope", sans-serif;
 }
 @theme {
   --color-Base: #121212;

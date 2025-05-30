@@ -46,7 +46,7 @@ const Banner = () => {
           <div className="text-left space-y-6 space-y-4 md:space-y-6 ">
             <h1
               data-aos="fade-up"
-              className="text-xl md:text-2xl font-semibold"
+              className="text-xl md:text-2xl font-semibold conthrax"
             >
               Hello, I`m Al Amin
             </h1>
@@ -69,25 +69,17 @@ const Banner = () => {
             className="flex flex-row gap-6 items-center"
           >
             {socialLinks.map(({ link, icon, label }, i) => (
-              <li
-                key={i}
-                initial={{ y: 0 }}
-                className="cursor-pointer transition w-12 h-12"
-              >
+              <li key={i} className="cursor-pointer w-10 h-10">
                 <a
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-full h-full text-white inline-block p-2 rounded-full border border-white/50 duration-300 relative group hover:-translate-y-1.5 hover:translate-x-1.5 z-10"
+                  className="w-full h-full text-white inline-block rounded-full border border-white/50 relative group will-change-transform transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden"
                 >
-                  <div className="absolute top-0 left-0 w-full h-full border border-white/50 rounded-full group-hover:-translate-y-1 group-hover:translate-x-1 duration-300 -z-10">
-                    <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur rounded-full  hover:shadow-[-2px_2px_6px_0px_rgba(255,255,255,0.5)]">
-                      {icon}
-                    </div>
+                  <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur">
+                    {icon}
                   </div>
-                  <span className="absolute top-0 left-0 w-full h-full border border-white/50 rounded-full opacity-0 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 duration-300 -z-20"></span>
-                  <span className="absolute top-0 left-0 w-full h-full border border-white/50 rounded-full opacity-0 group-hover:opacity-100 group-hover:-translate-y-0 group-hover:translate-x-0 duration-300 -z-30"></span>
                 </a>
               </li>
             ))}
