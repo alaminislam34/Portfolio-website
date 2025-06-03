@@ -70,7 +70,7 @@ const Navbar = () => {
       <div className={`w-full fixed left-0 z-50 duration-700 top-0`}>
         <nav
           data-aos="fade-down"
-          className={`my-2 conthrax rounded-xl border backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto border-white/20`}
+          className={`my-2 rounded-xl border backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto border-white/20`}
         >
           <div className="flex items-center justify-between py-2 px-4 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
             {/*  *******************************Gradient Motion Layers Start****************************** */}
@@ -212,7 +212,7 @@ const Navbar = () => {
                 {links.map(({ name, path }) => (
                   <li
                     key={path}
-                    className="relative py-3 px-4 cursor-pointer group overflow-hidden"
+                    className="relative py-3 px-4 cursor-pointer group overflow-hidden conthrax"
                   >
                     <Link
                       to={path}

@@ -1,29 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 const WelcomePage = () => {
-  const [hide, setHide] = useState(false);
-
-  useEffect(() => {
-    const fadeTimer = setTimeout(() => setHide(true), 5000);
-    const navTimer = setTimeout(() => {
-      setHide(true);
-      // No need to navigate since App.jsx will now render Home automatically
-      window.location.reload(); // Reload triggers App.jsx to re-render without WelcomePage
-    }, 6000);
-
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(navTimer);
-    };
-  }, []);
-
   return (
     <div
-      className={`fixed top-0 left-0 z-[999] h-screen w-screen flex items-center justify-center transition-opacity duration-1000 ${
-        hide ? "opacity-0 pointer-events-none hidden" : "opacity-100"
-      }`}
+      className={`fixed top-0 left-0 z-[999] h-screen w-screen flex items-center justify-center transition-opacity duration-1000 `}
     >
       <div className="relative w-full h-full bg-black text-white flex justify-center items-center">
         {/* Background and animations (unchanged) */}

@@ -2,8 +2,8 @@ import { Typewriter } from "react-simple-typewriter";
 
 const TypingAnimation = () => {
   return (
-    <h1 className="text-xl md:text-2xl lg:text-3xl font-medium bg-gradient-to-tr from-purple-500 to-purple-400 bg-clip-text text-transparent">
-      <p className="font-semibold conthrax">
+    <h1 className="text-xl md:text-2xl lg:text-3xl font-medium conthrax">
+      <p className="font-semibold bg-gradient-to-tr from-purple-500 to-purple-400 bg-clip-text text-transparent">
         <Typewriter
           words={[
             "Junior Backend Developer",

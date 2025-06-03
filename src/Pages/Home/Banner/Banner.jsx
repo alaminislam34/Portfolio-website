@@ -126,7 +126,7 @@ const Banner = () => {
         className="flex justify-center items-center h-full w-full relative my-10 md:col-span-2"
       >
         <div className="w-full max-h-[700px] h-full flex justify-center items-center px-4 relative">
-          <div className="relative w-2/3 h-3/4 aspect-square flex items-center justify-center rounded-3xl shadow-2xl shadow-white/10">
+          <div className="relative w-4/6 h-3/4 aspect-square flex items-center justify-center rounded-3xl shadow-2xl shadow-white/10">
             {/* Animated Gradient Ring 1 */}
             <motion.div
               initial={{ y: 0 }}
@@ -139,7 +139,7 @@ const Banner = () => {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ repeat: Infinity, duration: 10 }}
-                  className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-[150%] h-[150%] opacity-10 bg-gradient-to-r from-[#44318D] via-[#6E44FF] to-[#E0C3FC] blur-3xl"
+                  className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-[150%] h-[150%] opacity-50 bg-gradient-to-r from-[#7558e6] via-[#977bfc] to-[#E0C3FC] blur-3xl"
                 ></motion.div>
               </div>
             </motion.div>

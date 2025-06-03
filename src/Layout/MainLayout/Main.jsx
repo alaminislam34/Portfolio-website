@@ -1,4 +1,5 @@
-import { Outlet } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../../Components/Header/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
@@ -6,7 +7,6 @@ import { Link } from "react-scroll";
 import { useEffect, useState } from "react";
 import AnimatedBackground from "../../Components/AnimatedBackground";
 import { ArrowUp } from "lucide-react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import GradientBackground from "../../Components/MatrixRain/Matrix";
 import WelcomePage from "../../Pages/WelcomePage/WelcomePage";
@@ -14,7 +14,24 @@ import WelcomePage from "../../Pages/WelcomePage/WelcomePage";
 const Main = () => {
   const [show, setShow] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
+  const [showWelcome, setShowWelcome] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  // Show welcome page on first reload
+  useEffect(() => {
+    const isFirstLoad = sessionStorage.getItem("welcome_shown");
+    if (!isFirstLoad) {
+      sessionStorage.setItem("welcome_shown", "true");
+      setShowWelcome(true);
+      setTimeout(() => {
+        setShowWelcome(false);
+        navigate("/"); // redirect to home after welcome
+      }, 5000); // 5 seconds
+    }
+  }, [navigate]);
+
+  // Scroll button logic
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -22,12 +39,7 @@ const Main = () => {
         document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = (scrollTop / docHeight) * 100;
       setScrollPercent(scrolled);
-
-      if (scrollTop > 100) {
-        setShow(true);
-      } else {
-        setShow(false);
-      }
+      setShow(scrollTop > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -37,6 +49,10 @@ const Main = () => {
   const radius = 26;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (scrollPercent / 100) * circumference;
+
+  if (showWelcome && location.pathname === "/") {
+    return <WelcomePage />;
+  }
 
   return (
     <div className="overflow-hidden relative">
@@ -59,7 +75,6 @@ const Main = () => {
           }`}
         >
           <div className="relative w-14 h-14">
-            {/* Progress Circle */}
             <svg className="absolute top-0 left-0" width="56" height="56">
               <circle
                 cx="28"
@@ -74,14 +89,12 @@ const Main = () => {
               />
             </svg>
 
-            {/* Arrow Icon with Glass Effect */}
             <Link to="home" smooth={true} duration={500}>
               <ArrowUp
                 size={40}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 text-white cursor-pointer bg-gradient-to-br from-fuchsia-900/70 to-fuchsia-500/40 backdrop-blur-lg rounded-full"
               />
             </Link>
-            {/* Glow shadow underneath */}
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/50 filter blur-[5px] h-2 rounded-[50%] w-[90%]"></div>
           </div>
         </motion.div>
