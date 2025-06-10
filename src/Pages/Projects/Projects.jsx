@@ -49,7 +49,7 @@ const Projects = () => {
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
                   data-aos-anchor-placement="top-bottom"
-                  className="text-2xl lg:text-3xl font-bold py-4 text-transparent bg-clip-text bg-gradient-to-t from-purple-500 to-purple-700"
+                  className="text-2xl lg:text-3xl font-bold py-4 text-transparent bg-clip-text bg-gradient-to-t from-purple-500 to-purple-700 conthrax"
                 >
                   {project.name}
                 </h1>

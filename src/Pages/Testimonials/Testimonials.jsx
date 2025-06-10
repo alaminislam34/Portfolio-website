@@ -162,7 +162,7 @@ const Testimonials = () => {
                 className="px-3 py-6 relative group"
               >
                 {/* Card with Shine Effect */}
-                <div className="relative min-h-[300px] bg-[#1d1128]/20 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-500 overflow-hidden">
+                <div className="relative min-h-[300px] bg-[#1d1128]/30 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-500 overflow-hidden">
                   {/* Shine Effect */}
                   <div className="absolute top-0 left-0 w-full h-full">
                     <div className="w-full h-full flex items-center justify-center relative p-2">
@@ -171,7 +171,7 @@ const Testimonials = () => {
                         transition={{ repeat: Infinity, duration: 10 }}
                         className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-[40%] h-[200%] bg-gradient-to-r from-[#5e3bc9] via-[#816ead] to-[#dbd0f5] blur-3xl"
                       ></motion.div>
-                      <div className="bg-black/50 backdrop-blur-xl w-full z-10 h-full rounded-xl flex flex-col items-center justify-center">
+                      <div className="bg-[#170727]  backdrop-blur-xl w-full z-10 h-full rounded-xl flex flex-col items-center justify-center">
                         {/* Content */}
                         <img
                           loading="lazy"
