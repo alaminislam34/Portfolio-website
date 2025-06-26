@@ -44,7 +44,10 @@ const About = () => {
       <div className="flex flex-col-reverse md:flex-row justify-center items-center *:flex-1">
         <div data-aos="fade-right" className="flex flex-col space-y-6">
           <div>
-            <p data-aos="fade-up" className="text-justify leading-loose">
+            <p
+              data-aos="fade-up"
+              className="text-justify leading-loose text-white"
+            >
               Motivated Frontend Developer skilled in HTML, CSS3, JavaScript,
               React.js, and Tailwind CSS, focusing on responsive, pixel-perfect
               designs from Figma. Eager to learn CMS platforms like WordPress
