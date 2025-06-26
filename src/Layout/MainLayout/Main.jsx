@@ -18,19 +18,6 @@ const Main = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Show welcome page on first reload
-  useEffect(() => {
-    const isFirstLoad = sessionStorage.getItem("welcome_shown");
-    if (!isFirstLoad) {
-      sessionStorage.setItem("welcome_shown", "true");
-      setShowWelcome(true);
-      setTimeout(() => {
-        setShowWelcome(false);
-        navigate("/"); // redirect to home after welcome
-      }, 5000); // 5 seconds
-    }
-  }, [navigate]);
-
   // Scroll button logic
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +38,9 @@ const Main = () => {
   const offset = circumference - (scrollPercent / 100) * circumference;
 
   if (showWelcome && location.pathname === "/") {
-    return <WelcomePage />;
+    return setTimeout(() => {
+      <WelcomePage />;
+    }, 5000);
   }
 
   return (
