@@ -7,7 +7,7 @@ const Title = ({ title, des }) => {
       >
         {title}
       </h1>
-      <p data-aos="fade-up" className="max-w-lg w-full mx-auto">
+      <p data-aos="fade-up" className="max-w-lg w-full mx-auto text-white">
         {des}
       </p>
     </div>
