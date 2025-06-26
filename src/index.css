@@ -13,6 +13,7 @@ a {
 }
 body {
   font-family: "Manrope", sans-serif;
+  color: white;
 }
 @theme {
   --color-Base: #121212;

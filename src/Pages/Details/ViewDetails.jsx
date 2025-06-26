@@ -33,7 +33,7 @@ const ViewDetails = () => {
               data-aos="fade-up"
               data-aos-delay="300"
               data-aos-anchor-placement="top-bottom"
-              className="text-2xl md:text-3xl lg:text-4xl font-bold pb-4 lg:pb-8 text-transparent bg-clip-text bg-gradient-to-t from-purple-500 to-purple-700"
+              className="text-2xl md:text-3xl conthrax lg:text-4xl font-bold pb-4 lg:pb-8 text-transparent bg-clip-text bg-gradient-to-t from-purple-500 to-purple-700"
             >
               {name}
             </h1>
@@ -62,7 +62,7 @@ const ViewDetails = () => {
               data-aos="fade-up"
               data-aos-delay="1000"
               data-aos-anchor-placement="top-bottom"
-              className="text-xs lg:text-base"
+              className="text-xs lg:text-base text-white"
             >
               {description}
             </p>
@@ -85,7 +85,7 @@ const ViewDetails = () => {
               {stack.map((t, i) => (
                 <p
                   key={i}
-                  className="px-2 py-1 rounded-lg border border-white/10 text-xs text-white/80 backdrop-blur-sm"
+                  className="px-2 py-1 rounded-lg border  border-white/10 text-xs text-white/80 backdrop-blur-sm"
                 >
                   {t}
                 </p>
@@ -105,7 +105,7 @@ const ViewDetails = () => {
               data-aos="fade-up"
               data-aos-delay="1800"
               data-aos-anchor-placement="top-bottom"
-              className="text-xs lg:text-base"
+              className="text-xs lg:text-base text-white"
             >
               {challenges}
             </p>
@@ -121,7 +121,7 @@ const ViewDetails = () => {
             <p
               data-aos="fade-up"
               data-aos-anchor-placement="top-bottom"
-              className="text-xs lg:text-base"
+              className="text-xs lg:text-base text-white"
             >
               {improvements}
             </p>

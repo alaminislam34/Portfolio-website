@@ -68,6 +68,7 @@ const About = () => {
               data-aos="fade-up"
               data-aos-delay="500"
               data-aos-anchor-placement="top-bottom"
+              className="text-white"
             >
               My goal is to become a skilled Full-Stack Developer and build
               impactful digital solutions that solve real-world problems.
