@@ -1,5 +1,5 @@
 import { LuLinkedin, LuFacebook, LuGithub } from "react-icons/lu";
-import image from "../../../assets/Image/alaminBW.jpg";
+import image from "../../../assets/Image/MD-Alamin.jpg";
 import { Link } from "react-scroll";
 import { useEffect } from "react";
 import Aos from "aos";
@@ -173,7 +173,7 @@ const Banner = () => {
                 transition={{ repeat: Infinity, duration: 10 }}
                 className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-[100%] h-[200%] bg-gradient-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] blur-3xl shadow-[0_0_60px_rgba(125,5,255,0.2)] "
               ></motion.div>
-              <div className="w-full h-full overflow-hidden rounded-xl shadow-[inset_0_0_60px_rgba(125,5,255,0.2)] bg-gradient-to-r from-purple-700/40 via-purple-600/30 to-purple-400/30 backdrop-blur shadow shadow-black">
+              <div className="w-full h-full overflow-hidden rounded-xl shadow-[inset_0_0_60px_rgba(125,5,255,0.2)] bg-gradient-to-r from-purple-700/40 via-purple-600/30 to-purple-400/30 backdrop-blur shadow-black">
                 <img
                   src={image}
                   alt="alamin"
