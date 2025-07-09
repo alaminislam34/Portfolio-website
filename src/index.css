@@ -14,6 +14,7 @@ a {
 body {
   font-family: "Manrope", sans-serif;
   color: white;
+  cursor: none;
 }
 @theme {
   --color-Base: #121212;
@@ -48,7 +49,7 @@ body {
     @apply bg-white;
   }
   .buttonClass {
-    @apply overflow-hidden border border-purple-800 px-3 lg:px-4 py-2 rounded-lg relative z-20 hover:shadow-lg shadow-fuchsia-800/40 duration-300 flex items-center gap-2 text-white transition-all cursor-pointer;
+    @apply overflow-hidden border border-purple-800 px-3 lg:px-4 py-2 rounded-lg relative z-20 hover:shadow-lg shadow-fuchsia-800/40 duration-300 flex items-center gap-2 text-white transition-all;
   }
 }
 

@@ -156,7 +156,7 @@ const Navbar = () => {
                 <div className="absolute top-4 right-4 text-xl transition z-10">
                   <button
                     onClick={() => setOpen(false)}
-                    className="btn btn-sm cursor-pointer bg-purple-400"
+                    className="btn btn-sm  bg-purple-400"
                   >
                     <X />
                   </button>
@@ -184,7 +184,7 @@ const Navbar = () => {
                     <a
                       href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
                       target="_blank"
-                      className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
+                      className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
                     >
                       <span className="relative z-10">Resume</span>
                       <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
@@ -201,7 +201,7 @@ const Navbar = () => {
                   loading="lazy"
                   src={logo}
                   alt="logo"
-                  className="h-12 md:h-14 cursor-pointer"
+                  className="h-12 md:h-14 "
                 />
               </Link>
             </div>
@@ -212,7 +212,7 @@ const Navbar = () => {
                 {links.map(({ name, path }) => (
                   <li
                     key={path}
-                    className="relative py-3 px-4 cursor-pointer group overflow-hidden conthrax"
+                    className="relative py-3 px-4  group overflow-hidden conthrax"
                   >
                     <Link
                       to={path}
@@ -240,7 +240,7 @@ const Navbar = () => {
                 <a
                   href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
                   target="_blank"
-                  className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 active:scale-95 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
+                  className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 active:scale-95 rounded-lg text-sm  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
                 >
                   <span className="relative z-10">Resume</span>
                   <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
@@ -251,7 +251,7 @@ const Navbar = () => {
                 className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 lg:hidden flex items-center justify-center"
               >
                 <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
-                <a className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm cursor-pointer bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block">
+                <a className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block">
                   <span className="relative z-10">
                     <RiMenu2Fill className="text-xl" />
                   </span>

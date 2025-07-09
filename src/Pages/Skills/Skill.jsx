@@ -56,7 +56,7 @@ export default function Skill() {
               data-aos="fade-up"
               data-aos-delay={(index + 1) * 200}
               data-aos-anchor-placement="top-bottom"
-              className="px-8 py-6 cursor-pointer border-2 rounded-2xl bg-purple-950/5 border-purple-800/30 shadow-xl hover:shadow-purple-700/10 hover:scale-105 duration-500 group"
+              className="px-8 py-6  border-2 rounded-2xl bg-purple-950/5 border-purple-800/30 shadow-xl hover:shadow-purple-700/10 hover:scale-105 duration-500 group"
             >
               <div className="w-24 h-24 mx-auto relative">
                 <img
