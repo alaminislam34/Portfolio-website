@@ -10,7 +10,6 @@ import CustomCursor from "../../Components/CustomCursor";
 const Home = () => {
   return (
     <main className="space-y-9 md:space-y-12">
-      <CustomCursor />
       <section id="home" data-section="home">
         <Banner />
       </section>

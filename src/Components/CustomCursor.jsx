@@ -10,14 +10,21 @@ export default function CustomCursor() {
     };
 
     // Detect hover over interactive elements
-    const checkHover = (e) => {
-      const target = e.target;
-      const tag = target.tagName.toLowerCase();
-      const isInteractive =
-        ["a", "button", "input", "textarea", "select", "label"].includes(tag) ||
-        target.getAttribute("role") === "button";
+    // const checkHover = (e) => {
+    //   const target = e.target;
+    //   const tag = target.tagName.toLowerCase();
+    //   const isInteractive =
+    //     ["a", "button", "input", "textarea", "select", "label"].includes(tag) ||
+    //     target.getAttribute("role") === "button";
 
-      setIsHovered(isInteractive);
+    //   setIsHovered(isInteractive);
+    // };
+    const checkHover = (e) => {
+      const interactiveElement = e.target.closest(
+        "a, button, input, textarea, select, label, [role='button']"
+      );
+
+      setIsHovered(!!interactiveElement);
     };
 
     window.addEventListener("mousemove", move);

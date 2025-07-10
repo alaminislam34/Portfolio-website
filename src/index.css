@@ -14,7 +14,6 @@ a {
 body {
   font-family: "Manrope", sans-serif;
   color: white;
-  cursor: none;
 }
 @theme {
   --color-Base: #121212;
@@ -70,4 +69,12 @@ body {
 @font-face {
   font-family: "conthrax";
   src: url("../src/assets/font/conthrax/conthrax-sb.ttf");
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  cursor: pointer;
 }

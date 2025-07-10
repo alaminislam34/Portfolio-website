@@ -1,13 +1,11 @@
+// ✅ Testimonials.jsx
 import { X } from "lucide-react";
 import Title from "../../Components/Shared/Title";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Slider from "react-slick";
-import user from "../../assets/logo/user.jpg";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "motion/react";
-// import ColorPlates from "../../Components/ColorPlates";
+// import { motion } from "motion/react";
 
 const Testimonials = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -29,7 +27,7 @@ const Testimonials = () => {
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_SERVER_URL}/postReview`,
-        formData
+        { ...formData, verified: false }
       );
 
       if (res.data?.insertedId) {
@@ -39,6 +37,16 @@ const Testimonials = () => {
             color: "#fff",
           },
         });
+
+        // Store this ID locally so the user sees their feedback
+        const existing = JSON.parse(
+          localStorage.getItem("myFeedbacks") || "[]"
+        );
+        localStorage.setItem(
+          "myFeedbacks",
+          JSON.stringify([...existing, res.data.insertedId])
+        );
+
         fetchFeedbacks();
         setFormData({ name: "", overview: "" });
         setOpen(false);
@@ -53,13 +61,15 @@ const Testimonials = () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/reviews`);
       const data = res.data;
-      if (Array.isArray(data)) {
-        setFeedbacks(data);
-      } else if (Array.isArray(data.reviews)) {
-        setFeedbacks(data.reviews);
-      } else {
-        setFeedbacks([]);
-      }
+      const myIds = JSON.parse(localStorage.getItem("myFeedbacks") || "[]");
+
+      const feedbackArray = Array.isArray(data) ? data : data.reviews || [];
+
+      const filtered = feedbackArray.filter(
+        (item) => item.verified === true || myIds.includes(item._id)
+      );
+
+      setFeedbacks(filtered);
     } catch (error) {
       console.error("Failed to fetch testimonials:", error);
     }
@@ -78,8 +88,6 @@ const Testimonials = () => {
     autoplay: true,
     autoplaySpeed: 8000,
     arrows: false,
-    dotsClass: "slick-dots slick-thumb",
-    dotsClassActive: "slick-active",
     responsive: [
       {
         breakpoint: 1024,
@@ -98,13 +106,13 @@ const Testimonials = () => {
         title="Testimonials"
         des="I'd love to hear your thoughts. Feel free to leave honest feedback!"
       />
-      {/* <ColorPlates /> */}
+
       {/* Feedback Modal */}
       {open && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
           <form
             onSubmit={handleSubmit}
-            className="bg-[#1a0e25]/80 border border-purple-700/30 shadow-xl shadow-purple-800/20 rounded-xl max-w-xl w-full p-6 space-y-4 relative backdrop-blur-md"
+            className="bg-[#1a0e25]/80 border border-purple-700/30 shadow-xl rounded-xl max-w-xl w-full p-6 space-y-4 relative backdrop-blur-md"
           >
             <button
               onClick={() => setOpen(false)}
@@ -113,37 +121,33 @@ const Testimonials = () => {
             >
               <X size={18} />
             </button>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl pb-4 lg:pb-6 font-bold text-purple-300 text-center mb-2">
+            <h2 className="text-3xl font-bold text-purple-300 text-center mb-4">
               Give Feedback
             </h2>
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-transparent border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              placeholder="Your Name"
+              className="w-full px-4 py-2 rounded-md bg-transparent border border-purple-600/20 text-white"
               required
             />
             <textarea
               name="overview"
               rows="4"
-              placeholder="Your Feedback..."
               value={formData.overview}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-transparent border border-purple-600/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              placeholder="Your Feedback..."
+              className="w-full px-4 py-2 rounded-md bg-transparent border border-purple-600/20 text-white"
               required
             />
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
+                className="py-2.5 px-8 rounded-lg bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white"
               >
-                <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
-                <button className="py-2.5 active:scale-95 px-8 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
-                  <span className="relative z-10">Submit Feedback</span>
-                  <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
-                </button>
+                Submit Feedback
               </button>
             </div>
           </form>
@@ -151,66 +155,112 @@ const Testimonials = () => {
       )}
 
       {/* Feedback Slider */}
-      <div data-aos="fade-up" className="">
+      <div className="mt-10">
         {feedbacks?.length > 0 ? (
           <Slider {...sliderSettings}>
-            {feedbacks?.slice(0, 6).map((item, index) => (
+            {feedbacks.slice(0, 6).map((item, index) => (
               <div
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
                 key={index}
-                className="px-3 py-6 relative group"
+                className="relative w-[190px] h-[254px] transition duration-200 select-none group"
               >
-                {/* Card with Shine Effect */}
-                <div className="relative min-h-[300px] bg-[#1d1128]/30 rounded-2xl border border-purple-800/30 shadow-lg p-6 text-center transition hover:scale-[1.02] duration-500 overflow-hidden">
-                  {/* Shine Effect */}
-                  <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="w-full h-full flex items-center justify-center relative p-2">
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ repeat: Infinity, duration: 10 }}
-                        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-[40%] h-[200%] bg-gradient-to-r from-[#5e3bc9] via-[#816ead] to-[#dbd0f5] blur-3xl"
-                      ></motion.div>
-                      <div className="bg-[#170727]  backdrop-blur-xl w-full z-10 h-full rounded-xl flex flex-col items-center justify-center">
-                        {/* Content */}
-                        <img
-                          loading="lazy"
-                          src={user}
-                          alt="User"
-                          className="w-14 h-14 rounded-full border-2 border-purple-400 mx-auto mb-4 relative z-20"
-                        />
-                        <h3 className="text-lg font-semibold text-white mb-1 relative z-20">
-                          {item.name}
-                        </h3>
-                        <p className="text-sm text-gray-300 relative z-20">
-                          {item.overview?.slice(0, 120)}
-                        </p>
-                        <p className="text-xs text-gray-500 mt-2 relative z-20">
-                          {new Date(item.createdAt).toLocaleDateString()}
-                        </p>
-                      </div>
+                {/* Canvas */}
+                <div className="absolute inset-0 z-[200] grid grid-cols-5 grid-rows-5">
+                  {Array.from({ length: 25 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className={`absolute w-full h-full z-[200] hover:cursor-pointer tracker tr-${
+                        i + 1
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* Card */}
+                <div
+                  id="card"
+                  className="absolute inset-0 z-0 flex justify-center items-center rounded-[20px] transition duration-[700ms] border-2 border-white/10 overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#262626] shadow-[0_0_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(0,0,0,0.2)]"
+                >
+                  <div className="relative w-full h-full">
+                    {/* Glare */}
+                    <div className="card-glare absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(125deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.05)_45%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0.05)_55%,rgba(255,255,255,0)_100%)]"></div>
+
+                    {/* Cyber Lines */}
+                    <div className="cyber-lines">
+                      {[...Array(4)].map((_, i) => (
+                        <span
+                          key={i}
+                          className={`absolute w-full h-[1px] bg-[linear-gradient(90deg,transparent,rgba(92,103,255,0.2),transparent)] animate-[lineGrow_3s_linear_infinite]`}
+                          style={{
+                            top: `${20 * (i + 1)}%`,
+                            animationDelay: `${i * 0.5}s`,
+                            transformOrigin: i % 2 === 0 ? "left" : "right",
+                          }}
+                        ></span>
+                      ))}
                     </div>
+
+                    {/* Prompt */}
+                    <p
+                      id="prompt"
+                      className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 text-center text-[16px] font-semibold tracking-[2px] text-white/70 transition duration-300 text-shadow-[0_0_10px_rgba(255,255,255,0.3)] z-20 group-hover:opacity-0"
+                    >
+                      {item.overview?.slice(0, 70)}
+                    </p>
+
+                    {/* Title */}
+                    <div className="title opacity-0 group-hover:opacity-100 transition duration-300 absolute text-[28px] font-extrabold tracking-[4px] text-center w-full pt-5 bg-gradient-to-r from-[#00ffaa] to-[#00a2ff] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(0,255,170,0.3)] text-shadow-[0_0_10px_rgba(92,103,255,0.5),0_0_20px_rgba(92,103,255,0.3)]">
+                      {item.name}
+                    </div>
+
+                    {/* Subtitle */}
+                    <div className="absolute bottom-10 w-full text-center text-[12px] tracking-[2px] translate-y-[30px] text-white/60 group-hover:hidden transition-all duration-500">
+                      <span>{item.name}</span>
+                    </div>
+
+                    {/* Glowing Elements */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.3)_0%,rgba(0,255,170,0)_70%)] blur-[15px] rounded-full top-[-20px] left-[-20px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.3)_0%,rgba(0,255,170,0)_70%)] blur-[15px] rounded-full top-1/2 right-[-30px] -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.3)_0%,rgba(0,255,170,0)_70%)] blur-[15px] rounded-full bottom-[-20px] left-[30%] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+
+                    {/* Particles */}
+                    <div className="absolute inset-0">
+                      {Array.from({ length: 6 }).map((_, i) => (
+                        <span
+                          key={i}
+                          className="absolute w-[3px] h-[3px] bg-[#00ffaa] rounded-full opacity-0 animate-[particleFloat_2s_infinite]"
+                        ></span>
+                      ))}
+                    </div>
+
+                    {/* Corner Elements */}
+                    <div className="absolute inset-0">
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] top-[10px] left-[10px] border-r-0 border-b-0 transition-all"></span>
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] top-[10px] right-[10px] border-l-0 border-b-0 transition-all"></span>
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] bottom-[10px] left-[10px] border-r-0 border-t-0 transition-all"></span>
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] bottom-[10px] right-[10px] border-l-0 border-t-0 transition-all"></span>
+                    </div>
+
+                    {/* Scan Line */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(92,103,255,0.1),transparent)] animate-[scanMove_2s_linear_infinite] transform -translate-y-full"></div>
                   </div>
                 </div>
               </div>
             ))}
           </Slider>
         ) : (
-          <div className="text-center text-gray-500">No feedback yet.</div>
+          <p className="text-center text-gray-500">No feedback yet.</p>
         )}
       </div>
 
       {/* Give Feedback Button */}
-      <div data-aos="fade-up" className="flex justify-center mt-12">
+      <div className="flex justify-center mt-12">
         <button
           onClick={() => setOpen(true)}
-          className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
+          className="py-2.5 px-8 rounded-lg bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white"
         >
-          <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
-          <button className="py-2.5 px-8 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
-            <span className="relative z-10">Give Feedback</span>
-            <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
-          </button>
+          Give Feedback
         </button>
       </div>
     </div>
