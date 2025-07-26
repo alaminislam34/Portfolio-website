@@ -1,14 +1,48 @@
 // ✅ Testimonials.jsx
 import { X } from "lucide-react";
 import Title from "../../Components/Shared/Title";
-import { useState, useEffect } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
+import { useState } from "react";
 import Slider from "react-slick";
+// ✅ Static data
+const staticFeedbacks = [
+  {
+    _id: "1",
+    name: "MD Al Amin Islam",
+    overview:
+      "Amazing experience working with this platform! Highly recommended.",
+  },
+  {
+    _id: "2",
+    name: "MD Abdullah Hossain",
+    overview: "The UI is very friendly and performance is top-notch.",
+  },
+  {
+    _id: "3",
+    name: "Rufayed Ahmed",
+    overview: "I had an excellent time using this service. Great support!",
+  },
+  {
+    _id: "4",
+    name: "Anisha Tabassum",
+    overview: "Impressive work. Everything was smooth and clear. Loved it!",
+  },
+  {
+    _id: "5",
+    name: "Rony Ahmed",
+    overview: "Highly advanced system with clean design and powerful features.",
+  },
+  {
+    _id: "6",
+    name: "Badhon Hossain",
+    overview: "Professional and trustworthy service. Will use again.",
+  },
+];
+
 // import { motion } from "motion/react";
 
 const Testimonials = () => {
-  const [feedbacks, setFeedbacks] = useState([]);
+  const [feedbacks] = useState(staticFeedbacks); // ✅ Static data assign
+
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", overview: "" });
 
@@ -16,78 +50,24 @@ const Testimonials = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, overview } = formData;
-    if (!name || !overview) {
-      toast.warn("Please fill out all fields.");
-      return;
-    }
-
-    try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_SERVER_URL}/postReview`,
-        { ...formData, verified: false }
-      );
-
-      if (res.data?.insertedId) {
-        toast.success("Thanks for your feedback!", {
-          style: {
-            background: "linear-gradient(to right, #4b0082, #8a2be2)",
-            color: "#fff",
-          },
-        });
-
-        // Store this ID locally so the user sees their feedback
-        const existing = JSON.parse(
-          localStorage.getItem("myFeedbacks") || "[]"
-        );
-        localStorage.setItem(
-          "myFeedbacks",
-          JSON.stringify([...existing, res.data.insertedId])
-        );
-
-        fetchFeedbacks();
-        setFormData({ name: "", overview: "" });
-        setOpen(false);
-      }
-    } catch (error) {
-      console.error("Failed to submit feedback:", error);
-      toast.error("Something went wrong. Please try again later.");
-    }
+    // Submit functionality kept but will not save anywhere
+    alert("Feedback feature is disabled in static mode.");
+    setFormData({ name: "", overview: "" });
+    setOpen(false);
   };
-
-  const fetchFeedbacks = async () => {
-    try {
-      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/reviews`);
-      const data = res.data;
-      const myIds = JSON.parse(localStorage.getItem("myFeedbacks") || "[]");
-
-      const feedbackArray = Array.isArray(data) ? data : data.reviews || [];
-
-      const filtered = feedbackArray.filter(
-        (item) => item.verified === true || myIds.includes(item._id)
-      );
-
-      setFeedbacks(filtered);
-    } catch (error) {
-      console.error("Failed to fetch testimonials:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchFeedbacks();
-  }, []);
 
   const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 800,
+    slidesToScroll: 1,
     slidesToShow: 3,
-    slidesToScroll: 3,
     autoplay: true,
     autoplaySpeed: 8000,
     arrows: false,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -176,10 +156,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Card */}
-                <div
-                  id="card"
-                  className="absolute inset-0 z-0 flex justify-center items-center rounded-[20px] transition duration-[700ms] border-2 border-white/10 overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#262626] shadow-[0_0_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(0,0,0,0.2)]"
-                >
+                <div className="absolute inset-0 z-0 flex justify-center items-center rounded-[20px] transition duration-[700ms] border-2 border-white/10 overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#262626] shadow-[0_0_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(0,0,0,0.2)]">
                   <div className="relative w-full h-full">
                     {/* Glare */}
                     <div className="card-glare absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(125deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.05)_45%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0.05)_55%,rgba(255,255,255,0)_100%)]"></div>
@@ -189,7 +166,7 @@ const Testimonials = () => {
                       {[...Array(4)].map((_, i) => (
                         <span
                           key={i}
-                          className={`absolute w-full h-[1px] bg-[linear-gradient(90deg,transparent,rgba(92,103,255,0.2),transparent)] animate-[lineGrow_3s_linear_infinite]`}
+                          className="absolute w-full h-[1px] bg-[linear-gradient(90deg,transparent,rgba(92,103,255,0.2),transparent)] animate-[lineGrow_3s_linear_infinite]"
                           style={{
                             top: `${20 * (i + 1)}%`,
                             animationDelay: `${i * 0.5}s`,
@@ -199,22 +176,14 @@ const Testimonials = () => {
                       ))}
                     </div>
 
-                    {/* Prompt */}
-                    <p
-                      id="prompt"
-                      className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 text-center text-[16px] font-semibold tracking-[2px] text-white/70 transition duration-300 text-shadow-[0_0_10px_rgba(255,255,255,0.3)] z-20 group-hover:opacity-0"
-                    >
+                    {/* Feedback (Overview) – Always visible */}
+                    <p className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2 text-center text-[16px] font-semibold tracking-[2px] text-white/70 transition duration-300 text-shadow-[0_0_10px_rgba(255,255,255,0.3)] z-20">
                       {item.overview?.slice(0, 70)}
                     </p>
 
-                    {/* Title */}
-                    <div className="title opacity-0 group-hover:opacity-100 transition duration-300 absolute text-[28px] font-extrabold tracking-[4px] text-center w-full pt-5 bg-gradient-to-r from-[#00ffaa] to-[#00a2ff] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(0,255,170,0.3)] text-shadow-[0_0_10px_rgba(92,103,255,0.5),0_0_20px_rgba(92,103,255,0.3)]">
+                    {/* Name (Static Position, not hover dependent) */}
+                    <div className="absolute top-5 w-full text-center text-xl font-bold tracking-[2px] text-transparent bg-gradient-to-r from-[#00ffaa] to-[#00a2ff] bg-clip-text">
                       {item.name}
-                    </div>
-
-                    {/* Subtitle */}
-                    <div className="absolute bottom-10 w-full text-center text-[12px] tracking-[2px] translate-y-[30px] text-white/60 group-hover:hidden transition-all duration-500">
-                      <span>{item.name}</span>
                     </div>
 
                     {/* Glowing Elements */}
@@ -252,16 +221,6 @@ const Testimonials = () => {
         ) : (
           <p className="text-center text-gray-500">No feedback yet.</p>
         )}
-      </div>
-
-      {/* Give Feedback Button */}
-      <div className="flex justify-center mt-12">
-        <button
-          onClick={() => setOpen(true)}
-          className="py-2.5 px-8 rounded-lg bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white"
-        >
-          Give Feedback
-        </button>
       </div>
     </div>
   );
