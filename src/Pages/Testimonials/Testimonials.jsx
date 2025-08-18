@@ -69,14 +69,8 @@ const Testimonials = () => {
     arrows: false,
 
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 1 },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -140,8 +134,9 @@ const Testimonials = () => {
           <Slider {...sliderSettings}>
             {feedbacks.slice(0, 6).map((item, index) => (
               <div
+               data-aos="fade-up"
                 key={index}
-                className="relative w-[190px] h-[254px] transition duration-200 select-none group"
+                className="relative h-[254px] transition duration-200 select-none group"
               >
                 {/* Canvas */}
                 <div className="absolute inset-0 z-[200] grid grid-cols-5 grid-rows-5">
@@ -156,7 +151,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Card */}
-                <div className="absolute inset-0 z-0 flex justify-center items-center rounded-[20px] transition duration-[700ms] border-2 border-white/10 overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#262626] shadow-[0_0_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(0,0,0,0.2)]">
+                <div className="absolute mx-6 inset-0 z-0 flex justify-center items-center rounded-[20px] transition duration-[700ms] border-2 border-white/10 overflow-hidden bg-gradient-to-br from-[#280550]/5 to-[#280550]/10 shadow-[0_0_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-xs">
                   <div className="relative w-full h-full">
                     {/* Glare */}
                     <div className="card-glare absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(125deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.05)_45%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0.05)_55%,rgba(255,255,255,0)_100%)]"></div>
@@ -182,7 +177,7 @@ const Testimonials = () => {
                     </p>
 
                     {/* Name (Static Position, not hover dependent) */}
-                    <div className="absolute top-5 w-full text-center text-xl font-bold tracking-[2px] text-transparent bg-gradient-to-r from-[#00ffaa] to-[#00a2ff] bg-clip-text">
+                    <div className="absolute top-5 w-full text-center text-xl font-bold tracking-[2px] text-transparent bg-gradient-to-r from-[#8d56c0] to-[#8535c7] bg-clip-text">
                       {item.name}
                     </div>
 
@@ -198,17 +193,17 @@ const Testimonials = () => {
                       {Array.from({ length: 6 }).map((_, i) => (
                         <span
                           key={i}
-                          className="absolute w-[3px] h-[3px] bg-[#00ffaa] rounded-full opacity-0 animate-[particleFloat_2s_infinite]"
+                          className="absolute w-[3px] h-[3px] bg-[#8d56c0] rounded-full opacity-0 animate-[particleFloat_2s_infinite]"
                         ></span>
                       ))}
                     </div>
 
                     {/* Corner Elements */}
                     <div className="absolute inset-0">
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] top-[10px] left-[10px] border-r-0 border-b-0 transition-all"></span>
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] top-[10px] right-[10px] border-l-0 border-b-0 transition-all"></span>
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] bottom-[10px] left-[10px] border-r-0 border-t-0 transition-all"></span>
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#5c67ff4d] bottom-[10px] right-[10px] border-l-0 border-t-0 transition-all"></span>
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] top-[10px] left-[10px] border-r-0 border-b-0 transition-all"></span>
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] top-[10px] right-[10px] border-l-0 border-b-0 transition-all"></span>
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] bottom-[10px] left-[10px] border-r-0 border-t-0 transition-all"></span>
+                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] bottom-[10px] right-[10px] border-l-0 border-t-0 transition-all"></span>
                     </div>
 
                     {/* Scan Line */}

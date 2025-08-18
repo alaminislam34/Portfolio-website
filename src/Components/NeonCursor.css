@@ -15,7 +15,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #a073d4; /* main cursor color */
+  background: #cdaff0; /* main cursor color */
+  opacity: 10;
   pointer-events: none;
   box-shadow: 0 0 8px #8e42e6, 0 0 16px #7145a3, 0 0 24px #9456db;
 }
@@ -37,4 +38,5 @@
   border-radius: 50%;
   background: radial-gradient(circle, #9c32ff66 0%, transparent 60%);
   pointer-events: none;
+  opacity: 10;
 }
