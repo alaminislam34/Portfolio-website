@@ -1,10 +1,15 @@
 import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
 import Title from "../../Components/Shared/Title";
 import Form from "./Form";
+import Lottie from "react-lottie";
+import loop from "../../assets/Image/loop.json";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="relative">
+      <div className="absolute top-0 left-0 w-full -z-10 opacity-10">
+        <Lottie options={{ animationData: loop, autoplay: true, loop: true }} />
+      </div>
       <Title title={"Contact Me"} />
       <div
         data-aos="fade-up"

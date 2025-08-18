@@ -8,7 +8,6 @@ import { DiMongodb } from "react-icons/di";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { Link } from "react-scroll";
-import { MdContactEmergency } from "react-icons/md";
 
 const About = () => {
   const skills = [
