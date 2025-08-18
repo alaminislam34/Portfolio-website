@@ -4,7 +4,7 @@ const Footer = () => {
       data-aos="fade-in-up"
       data-aos-offset="0"
       data-aos-anchor-placement="top-bottom"
-      className="footer bg-[#120727]/30 pb-6 pt-8 text-center flex justify-center items-center"
+      className="footer bg-[#120727]/30 pb-6 pt-8 text-center flex justify-center items-center border-t border-white/10"
     >
       <p
         data-aos="fade-in-up"

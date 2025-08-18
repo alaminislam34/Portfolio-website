@@ -36,12 +36,6 @@ const Banner = () => {
 
   return (
     <div className="relative">
-      <div className="absolute top-0 left-0 w-full">
-        <Lottie
-          options={{ animationData: bg, autoplay: true, loop: true }}
-        ></Lottie>
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-7 items-center min-h-[600px] mt-8 sm:mt-0 md:mt-6 text-white relative overflow-hidden">
         <div className="flex justify-start items-center relative z-10 lg:col-span-4">
           <div className="space-y-4 md:space-y-6 ">
@@ -231,3 +225,8 @@ const Banner = () => {
 };
 
 export default Banner;
+      // <div className="absolute top-0 left-0 w-full">
+      //   <Lottie
+      //     options={{ animationData: bg, autoplay: true, loop: true }}
+      //   ></Lottie>
+      // </div>

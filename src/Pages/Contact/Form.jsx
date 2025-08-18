@@ -56,7 +56,7 @@ const Form = () => {
           type="text"
           placeholder="Your Name"
           {...register("name", { required: "Name is required" })}
-          className="w-full py-2 px-4 text-xs lg:text-sm border border-purple-600/50 focus:outline focus:outline-purple-600/50 rounded-lg bg-transparent text-white"
+          className="w-full py-2 px-4 text-xs lg:text-sm border border-white/10 focus:outline hover:border-purple-400 focus:outline-purple-600/50 rounded-lg bg-gradient-to-b to-white/10 via-white/5 from-white/10 backdrop-blur-xs text-white"
         />
         {errors.name && (
           <p className="text-red-500 text-xs">{errors.name.message}</p>
@@ -72,7 +72,7 @@ const Form = () => {
               message: "Invalid email address",
             },
           })}
-          className="w-full py-2 px-4 border border-purple-600/30 focus:outline-2 focus:outline-purple-600/50 rounded-lg bg-transparent text-white"
+          className="w-full py-2 px-4 border border-white/10 focus:outline-2 hover:border-purple-400 focus:outline-purple-600/50 rounded-lg bg-gradient-to-b to-white/10 via-white/5 from-white/10 backdrop-blur-xs text-white"
         />
         {errors.email && (
           <p className="text-red-500 text-xs">{errors.email.message}</p>
@@ -82,7 +82,7 @@ const Form = () => {
           rows="4"
           placeholder="Your Message"
           {...register("message", { required: "Message is required" })}
-          className="w-full py-2 px-4 border border-purple-600/30 focus:outline-2 focus:outline-purple-600/50 rounded-lg bg-transparent text-white"
+          className="w-full py-2 px-4 border border-white/10 focus:outline-2 hover:border-purple-400 focus:outline-purple-600/50 rounded-lg bg-gradient-to-b to-white/10 via-white/5 from-white/10 backdrop-blur-xs text-white"
         ></textarea>
         {errors.message && (
           <p className="text-red-500 text-xs">{errors.message.message}</p>

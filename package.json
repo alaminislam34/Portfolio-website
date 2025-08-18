@@ -13,12 +13,13 @@
     "@tailwindcss/vite": "^4.1.6",
     "aos": "^2.3.4",
     "axios": "^1.9.0",
+    "clsx": "^2.1.1",
     "gsap": "^3.13.0",
     "keen-slider": "^6.8.6",
     "localforage": "^1.10.0",
     "lucide-react": "^0.509.0",
     "match-sorter": "^8.0.1",
-    "motion": "^12.10.5",
+    "motion": "^12.23.12",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.3",
@@ -32,6 +33,7 @@
     "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
     "split-type": "^0.3.4",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.6"
   },
   "devDependencies": {

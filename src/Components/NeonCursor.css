@@ -1,0 +1,40 @@
+/* NeonCursor.css */
+
+.neon-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+}
+
+.cursor-main {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #a073d4; /* main cursor color */
+  pointer-events: none;
+  box-shadow: 0 0 8px #8e42e6, 0 0 16px #7145a3, 0 0 24px #9456db;
+}
+
+.cursor-trail {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #760feb;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.cursor-glow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #9c32ff66 0%, transparent 60%);
+  pointer-events: none;
+}

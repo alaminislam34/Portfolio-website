@@ -11,7 +11,7 @@ import {
   X,
   FileText,
 } from "lucide-react";
-import Logo from '../../assets/logo/AA.jpg'
+import Logo from "../../assets/logo/AA.jpg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -78,7 +78,7 @@ const Navbar = () => {
           initial={{ y: -80 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="my-2 rounded-xl border backdrop-blur-xl border-white/10 max-w-7xl w-11/12 mx-auto"
+          className="my-2 rounded-xl border backdrop-blur-xl border-white/10 max-w-[1400px] w-11/12 mx-auto"
         >
           <div className="flex items-center justify-between py-2 px-4 rounded-[14px] bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80 shadow-md shadow-purple-900/10 relative">
             {/* Logo */}

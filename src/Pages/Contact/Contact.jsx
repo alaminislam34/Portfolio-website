@@ -6,16 +6,18 @@ import loop from "../../assets/Image/loop.json";
 
 const Contact = () => {
   return (
-    <div className="relative">
-      <div className="absolute top-0 left-0 w-full -z-10 opacity-10">
-        <Lottie options={{ animationData: loop, autoplay: true, loop: true }} />
-      </div>
+    <div>
       <Title title={"Contact Me"} />
       <div
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-purple-400/10 rounded-xl shadow-2xl"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-purple-400/10 rounded-xl shadow-2xl relative overflow-hidden py-6 px-4 border border-white/10"
       >
+        <div className="absolute top-0 left-0 w-full object-cover -z-10 opacity-10">
+          <Lottie
+            options={{ animationData: loop, autoplay: true, loop: true }}
+          />
+        </div>
         <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
           <h2 className="text-xl md:text-2xl font-bold text-purple-400 mb-4">
             Get in Touch

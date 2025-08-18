@@ -5,9 +5,11 @@ import Projects from "../Projects/Projects";
 import Skill from "../Skills/Skill";
 import Testimonials from "../Testimonials/Testimonials";
 import Banner from "./Banner/Banner";
-import CustomCursor from "../../Components/CustomCursor";
+import useMouseCursor from "../../Components/useMouseCursor";
+import NeonCursor from "../../Components/useMouseCursor";
 
 const Home = () => {
+  const { mouse, ref } = useMouseCursor();
   return (
     <main className="space-y-9 md:space-y-12">
       <section id="home" data-section="home">
@@ -29,6 +31,7 @@ const Home = () => {
         <Contact />
       </section>
       <ToastContainer autoClose={2000} position="bottom-center" />
+      <NeonCursor />
     </main>
   );
 };
