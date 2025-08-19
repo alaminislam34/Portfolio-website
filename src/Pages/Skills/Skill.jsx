@@ -17,18 +17,63 @@ import nextjs from "../../assets/logo/nextjs.jpg";
 
 // ==== DATA (proper learning order) ====
 const ROADMAP = [
-  { step: 1, name: "HTML", img: html, sum: "Semantic structure & accessible markup." },
-  { step: 2, name: "CSS", img: css, sum: "Layout, responsive design, animations." },
+  {
+    step: 1,
+    name: "HTML",
+    img: html,
+    sum: "Semantic structure & accessible markup.",
+  },
+  {
+    step: 2,
+    name: "CSS",
+    img: css,
+    sum: "Layout, responsive design, animations.",
+  },
   { step: 3, name: "JavaScript", img: js, sum: "Language fundamentals & DOM." },
-  { step: 4, name: "Tailwind CSS", img: tailwind, sum: "Utility-first styling at scale." },
-  { step: 5, name: "React", img: reactImg, sum: "Components, hooks, state & effects." },
-  { step: 6, name: "Redux", img: redux, sum: "Global state & predictable flows." },
-  { step: 7, name: "Node.js", img: node, sum: "Runtime, modules, async patterns." },
-  { step: 8, name: "Express.js", img: express, sum: "API routing & middleware." },
+  {
+    step: 4,
+    name: "Tailwind CSS",
+    img: tailwind,
+    sum: "Utility-first styling at scale.",
+  },
+  {
+    step: 5,
+    name: "React",
+    img: reactImg,
+    sum: "Components, hooks, state & effects.",
+  },
+  {
+    step: 6,
+    name: "Redux",
+    img: redux,
+    sum: "Global state & predictable flows.",
+  },
+  {
+    step: 7,
+    name: "Node.js",
+    img: node,
+    sum: "Runtime, modules, async patterns.",
+  },
+  {
+    step: 8,
+    name: "Express.js",
+    img: express,
+    sum: "API routing & middleware.",
+  },
   { step: 9, name: "MongoDB", img: mongodb, sum: "NoSQL modeling & queries." },
   { step: 10, name: "Mongoose", img: mongoose, sum: "Schemas & validation." },
-  { step: 11, name: "Firebase", img: firebase, sum: "Auth, hosting & quick backend." },
-  { step: 12, name: "Next.js", img: nextjs, sum: "SSR/SSG, routing & performance." },
+  {
+    step: 11,
+    name: "Firebase",
+    img: firebase,
+    sum: "Auth, hosting & quick backend.",
+  },
+  {
+    step: 12,
+    name: "Next.js",
+    img: nextjs,
+    sum: "SSR/SSG, routing & performance.",
+  },
 ];
 
 // simple in-view hook (no extra libs)
@@ -53,7 +98,7 @@ export default function SkillsRoadmap() {
   return (
     <section>
       <Title
-        title="My Skills Roadmap"
+        title="My Skills"
         des="A clean, step-by-step path from fundamentals to full-stack. Hover any step to preview."
       />
 
@@ -93,7 +138,9 @@ function TimelineItem({ item, index }) {
   return (
     <li
       ref={ref}
-      className={`relative flex ${alignRight ? "justify-start" : "justify-end"}`}
+      className={`relative flex ${
+        alignRight ? "justify-start" : "justify-end"
+      }`}
     >
       {/* connector dot on the spine */}
       <span
@@ -205,5 +252,3 @@ function getTags(name) {
       return [];
   }
 }
-
-

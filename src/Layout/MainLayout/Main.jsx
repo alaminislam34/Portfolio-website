@@ -81,7 +81,7 @@ const Main = () => {
             <Link to="home" smooth={true} duration={500}>
               <ArrowUp
                 size={40}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 text-white  bg-gradient-to-br from-fuchsia-900/70 to-fuchsia-500/40 backdrop-blur-lg rounded-full"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 text-white  bg-gradient-to-br from-fuchsia-900/10 to-fuchsia-500/10 backdrop-blur-lg border border-white/20 rounded-full"
               />
             </Link>
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/50 filter blur-[5px] h-2 rounded-[50%] w-[90%]"></div>
