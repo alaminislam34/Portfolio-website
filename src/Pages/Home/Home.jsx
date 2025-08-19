@@ -4,12 +4,10 @@ import Contact from "../Contact/Contact";
 import Projects from "../Projects/Projects";
 import Testimonials from "../Testimonials/Testimonials";
 import Banner from "./Banner/Banner";
-import useMouseCursor from "../../Components/useMouseCursor";
 import NeonCursor from "../../Components/useMouseCursor";
 import SkillsRoadmap from "../Skills/Skill";
 
 const Home = () => {
-  const { mouse, ref } = useMouseCursor();
   return (
     <main className="space-y-9 md:space-y-12">
       <section id="home" data-section="home">

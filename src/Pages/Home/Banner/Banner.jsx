@@ -1,6 +1,5 @@
 import { LuLinkedin, LuFacebook, LuGithub } from "react-icons/lu";
 import image from "../../../assets/Image/MD-Alamin.jpg";
-import bg from "../../../assets/Image/Wave Loop.json";
 import { Link } from "react-scroll";
 import { useEffect } from "react";
 import Aos from "aos";
