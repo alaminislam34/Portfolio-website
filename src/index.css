@@ -5,11 +5,12 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-.conthrax,
-button,
-a {
+.conthrax {
   font-family: "conthrax", sans-serif;
   color: white;
+}
+button{
+  font-family: 'Poppins', sans-serif;
 }
 body {
   font-family: "Manrope", sans-serif;

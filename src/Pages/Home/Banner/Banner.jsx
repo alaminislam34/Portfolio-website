@@ -118,7 +118,7 @@ const Banner = () => {
           className="flex justify-center items-center h-full w-full relative my-10 lg:col-span-3"
         >
           <div className="w-full max-h-[700px] h-full flex justify-center items-center px-4 relative">
-            <div className="relative w-4/6 h-3/4 aspect-square flex items-center justify-center rounded-3xl shadow-2xl shadow-white/10">
+            <div className="relative w-6/9 h-5/6 aspect-square flex items-center justify-center rounded-3xl shadow-2xl shadow-white/10">
               <div className="relative w-full h-full flex items-center justify-center p-4 border-2 border-purple-100/10 rounded-3xl">
                 {/* Rotating Ring Around Image */}
                 <motion.div

@@ -13,7 +13,7 @@ const Contact = () => {
         data-aos-anchor-placement="top-bottom"
         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-purple-400/10 rounded-xl shadow-2xl relative overflow-hidden py-6 px-4 border border-white/10"
       >
-        <div className="absolute top-0 left-0 w-full object-cover -z-10 opacity-10">
+        <div className="absolute top-0 left-0 w-full object-cover bg-bottom -z-10 opacity-10">
           <Lottie
             options={{ animationData: loop, autoplay: true, loop: true }}
           />
