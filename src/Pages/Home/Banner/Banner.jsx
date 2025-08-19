@@ -52,10 +52,11 @@ const Banner = () => {
               <p
                 data-aos="fade-up"
                 data-aos-delay="400"
-                className="leading-relaxed max-w-md text-sm"
+                className="leading-relaxed max-w-lg"
               >
-                A Full Stack Web Developer Passionate About Building
-                Professional and Interactive Websites.
+                Full Stack Web Developer passionate about building interactive,
+                responsive, and high-quality websites with clean and efficient
+                code.
               </p>
             </div>
             {/* Social Icons */}
@@ -71,7 +72,7 @@ const Banner = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-full h-full text-white inline-block rounded-full border border-white/50 relative group will-change-transform transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden"
+                    className="w-full h-full text-white inline-block rounded-full border border-white/50 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:bg-gradient-to-tr from-purple-400 to-purple-600 hover:shadow-[2px_2px_6px_#623ac0]"
                   >
                     <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur">
                       {icon}
@@ -225,8 +226,8 @@ const Banner = () => {
 };
 
 export default Banner;
-      // <div className="absolute top-0 left-0 w-full">
-      //   <Lottie
-      //     options={{ animationData: bg, autoplay: true, loop: true }}
-      //   ></Lottie>
-      // </div>
+// <div className="absolute top-0 left-0 w-full">
+//   <Lottie
+//     options={{ animationData: bg, autoplay: true, loop: true }}
+//   ></Lottie>
+// </div>

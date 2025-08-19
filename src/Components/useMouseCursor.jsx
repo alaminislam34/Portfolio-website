@@ -69,7 +69,7 @@ const NeonCursor = () => {
   return (
     <div className="neon-cursor-container">
       <motion.div
-        className="cursor-main"
+        className="cursor-main opacity-0"
         animate={{
           x: position.x - 10,
           y: position.y - 10,
@@ -94,21 +94,6 @@ const NeonCursor = () => {
           damping: 30,
           stiffness: 200,
           mass: 0.8,
-        }}
-        initial={false}
-      />
-
-      <motion.div
-        className="cursor-glow"
-        animate={{
-          x: position.x - 30,
-          y: position.y - 30,
-        }}
-        transition={{
-          type: 'spring',
-          damping: 40,
-          stiffness: 150,
-          mass: 1,
         }}
         initial={false}
       />

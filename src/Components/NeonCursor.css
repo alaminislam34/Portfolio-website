@@ -15,16 +15,16 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #cdaff0; /* main cursor color */
-  opacity: 10;
+  background: #c18bff; /* main cursor color */
+  opacity: 2;
   pointer-events: none;
   box-shadow: 0 0 8px #8e42e6, 0 0 16px #7145a3, 0 0 24px #9456db;
 }
 
 .cursor-trail {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 2px solid #760feb;
   pointer-events: none;
