@@ -1,5 +1,7 @@
 import { IoCaretBackOutline } from "react-icons/io5";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import CommonButton from "../../Components/CommonButton";
+import CommonLink from "../../Components/CommonLink";
 
 const ViewDetails = () => {
   const data = useLoaderData();
@@ -18,10 +20,13 @@ const ViewDetails = () => {
   return (
     <div className="my-12">
       <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <button onClick={() => navigate("/")} className="buttonClass group">
+        <div>
+          <CommonButton navigateLink={"/"} btnText={"Back"} />
+        </div>
+        {/* <button onClick={() => navigate("/")} className="buttonClass group">
           <IoCaretBackOutline /> Back
           <span className="buttonAnimationColor"></span>
-        </button>
+        </button> */}
       </div>
       <div
         key={id}
@@ -131,14 +136,16 @@ const ViewDetails = () => {
             data-aos-anchor-placement="top-bottom"
             className="flex justify-between items-center"
           >
-            <a href={github} target="_blank" className="buttonClass group">
+            <CommonLink link={github} btnText={"GitHub Repo"} />
+            <CommonLink link={liveLink} btnText={"Preview Now"} />
+            {/* <a href={github} target="_blank" className="buttonClass group">
               Github Repo
               <span className="buttonAnimationColor"></span>
             </a>
             <a href={liveLink} target="_blank" className="buttonClass group">
               Live Demo
               <span className="buttonAnimationColor"></span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

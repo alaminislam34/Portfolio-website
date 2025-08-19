@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Title from "../../Components/Shared/Title";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Aos from "aos";
+import CommonButton from "../../Components/CommonButton";
+import CommonLink from "../../Components/CommonLink";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
     fetch("projects.json")
       .then((res) => res.json())
@@ -87,7 +89,8 @@ const Projects = () => {
                 data-aos-anchor-placement="top-bottom"
                 className="flex justify-between items-center mt-4 p-4"
               >
-                <a
+                <CommonLink link={project.liveLink} btnText={"Preview Now"} />
+                {/* <a
                   href={project.liveLink}
                   target="_blank"
                   className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
@@ -100,20 +103,18 @@ const Projects = () => {
                     </span>
                     <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
                   </button>
-                </a>
-
-                <button
+                </a> */}
+                <CommonButton navigateLink={`/details/${project.id}`} btnText={'View Details'} />
+                {/* <button
                   onClick={() => navigate(`/details/${project.id}`)}
                   className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
                 >
                   <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
                   <button className="py-2.5 active:scale-95 px-6 lg:px-8 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
-                    <span className="relative z-10 text-xs">
-                      View Details
-                    </span>
+                    <span className="relative z-10 text-xs">View Details</span>
                     <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
                   </button>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
