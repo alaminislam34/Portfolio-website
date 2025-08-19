@@ -9,6 +9,7 @@ import TypingAnimation from "./TypingText";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Lottie from "react-lottie";
+import CommonLink from "../../../Components/CommonLink";
 
 const Banner = () => {
   useEffect(() => {
@@ -101,19 +102,12 @@ const Banner = () => {
                   <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
                 </button>
               </Link>
-              <div className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 flex items-center justify-center">
-                <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
-                <a
-                  href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
-                  target="_blank"
-                  className="py-2.5 px-8 active:scale-95 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
-                >
-                  <span className="relative z-10 text-xs md:text-sm">
-                    Resume
-                  </span>
-                  <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
-                </a>
-              </div>
+              <CommonLink
+                link={
+                  "https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
+                }
+                btnText={"Resume"}
+              />
             </div>
           </div>
         </div>

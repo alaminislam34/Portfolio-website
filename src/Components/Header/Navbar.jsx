@@ -8,6 +8,7 @@ import { GoHome } from "react-icons/go";
 import { IoCodeSlashOutline, IoMailUnreadOutline } from "react-icons/io5";
 import { BsFolder2Open } from "react-icons/bs";
 import { X } from "lucide-react";
+import CommonLink from "../CommonLink";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -69,7 +70,7 @@ const Navbar = () => {
       <div className={`w-full fixed left-0 z-50 duration-700 top-0`}>
         <nav
           data-aos="fade-down"
-          className={`my-2 rounded border backdrop-blur-xl duration-300 max-w-7xl w-11/12 mx-auto border-white/20`}
+          className={`my-2 rounded border backdrop-blur-xl duration-300 max-w-[1400px] w-11/12 mx-auto border-white/20`}
         >
           <div className="flex items-center justify-between py-2 px-4 rounded bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
             {/*  *******************************Gradient Motion Layers Start****************************** */}
@@ -178,17 +179,8 @@ const Navbar = () => {
                   </li>
                 ))}
                 <li className="flex items-center justify-center">
-                  <div className="bg-white/10 border border-white/20 py-1.5 px-1.5 lg:px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 flex items-center justify-center">
-                    <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
-                    <a
-                      href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
-                      target="_blank"
-                      className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 rounded-lg text-sm  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
-                    >
-                      <span className="relative z-10">Resume</span>
-                      <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
-                    </a>
-                  </div>
+                  <CommonLink link={'https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing'} btnText={'Resume'}/>
+                 
                 </li>
               </ul>
             </div>
@@ -234,17 +226,8 @@ const Navbar = () => {
 
             {/* Resume + Toggle */}
             <div className="flex items-center gap-2 lg:gap-4">
-              <div className="bg-white/10 border hidden md:flex border-white/20 py-1.5 px-1.5 lg:px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 items-center justify-center">
-                <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
-                <a
-                  href="https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
-                  target="_blank"
-                  className="py-2 lg:py-2.5 px-4 md:px-6 lg:px-8 active:scale-95 rounded-lg text-sm  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden inline-block"
-                >
-                  <span className="relative z-10">Resume</span>
-                  <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-40 duration-1000 transition-all ease-out z-0"></span>
-                </a>
-              </div>
+             <CommonLink link={'https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing'} btnText={'Resume'}/>
+              
               <div
                 onClick={() => setOpen(true)}
                 className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 lg:hidden flex items-center justify-center"
