@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import Title from "../../Components/Shared/Title";
-// import { useNavigate } from "react-router-dom";
-import Aos from "aos";
 import CommonButton from "../../Components/CommonButton";
 import CommonLink from "../../Components/CommonLink";
 

@@ -20,13 +20,9 @@ const ViewDetails = () => {
   return (
     <div className="my-12">
       <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div>
+        <div className="flex justify-start">
           <CommonButton navigateLink={"/"} btnText={"Back"} />
         </div>
-        {/* <button onClick={() => navigate("/")} className="buttonClass group">
-          <IoCaretBackOutline /> Back
-          <span className="buttonAnimationColor"></span>
-        </button> */}
       </div>
       <div
         key={id}
