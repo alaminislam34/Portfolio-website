@@ -179,8 +179,12 @@ const Navbar = () => {
                   </li>
                 ))}
                 <li className="flex items-center justify-center">
-                  <CommonLink link={'https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing'} btnText={'Resume'}/>
-                 
+                  <CommonLink
+                    link={
+                      "https://drive.google.com/file/d/1vgUAhnPa2z9TrXilEu_PvDLJhv6C6IDn/view?usp=drivesdk"
+                    }
+                    btnText={"Resume"}
+                  />
                 </li>
               </ul>
             </div>
@@ -226,7 +230,14 @@ const Navbar = () => {
 
             {/* Resume + Toggle */}
             <div className="flex items-center gap-2 lg:gap-4">
-              
+              <div className="hidden md:block">
+                <CommonLink
+                  link={
+                    "https://drive.google.com/file/d/1vgUAhnPa2z9TrXilEu_PvDLJhv6C6IDn/view?usp=drivesdk"
+                  }
+                  btnText={"Resume"}
+                />
+              </div>
               <div
                 onClick={() => setOpen(true)}
                 className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10 lg:hidden flex items-center justify-center"

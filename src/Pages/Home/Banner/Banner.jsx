@@ -72,7 +72,7 @@ const Banner = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-full h-full text-white inline-block rounded-full border border-white/50 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:bg-gradient-to-tr from-purple-400 to-purple-600 hover:shadow-[2px_2px_6px_#623ac0]"
+                    className="w-full h-full text-white inline-block rounded-full border border-white/20 shadow hover:scale-105 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:bg-gradient-to-tr from-purple-400 to-purple-600 hover:shadow-[2px_2px_6px_#623ac0]"
                   >
                     <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur">
                       {icon}
@@ -104,7 +104,7 @@ const Banner = () => {
               </Link>
               <CommonLink
                 link={
-                  "https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing"
+                  "https://drive.google.com/file/d/1vgUAhnPa2z9TrXilEu_PvDLJhv6C6IDn/view?usp=drivesdk"
                 }
                 btnText={"Resume"}
               />
