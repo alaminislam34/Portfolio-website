@@ -226,7 +226,6 @@ const Navbar = () => {
 
             {/* Resume + Toggle */}
             <div className="flex items-center gap-2 lg:gap-4">
-             <CommonLink link={'https://drive.google.com/file/d/1qRSADF-JFIjXiVWGD7wmunUomS4LjAcO/view?usp=sharing'} btnText={'Resume'}/>
               
               <div
                 onClick={() => setOpen(true)}

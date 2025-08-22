@@ -20,7 +20,7 @@ const Projects = () => {
           "Showcases my web development skills, including HTML, CSS, JavaScript, and React-based projects."
         }
       />
-      <div className="grid grid-cols-3  gap-6 lg:gap-8 my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-12">
         {projects?.map((project, i) => (
           <div
             data-aos="fade-up"
@@ -102,7 +102,10 @@ const Projects = () => {
                     <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
                   </button>
                 </a> */}
-                <CommonButton navigateLink={`/details/${project.id}`} btnText={'View Details'} />
+                <CommonButton
+                  navigateLink={`/details/${project.id}`}
+                  btnText={"View Details"}
+                />
                 {/* <button
                   onClick={() => navigate(`/details/${project.id}`)}
                   className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
