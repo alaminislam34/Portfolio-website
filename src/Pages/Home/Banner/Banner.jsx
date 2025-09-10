@@ -7,8 +7,7 @@ import "aos/dist/aos.css";
 import TypingAnimation from "./TypingText";
 
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
-import Lottie from "react-lottie";
+import { motion } from "motion/react";
 import CommonLink from "../../../Components/CommonLink";
 
 const Banner = () => {

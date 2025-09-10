@@ -98,7 +98,7 @@ const Form = () => {
             }`}
           >
             <div className="absolute top-0 -right-48 w-1/4 h-full bg-white/20 blur-sm group-hover:right-64 duration-700"></div>
-            <button className="py-2.5 px-8 active:scale-95 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+            <div className="py-2.5 px-8 active:scale-95 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
               <span className="relative z-10">
                 {loading ? (
                   <div className="flex items-center justify-center flex-row gap-2">
@@ -110,7 +110,7 @@ const Form = () => {
                 )}
               </span>
               <span className="absolute top-0 w-1/4 h-full -left-44 bg-white/20 blur-sm group-hover:left-60 duration-1000 transition-all ease-out z-0"></span>
-            </button>
+            </div>
           </button>
         </div>
       </form>
