@@ -103,7 +103,7 @@ const About = () => {
             data-aos="fade-up"
             data-aos-delay="1000"
             data-aos-anchor-placement="top-bottom"
-            className="flex flex-row gap-2 lg:gap-4"
+            className="flex flex-col sm:flex-row gap-2 lg:gap-4"
           >
             <Link
               to="contact"
@@ -112,7 +112,7 @@ const About = () => {
               className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
             >
               <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
-              <button className="py-2.5 px-8 active:scale-95 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+              <button className="py-2.5 px-8 active:scale-95 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden w-full">
                 <span className="relative z-10">Hire Me</span>
                 <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
               </button>
@@ -124,7 +124,7 @@ const About = () => {
               className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
             >
               <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
-              <button className="py-2.5 px-8 active:scale-95 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+              <button className="py-2.5 px-8 active:scale-95 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden w-full">
                 <span className="relative z-10">Contact Now</span>
                 <span className="absolute top-0 w-1/4 h-full -left-24 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
               </button>
