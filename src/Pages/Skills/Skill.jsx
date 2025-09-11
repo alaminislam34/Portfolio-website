@@ -18,18 +18,78 @@ import nextjs from "../../assets/logo/nextjs.jpg";
 
 // ==== DATA ====
 const ALL_SKILLS = [
-  { name: "HTML", img: html, sum: "Semantic structure & accessible markup for web content.", level: "Advanced" },
-  { name: "CSS", img: css, sum: "Styling with modern techniques like Flexbox & Grid for responsive designs.", level: "Advanced" },
-  { name: "JavaScript", img: js, sum: "Core language fundamentals, ES6+, and DOM manipulation.", level: "Advanced" },
-  { name: "Tailwind CSS", img: tailwind, sum: "Utility-first CSS framework for rapid UI development.", level: "Advanced" },
-  { name: "React", img: reactImg, sum: "Building interactive UIs with components, hooks, and state management.", level: "Advanced" },
-  { name: "Redux", img: redux, sum: "Predictable state container for JavaScript apps, often with Redux Toolkit.", level: "Intermediate" },
-  { name: "Node.js", img: node, sum: "JavaScript runtime for building scalable server-side applications.", level: "Intermediate" },
-  { name: "Express.js", img: express, sum: "Minimalist web framework for Node.js to build robust APIs.", level: "Intermediate" },
-  { name: "MongoDB", img: mongodb, sum: "NoSQL database for flexible, document-based data storage.", level: "Intermediate" },
-  { name: "Mongoose", img: mongoose, sum: "MongoDB object data modeling (ODM) for Node.js.", level: "Intermediate" },
-  { name: "Firebase", img: firebase, sum: "Google's mobile and web application development platform.", level: "Intermediate" },
-  { name: "Next.js", img: nextjs, sum: "React framework for production-grade applications with SSR/SSG.", level: "Intermediate" },
+  {
+    name: "HTML",
+    img: html,
+    sum: "Semantic structure & accessible markup for web content.",
+    level: "Advanced",
+  },
+  {
+    name: "CSS",
+    img: css,
+    sum: "Styling with modern techniques like Flexbox & Grid for responsive designs.",
+    level: "Advanced",
+  },
+  {
+    name: "JavaScript",
+    img: js,
+    sum: "Core language fundamentals, ES6+, and DOM manipulation.",
+    level: "Advanced",
+  },
+  {
+    name: "Tailwind CSS",
+    img: tailwind,
+    sum: "Utility-first CSS framework for rapid UI development.",
+    level: "Advanced",
+  },
+  {
+    name: "React",
+    img: reactImg,
+    sum: "Building interactive UIs with components, hooks, and state management.",
+    level: "Advanced",
+  },
+  {
+    name: "Redux",
+    img: redux,
+    sum: "Predictable state container for JavaScript apps, often with Redux Toolkit.",
+    level: "Intermediate",
+  },
+  {
+    name: "Node.js",
+    img: node,
+    sum: "JavaScript runtime for building scalable server-side applications.",
+    level: "Intermediate",
+  },
+  {
+    name: "Express.js",
+    img: express,
+    sum: "Minimalist web framework for Node.js to build robust APIs.",
+    level: "Intermediate",
+  },
+  {
+    name: "MongoDB",
+    img: mongodb,
+    sum: "NoSQL database for flexible, document-based data storage.",
+    level: "Intermediate",
+  },
+  {
+    name: "Mongoose",
+    img: mongoose,
+    sum: "MongoDB object data modeling (ODM) for Node.js.",
+    level: "Intermediate",
+  },
+  {
+    name: "Firebase",
+    img: firebase,
+    sum: "Google's mobile and web application development platform.",
+    level: "Intermediate",
+  },
+  {
+    name: "Next.js",
+    img: nextjs,
+    sum: "React framework for production-grade applications with SSR/SSG.",
+    level: "Intermediate",
+  },
 ];
 
 export default function OrbitalSkillsSection() {
@@ -45,8 +105,10 @@ export default function OrbitalSkillsSection() {
     let newAngle;
 
     // Determine the next skill based on the current active skill's index
-    const currentIndex = ALL_SKILLS.findIndex(skill => skill.name === activeSkill.name);
-    
+    const currentIndex = ALL_SKILLS.findIndex(
+      (skill) => skill.name === activeSkill.name
+    );
+
     if (direction === "left") {
       newIndex = (currentIndex - 1 + numSkills) % numSkills;
     } else {
@@ -55,13 +117,13 @@ export default function OrbitalSkillsSection() {
 
     // Update state to the new skill and calculate the new rotation angle
     setActiveSkill(ALL_SKILLS[newIndex]);
-    
+
     // Smoothly transition the angle to place the new active skill at the top center
     // This is more complex than a simple +/- and ensures a clean, predictable rotation
     const targetAngle = -newIndex * angleIncrement + 90;
     setRotationAngle(targetAngle);
   };
-  
+
   // To handle hover for individual skill display without affecting the main rotation
   const handleSkillHover = (skill) => {
     setActiveSkill(skill);
@@ -118,7 +180,9 @@ export default function OrbitalSkillsSection() {
               >
                 <div
                   className={`group relative flex size-16 cursor-pointer items-center justify-center rounded-full border-2 border-transparent bg-gray-800 p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-purple-500/50 hover:bg-purple-900/30 ${
-                    activeSkill.name === skill.name ? "border-purple-500/50 ring-2 ring-purple-500 bg-purple-900/30 shadow-purple-500/40" : ""
+                    activeSkill.name === skill.name
+                      ? "border-purple-500/50 ring-2 ring-purple-500 bg-purple-900/30 shadow-purple-500/40"
+                      : ""
                   }`}
                 >
                   <img
