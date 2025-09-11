@@ -1,12 +1,6 @@
-import { IoCaretBackOutline } from "react-icons/io5";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import CommonButton from "../../Components/CommonButton";
 import CommonLink from "../../Components/CommonLink";
 
-const ViewDetails = () => {
-  const data = useLoaderData();
-  const navigate = useNavigate();
-  const {
+const ViewDetails = ({
     id,
     image,
     name,
@@ -16,19 +10,14 @@ const ViewDetails = () => {
     github,
     challenges,
     improvements,
-  } = data;
+  }) => {
   return (
     <div className="my-12">
-      <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div className="flex justify-start">
-          <CommonButton navigateLink={"/"} btnText={"Back"} />
-        </div>
-      </div>
       <div
         key={id}
-        className="p-6 rounded-lg shadow-2xl bg-purple-800/5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-12"
+        className="p-4 rounded-lg shadow-2xl bg-purple-800/5 grid grid-cols-1 gap-6 lg:gap-12"
       >
-        <div className="space-y-4 md:col-span-2 lg:col-span-3">
+        <div className="space-y-4">
           <div>
             <h1
               data-aos="fade-up"
@@ -48,7 +37,7 @@ const ViewDetails = () => {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-2 space-y-6 p-2 lg:p-4">
+        <div className="space-y-6 p-2 lg:p-4">
           <div className="space-y-2">
             <p
               data-aos="fade-up"
@@ -134,14 +123,7 @@ const ViewDetails = () => {
           >
             <CommonLink link={github} btnText={"GitHub Repo"} />
             <CommonLink link={liveLink} btnText={"Preview Now"} />
-            {/* <a href={github} target="_blank" className="buttonClass group">
-              Github Repo
-              <span className="buttonAnimationColor"></span>
-            </a>
-            <a href={liveLink} target="_blank" className="buttonClass group">
-              Live Demo
-              <span className="buttonAnimationColor"></span>
-            </a> */}
+            
           </div>
         </div>
       </div>
