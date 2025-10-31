@@ -7,7 +7,7 @@ import { Link } from "react-scroll";
 import { useEffect, useState } from "react";
 import AnimatedBackground from "../../Components/AnimatedBackground";
 import { ArrowUp } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import GradientBackground from "../../Components/MatrixRain/Matrix";
 import WelcomePage from "../../Pages/WelcomePage/WelcomePage";
 

@@ -1,11 +1,11 @@
 import { ToastContainer } from "react-toastify";
 import About from "../AboutMe/About";
 import Contact from "../Contact/Contact";
-import Projects from "../Projects/Projects";
 import Testimonials from "../Testimonials/Testimonials";
 import Banner from "./Banner/Banner";
 import NeonCursor from "../../Components/useMouseCursor";
-import SkillsRoadmap from "../Skills/Skill";
+import OrbitalSkillsSection from "../Skills/Skill";
+import Projects from '../Projects/Projects'
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
         <About />
       </section>
       <section id="skills" data-section="skills">
-        <SkillsRoadmap />
+        <OrbitalSkillsSection/>
       </section>
       <section id="projects" data-section="projects">
         <Projects />
