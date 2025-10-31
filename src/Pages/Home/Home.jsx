@@ -5,7 +5,7 @@ import Testimonials from "../Testimonials/Testimonials";
 import Banner from "./Banner/Banner";
 import NeonCursor from "../../Components/useMouseCursor";
 import OrbitalSkillsSection from "../Skills/Skill";
-import Projects from '../Projects/Projects'
+import Projects from "../Projects/Projects";
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
         <About />
       </section>
       <section id="skills" data-section="skills">
-        <OrbitalSkillsSection/>
+        <OrbitalSkillsSection />
       </section>
       <section id="projects" data-section="projects">
         <Projects />
@@ -29,7 +29,6 @@ const Home = () => {
         <Contact />
       </section>
       <ToastContainer autoClose={2000} position="bottom-center" />
-      <NeonCursor />
     </main>
   );
 };

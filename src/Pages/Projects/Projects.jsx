@@ -24,57 +24,46 @@ const Projects = () => {
         }
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 my-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {projects?.map((project, i) => (
           <div
             data-aos="fade-up"
             data-aos-delay={i * 100}
             key={project.id}
-            className="rounded backdrop-blur-xl shadow-xl shadow-purple-400/10 transition-all grid grid-cols-1 duration-300 hover:shadow-xl overflow-hidden border border-white/10"
+            // Simplified Card Style: Clean dark background, subtle border, and a professional hover lift.
+            className="rounded-xl overflow-hidden bg-gray-900 border border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-900/50 hover:-translate-y-1"
           >
-            {/* Image */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay={i * 100}
-              className="overflow-hidden group"
-            >
+            {/* Image - Clean overflow and professional scale on hover */}
+            <div className="overflow-hidden">
               <img
                 src={project.image}
-                loading="lazy"
                 alt={project.name}
-                className="aspect-video w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                width="800"
+                height="450"
+                className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
 
             {/* Content */}
-            <div className="flex justify-between flex-col">
-              <div className="space-y-4 px-4">
-                <h1
-                  data-aos="fade-up"
-                  data-aos-delay={i * 100}
-                  className="text-lg md:text-xl font-bold py-4 text-transparent bg-clip-text bg-gradient-to-t from-purple-500 to-purple-700 conthrax"
-                >
+            <div className="flex flex-col justify-between h-full p-6">
+              <div className="space-y-4">
+                {/* Project Name - Using the gradient for the main title for emphasis */}
+                <h1 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8827f7] via-[#9e02bd] to-[#9e02bd] tracking-tight">
                   {project.name}
                 </h1>
 
                 {/* Stack */}
-                <div className="space-y-6">
-                  <h3
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                    className="text-sm lg:text-base font-medium text-purple-400/80"
-                  >
-                    Used Technologies:
+                <div className="space-y-3">
+                  <h3 className="text-sm font-semibold text-gray-400">
+                    Technologies:
                   </h3>
-                  <div
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                    className="flex flex-wrap gap-2"
-                  >
+                  <div className="flex flex-wrap gap-2">
                     {project.stack.map((t, idx) => (
                       <p
                         key={idx}
-                        className="px-2 py-2 rounded-lg border border-gray-300/10 text-xs text-white/70 bg-fuchsia-800/5 backdrop-blur-sm"
+                        // Clean, subtle pill badge
+                        className="px-3 py-1 rounded-full text-xs font-medium text-purple-200 bg-purple-900/30 border border-purple-900"
                       >
                         {t}
                       </p>
@@ -83,26 +72,27 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Buttons */}
-              <div
-                data-aos="fade-up"
-                data-aos-delay={i * 100}
-                className="flex justify-between items-center mt-4 p-4"
-              >
-                <CommonLink link={project.liveLink} btnText={"Preview Now"} />
+              {/* Buttons - Separated for better visual flow */}
+              <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-800/50">
+                {/* Left Button (Live Link) - Keep it clean and secondary */}
+                {/* Assuming CommonLink handles its own styling, otherwise you'd update it here */}
+                <CommonLink
+                  link={project.liveLink}
+                  btnText={"Preview Now"}
+                  className="text-sm text-gray-400 hover:text-purple-400"
+                />
+
+                {/* Right Button (View Details) - The primary CTA, using a solid gradient for strong focus */}
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
+                  // Professional Gradient Button with a clean hover state
+                  className="relative overflow-hidden group rounded-lg text-white font-medium transition-all duration-300 transform active:scale-95"
                 >
-                  <div>
-                    <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-[120%] duration-700"></div>
-                    <div className="py-2.5 active:scale-95 px-6 lg:px-8 rounded-lg  bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
-                      <span className="relative z-10 text-xs flex flex-row gap-2 items-center justify-center">
-                        View Details
-                        <ArrowUpRight className="group-hover:scale-110 duration-500" />
-                      </span>
-                      <span className="absolute top-0 w-1/4 h-full -left-1/2 bg-white/20 blur-sm group-hover:left-[120%] duration-1000 transition-all ease-out z-0"></span>
-                    </div>
+                  <div className="py-2 px-4 rounded-lg bg-gradient-to-r from-[#8827f7] via-[#9e02bd] to-[#9e02bd]">
+                    <span className="relative z-10 text-sm flex items-center justify-center gap-1">
+                      View Details
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
                   </div>
                 </button>
               </div>
@@ -111,6 +101,7 @@ const Projects = () => {
         ))}
       </div>
 
+      
       {/* Modal */}
       {selectedProject && (
         <div className="fixed top-0 left-0 h-screen w-screen bg-black/40 backdrop-blur-xl flex items-center justify-center z-50">
@@ -119,7 +110,7 @@ const Projects = () => {
               onClick={() => setSelectedProject(null)}
               className="absolute top-1 right-1 z-20 px-2 py-2 bg-red-200 border border-red-300 text-red-600 rounded-xl"
             >
-              <XCircle/>
+              <XCircle />
             </button>
             <div className="rounded-xl w-full max-w-5xl max-h-[90vh] overflow-y-auto">
               <ViewDetails

@@ -94,7 +94,7 @@ const Banner = () => {
                 className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
               >
                 <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
-                <button className="py-2.5 px-8 active:scale-95 rounded-lg bg-gradient-to-r from-[#3c1c9c] via-[#623ac0] to-[#b091f8] text-white relative group overflow-hidden">
+                <button className="py-2.5 px-8 active:scale-95 rounded-lg bg-gradient-to-tr from-[#6b14ce] via-[#8827f7] to-[#9e02bd] text-white relative group overflow-hidden">
                   <span className="relative z-10 text-xs md:text-sm ">
                     Projects
                   </span>
