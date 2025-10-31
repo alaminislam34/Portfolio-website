@@ -3,7 +3,7 @@ import { RiMenu2Fill } from "react-icons/ri";
 import { GrClose, GrContactInfo } from "react-icons/gr";
 import { Link } from "react-scroll";
 import "aos/dist/aos.css";
-import logo from "../../assets/logo/AA.jpg";
+import logo from "../../assets/logo/logo2.png";
 import { GoHome } from "react-icons/go";
 import { IoCodeSlashOutline, IoMailUnreadOutline } from "react-icons/io5";
 import { BsFolder2Open } from "react-icons/bs";
@@ -196,7 +196,7 @@ const Navbar = () => {
                   loading="lazy"
                   src={logo}
                   alt="logo"
-                  className="h-12 md:h-14 "
+                  className="h-8 md:h-10"
                 />
               </Link>
             </div>

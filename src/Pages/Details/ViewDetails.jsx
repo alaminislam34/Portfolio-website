@@ -1,11 +1,9 @@
-import { IoCaretBackOutline } from "react-icons/io5";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import CommonButton from "../../Components/CommonButton";
 import CommonLink from "../../Components/CommonLink";
 
 const ViewDetails = () => {
   const data = useLoaderData();
-  const navigate = useNavigate();
   const {
     id,
     image,
