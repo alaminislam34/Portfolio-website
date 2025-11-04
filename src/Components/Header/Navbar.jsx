@@ -207,7 +207,11 @@ const Navbar = () => {
                 {links.map(({ name, path }) => (
                   <li
                     key={path}
-                    className="relative py-3 px-4  group overflow-hidden conthrax"
+                    className={`${
+                      activeSection === path
+                        ? "bg-gradient-to-r from-[#294deb] via-[#8251f3] to-[#d33ae7]"
+                        : ""
+                    } relative transition-colors duration-500 ease-in-out py-2 px-4 rounded-xl group overflow-hidden conthrax`}
                   >
                     <Link
                       to={path}
@@ -216,7 +220,7 @@ const Navbar = () => {
                       className={` 
                         ${
                           activeSection === path
-                            ? "bg-gradient-to-r from-[#a48af0] via-[#b297f1] to-[#c4b0f3] bg-clip-text text-transparent shadow-md"
+                            ? "bg-gradient-to-r from-[#ece9f7] via-[#e8e2f5] to-[#e9dfff] bg-clip-text text-transparent shadow-md"
                             : "text-white"
                         }`}
                     >
