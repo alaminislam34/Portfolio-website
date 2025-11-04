@@ -35,7 +35,7 @@ const Banner = () => {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 lg:grid-cols-7 items-center min-h-[600px] mt-8 sm:mt-0 md:mt-6 text-white relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-7 items-center min-h-[600px] mt-8 md:mt-12 lg:mt-16 text-white relative overflow-hidden">
         <div className="flex justify-start items-center relative z-10 lg:col-span-4">
           <div className="space-y-4 md:space-y-6 ">
             <div className="text-left space-y-6 md:space-y-6 ">
@@ -65,7 +65,7 @@ const Banner = () => {
               className="flex flex-row gap-6 items-center"
             >
               {socialLinks.map(({ link, icon, label }, i) => (
-                <li key={i} className=" w-10 h-10">
+                <li key={i} className="w-10 h-10">
                   <a
                     href={link}
                     target="_blank"
