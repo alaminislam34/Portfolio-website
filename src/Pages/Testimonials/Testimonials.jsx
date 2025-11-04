@@ -134,7 +134,7 @@ const Testimonials = () => {
           <Slider {...sliderSettings}>
             {feedbacks.slice(0, 6).map((item, index) => (
               <div
-               data-aos="fade-up"
+                data-aos="fade-up"
                 key={index}
                 className="relative h-[254px] transition duration-200 select-none group"
               >
@@ -151,7 +151,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Card */}
-                <div className="absolute mx-6 inset-0 z-0 flex justify-center items-center rounded-[20px] transition duration-[700ms] border-2 border-white/10 overflow-hidden bg-gradient-to-br from-[#280550]/5 to-[#280550]/10 shadow-[0_0_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-xs">
+                <div className="absolute mx-6 inset-0 z-0 flex justify-center items-center rounded-[20px] transition duration-[700ms] border-2 border-[#3b2141] overflow-hidden bg-gradient-to-br from-[#280550]/5 to-[#280550]/10 shadow-[0_0_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-xs">
                   <div className="relative w-full h-full">
                     {/* Glare */}
                     <div className="card-glare absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[linear-gradient(125deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.05)_45%,rgba(255,255,255,0.1)_50%,rgba(255,255,255,0.05)_55%,rgba(255,255,255,0)_100%)]"></div>
@@ -183,9 +183,9 @@ const Testimonials = () => {
 
                     {/* Glowing Elements */}
                     <div className="absolute inset-0 pointer-events-none">
-                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.3)_0%,rgba(0,255,170,0)_70%)] blur-[15px] rounded-full top-[-20px] left-[-20px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.3)_0%,rgba(0,255,170,0)_70%)] blur-[15px] rounded-full top-1/2 right-[-30px] -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.3)_0%,rgba(0,255,170,0)_70%)] blur-[15px] rounded-full bottom-[-20px] left-[30%] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.1)_0%,rgba(0,255,170,0)_50%)] blur-[20px] rounded-full top-[-20px] left-[-20px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.1)_0%,rgba(0,255,170,0)_50%)] blur-[20px] rounded-full top-1/2 right-[-30px] -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <div className="absolute w-[100px] h-[100px] bg-[radial-gradient(circle,rgba(0,255,170,0.1)_0%,rgba(0,255,170,0)_50%)] blur-[20px] rounded-full bottom-[-20px] left-[30%] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
 
                     {/* Particles */}
@@ -200,10 +200,10 @@ const Testimonials = () => {
 
                     {/* Corner Elements */}
                     <div className="absolute inset-0">
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] top-[10px] left-[10px] border-r-0 border-b-0 transition-all"></span>
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] top-[10px] right-[10px] border-l-0 border-b-0 transition-all"></span>
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] bottom-[10px] left-[10px] border-r-0 border-t-0 transition-all"></span>
-                      <span className="absolute w-[15px] h-[15px] border-2 border-[#8d5cff4d] bottom-[10px] right-[10px] border-l-0 border-t-0 transition-all"></span>
+                      <span className="absolute w-[15px] group-hover:w-[25px] h-[15px] group-hover:h-[25px] border-2 border-[#9e02bd] top-[30px] group-hover:top-[20px] left-[30px] group-hover:left-[20px] border-r-0 border-b-0 transition-all"></span>
+                      <span className="absolute w-[15px] group-hover:w-[25px] h-[15px] group-hover:h-[25px] border-2 border-[#9e02bd] top-[30px] group-hover:top-[20px] right-[30px] group-hover:right-[20px] border-l-0 border-b-0 transition-all"></span>
+                      <span className="absolute w-[15px] group-hover:w-[25px] h-[15px] group-hover:h-[25px] border-2 border-[#9e02bd] bottom-[30px] group-hover:bottom-[20px] left-[30px] group-hover:left-[20px] border-r-0 border-t-0 transition-all"></span>
+                      <span className="absolute w-[15px] group-hover:w-[25px] h-[15px] group-hover:h-[25px] border-2 border-[#9e02bd] bottom-[30px] group-hover:bottom-[20px] right-[30px] group-hover:right-[20px] border-l-0 border-t-0 transition-all"></span>
                     </div>
 
                     {/* Scan Line */}
