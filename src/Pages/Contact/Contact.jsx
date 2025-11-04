@@ -86,10 +86,10 @@ export default function ContactSection() {
       {/* Background radial glow */}
       <div className="absolute inset-0 z-0 bg-radial-gradient from-[#2a0c4f] via-transparent to-transparent opacity-50"></div>
 
-      <div className="relative z-10 px-4 my-6 md:my-12">
+      <div className="relative z-10 my-6 md:my-12">
         <Title title="Contact Me" des="Feel free to reach out for any inquiries or feedback." />
 
-        <div className="relative z-10 mx-auto max-w-[1440px] rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md md:p-12 lg:p-16">
+        <div className="relative z-10 mx-auto max-w-[1440px] rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-md md:p-12 lg:p-16">
           <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-purple-500/10" />
           
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
@@ -100,7 +100,7 @@ export default function ContactSection() {
                 I'm currently open to new opportunities. Whether you have a question or just want to say hi, my inbox is always open.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-4 text-sm md:text-base">
                 <ContactCard
                   icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>}
                   text="alaminislam43.bd@email.com"

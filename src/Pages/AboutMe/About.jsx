@@ -6,8 +6,9 @@ import Lottie from "react-lottie";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { DiMongodb } from "react-icons/di";
 // eslint-disable-next-line no-unused-vars
-import { motion } from "motion/react";
+import { motion, scale } from "motion/react";
 import { Link } from "react-scroll";
+import SparkleBadge from "./SparkleBadge";
 
 const About = () => {
   const skills = [
@@ -36,10 +37,18 @@ const About = () => {
   ];
   return (
     <div>
-      <Title
-        title={"About Me"}
-        des={"✨ Building Scalable & Interactive Web Solutions ✨"}
-      />
+      <div className="text-center space-y-4">
+        <h1
+          data-aos="fade-up"
+          className="text-3xl conthrax md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500 py-4 inline-block"
+        >
+          About
+          <SparkleBadge/>
+        </h1>
+        <p data-aos="fade-up" className="max-w-lg w-full mx-auto text-white">
+          Building Scalable & Interactive Web Solutions
+        </p>
+      </div>
       <div className="flex flex-col-reverse md:flex-row justify-center items-center *:flex-1">
         <div data-aos="fade-right" className="flex flex-col space-y-6">
           <div>
