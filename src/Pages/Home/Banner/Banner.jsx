@@ -116,6 +116,29 @@ const Banner = () => {
           data-aos="zoom-in"
           className="flex justify-center items-center h-full w-full relative my-10 lg:col-span-3"
         >
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 3,
+              ease: "easeOut",
+            }}
+            className="px-6 py-3 text-sm leading-normal tracking-widest rounded-lg bg-gradient-to-r from-[#684ff7]/30 via-[#856bf8]/30 to-[#d580f7]/30 absolute -left-2 top-12 z-20"
+          >
+            <span>Clean Code</span>
+          </motion.div>
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 12,
+              ease: "easeInOut",
+            }}
+            className="px-6 py-3 text-sm leading-normal tracking-widest rounded-lg bg-gradient-to-r from-[#b88b50] via-[#94744b] to-[#d1b187] absolute right-8 bottom-1/2 z-20"
+          >
+            <span>Innovation</span>
+          </motion.div>
+
           <div className="w-full max-h-[700px] h-full flex justify-center items-center px-4 relative">
             <div className="relative w-5/6 h-5/6 aspect-square flex items-center justify-center rounded-3xl shadow-2xl shadow-white/10">
               <div className="relative w-full h-full flex items-center justify-center p-4 border-2 border-purple-100/10 rounded-3xl">
@@ -195,7 +218,7 @@ const Banner = () => {
                 {/* Image Container */}
                 <div
                   className="relative w-full h-full overflow-hidden rounded-xl shadow-[inset_0_0_60px_rgba(125,5,255,0.2)] 
-                  bg-gradient-to-r from-purple-700/40 via-purple-600/30 to-purple-400/30 backdrop-blur shadow-black"
+                  bg-gradient-to-r from-purple-700/20 via-purple-600/30 to-purple-400/20 backdrop-blur shadow-black"
                 >
                   <img
                     src={image}
