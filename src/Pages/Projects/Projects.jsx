@@ -4,6 +4,8 @@ import CommonLink from "../../Components/CommonLink";
 import ViewDetails from "../Details/ViewDetails";
 import { ArrowUpRight } from "lucide-react";
 import { XCircle } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+import { ScanEye } from "lucide-react";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -31,7 +33,7 @@ const Projects = () => {
             data-aos-delay={i * 100}
             key={project.id}
             // Simplified Card Style: Clean dark background, subtle border, and a professional hover lift.
-            className="rounded-xl overflow-hidden bg-gray-900 border border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-900/50 hover:-translate-y-1"
+            className="rounded-xl overflow-hidden bg-gray-900 border border-gray-800 duration-500 hover:shadow-2xl hover:shadow-fuchsia-900/50 hover:-translate-y-1"
           >
             {/* Image - Clean overflow and professional scale on hover */}
             <div className="overflow-hidden">
@@ -46,7 +48,7 @@ const Projects = () => {
             </div>
 
             {/* Content */}
-            <div className="flex flex-col justify-between h-full p-6">
+            <div className="flex flex-col justify-between h-full p-6 z-20">
               <div className="space-y-4">
                 {/* Project Name - Using the gradient for the main title for emphasis */}
                 <h1 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8827f7] via-[#9e02bd] to-[#9e02bd] tracking-tight">
@@ -70,38 +72,46 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+                <div className="flex justify-start gap-3 mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                  {/* Live Demo Button (Gradient Primary) */}
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex items-center justify-center py-2 px-6 text-white transition duration-300 rounded-full 
+               bg-gradient-to-r from-[#294deb] via-[#8251f3] to-[#d33ae7] 
+               hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30 active:scale-95 overflow-hidden"
+                  >
+                    {/* Icon with Hover Animation (Slight Jiggle) */}
+                    Preview{" "}
+                    <ScanEye className="transition duration-300 group-hover:rotate-6 group-hover:scale-125 ml-2 " />
+                    {/* Optional: Add a sweeping shine effect (complex but stylish) */}
+                    <span className="absolute top-0 w-1/4 h-full -left-full bg-white/30 blur-sm group-hover:left-[150%] duration-700 transition-all ease-out z-0"></span>
+                  </a>
 
-              {/* Buttons - Separated for better visual flow */}
-              <div className="flex justify-between items-center mt-6 pt-4 border-t border-gray-800/50">
-                {/* Left Button (Live Link) - Keep it clean and secondary */}
-                {/* Assuming CommonLink handles its own styling, otherwise you'd update it here */}
-                <CommonLink
-                  link={project.liveLink}
-                  btnText={"Preview Now"}
-                  className="text-sm text-gray-400 hover:text-purple-400"
-                />
+                  {/* GitHub Button (Secondary) */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex items-center justify-center p-3 transition duration-300 rounded-full 
+               text-gray-700 bg-gray-100 hover:bg-gray-200 
+               dark:text-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600
+               hover:scale-105 hover:shadow-md active:scale-95"
+                  >
+                    {/* Icon with Hover Animation (Pulse/Bounce) */}
+                    <FaGithub className="w-4 h-4 transition duration-300 group-hover:translate-y-[-2px]" />
 
-                {/* Right Button (View Details) - The primary CTA, using a solid gradient for strong focus */}
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  // Professional Gradient Button with a clean hover state
-                  className="relative overflow-hidden group rounded-lg text-white font-medium transition-all duration-300 transform active:scale-95"
-                >
-                  <div className="py-2 px-4 rounded-lg bg-gradient-to-r from-[#8827f7] via-[#9e02bd] to-[#9e02bd]">
-                    <span className="relative z-10 text-sm flex items-center justify-center gap-1">
-                      View Details
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </span>
-                  </div>
-                </button>
+                    {/* Optional: Add a subtle border glow/ring on hover */}
+                    <div className="absolute inset-0 rounded-full ring-2 ring-transparent group-hover:ring-indigo-500 transition duration-300 pointer-events-none"></div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      
       {/* Modal */}
       {selectedProject && (
         <div className="fixed top-0 left-0 h-screen w-screen bg-black/40 backdrop-blur-xl flex items-center justify-center z-50">
