@@ -7,9 +7,9 @@ const TypingAnimation = () => {
       <p className="text-xl md:text-2xl lg:text-4xl font-medium conthrax">
         <Typewriter
           words={[
-            "Junior React Developer",
-            "Front End Specialist",
-            "Mern Stack Developer",
+            "React Specialist",
+            "Next.js Specialist",
+            "Junior Mern Specialist",
           ]}
           loop={0}
           typeSpeed={150}
