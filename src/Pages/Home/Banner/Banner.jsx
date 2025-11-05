@@ -71,7 +71,7 @@ const Banner = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-full h-full text-white inline-block rounded-full border border-white/20 shadow hover:scale-105 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:bg-gradient-to-tr from-purple-400 to-purple-600 hover:shadow-[2px_2px_6px_#623ac0]"
+                    className="w-full h-full text-white inline-block rounded-full border border-white/20 shadow hover:scale-105 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:bg-linear-to-tr from-purple-400 to-purple-600 hover:shadow-[2px_2px_6px_#623ac0]"
                   >
                     <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur">
                       {icon}
@@ -94,7 +94,7 @@ const Banner = () => {
                 className="bg-white/10 border border-white/20 py-1.5 px-2 rounded-md relative group overflow-hidden hover:shadow-md shadow-white/10"
               >
                 <div className="absolute top-0 -right-1/2 w-1/4 h-full bg-white/20 blur-sm group-hover:right-44 duration-700"></div>
-                <button className="py-2.5 px-8 active:scale-95 rounded-lg bg-gradient-to-tr from-[#6b14ce] via-[#8827f7] to-[#9e02bd] text-white relative group overflow-hidden">
+                <button className="py-2.5 px-8 active:scale-95 rounded-lg bg-linear-to-tr from-[#6b14ce] via-[#8827f7] to-[#9e02bd] text-white relative group overflow-hidden">
                   <span className="relative z-10 text-xs md:text-sm ">
                     Projects
                   </span>
@@ -123,7 +123,7 @@ const Banner = () => {
               duration: 3,
               ease: "easeOut",
             }}
-            className="px-6 py-3 text-sm leading-normal tracking-widest rounded-lg bg-gradient-to-r from-[#684ff7]/30 via-[#856bf8]/30 to-[#d580f7]/30 absolute -left-2 top-12 z-20"
+            className="px-6 py-3 text-sm leading-normal tracking-widest rounded-lg bg-linear-to-r from-[#684ff7]/30 via-[#856bf8]/30 to-[#d580f7]/30 absolute -left-2 top-12 z-20"
           >
             <span>Clean Code</span>
           </motion.div>
@@ -134,7 +134,7 @@ const Banner = () => {
               duration: 12,
               ease: "easeInOut",
             }}
-            className="px-6 py-3 text-sm leading-normal tracking-widest rounded-lg bg-gradient-to-r from-[#b88b50] via-[#94744b] to-[#d1b187] absolute right-8 bottom-1/2 z-20"
+            className="px-6 py-3 text-sm leading-normal tracking-widest rounded-lg bg-linear-to-r from-[#b88b50] via-[#94744b] to-[#d1b187] absolute right-8 bottom-1/2 z-20"
           >
             <span>Innovation</span>
           </motion.div>
@@ -151,7 +151,7 @@ const Banner = () => {
                     ease: "linear",
                   }}
                   className="absolute w-[115%] h-[115%] rounded-full 
-               bg-gradient-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
+               bg-linear-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
                blur-md opacity-60"
                   style={{
                     maskImage:
@@ -169,7 +169,7 @@ const Banner = () => {
                     ease: "linear",
                   }}
                   className="absolute w-[115%] h-[115%] rounded-full 
-               bg-gradient-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
+               bg-linear-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
                blur-md opacity-60"
                   style={{
                     maskImage:
@@ -187,7 +187,7 @@ const Banner = () => {
                     ease: "linear",
                   }}
                   className="absolute w-[115%] h-[115%] rounded-full 
-               bg-gradient-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
+               bg-linear-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
                blur-md opacity-60"
                   style={{
                     maskImage:
@@ -205,7 +205,7 @@ const Banner = () => {
                     ease: "linear",
                   }}
                   className="absolute w-[115%] h-[115%] rounded-full 
-               bg-gradient-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
+               bg-linear-to-r from-[#5e42ff] via-[#7d60ff] to-[#d2c3fc] 
                blur-md opacity-60"
                   style={{
                     maskImage:
@@ -218,7 +218,7 @@ const Banner = () => {
                 {/* Image Container */}
                 <div
                   className="relative w-full h-full overflow-hidden rounded-xl shadow-[inset_0_0_60px_rgba(125,5,255,0.2)] 
-                  bg-gradient-to-r from-purple-700/20 via-purple-600/30 to-purple-400/20 backdrop-blur shadow-black"
+                  bg-linear-to-r from-purple-700/20 via-purple-600/30 to-purple-400/20 backdrop-blur shadow-black"
                 >
                   <img
                     src={image}

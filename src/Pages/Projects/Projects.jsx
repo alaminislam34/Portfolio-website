@@ -86,7 +86,7 @@ const Projects = () => {
                     Preview{" "}
                     <ScanEye className="transition duration-300 group-hover:rotate-6 group-hover:scale-125 ml-2 " />
                     {/* Optional: Add a sweeping shine effect (complex but stylish) */}
-                    <span className="absolute top-0 w-1/4 h-full -left-full bg-white/30 blur-sm group-hover:left-[150%] duration-700 transition-all ease-out z-0"></span>
+                    <span className="absolute top-0 opacity-0 group-hover:opacity-100 w-1/4 h-full -left-[200%] group-hover:bg-white/30 group-hover:blur-sm group-hover:left-[150%] duration-700 transition-all ease-out z-0"></span>
                   </a>
 
                   {/* GitHub Button (Secondary) */}
