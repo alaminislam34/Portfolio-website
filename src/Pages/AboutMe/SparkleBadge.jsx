@@ -45,9 +45,8 @@ const SparkleBadge = () => {
     >
       {/* Sparkles */}
       <span className="sparkle absolute top-0 left-0 text-xl">✨</span>
-      <span className="sparkle absolute top-6 left-0 text-base">✨</span>
+      <span className="sparkle absolute top-0 left-8 text-base">✨</span>
       <span className="sparkle absolute -bottom-2 -right-2 text-xl">✨</span>
-      <span className="sparkle absolute top-0 left-8 text-sm">✨</span>
       <span className="sparkle absolute -bottom-1 right-6 text-sm">✨</span>
 
       {/* Text */}
