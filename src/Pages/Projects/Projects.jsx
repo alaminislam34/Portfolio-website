@@ -29,81 +29,84 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {projects?.map((project, i) => (
           <div
+            // Container: Very subtle lift, focus on clean borders and shadowless depth
             data-aos="fade-up"
             data-aos-delay={i * 100}
             key={project.id}
-            // Simplified Card Style: Clean dark background, subtle border, and a professional hover lift.
-            className="rounded-xl overflow-hidden bg-gray-900 border border-gray-800 duration-500 hover:shadow-2xl hover:shadow-fuchsia-900/50 hover:-translate-y-1"
+            className="rounded-xl overflow-hidden bg-gray-900 duration-500 
+             shadow-lg shadow-black/40 
+             hover:-translate-y-1 hover:shadow-xl 
+             ring-1 ring-gray-800 transition-all ease-in-out"
           >
-            {/* Image - Clean overflow and professional scale on hover */}
-            <div className="overflow-hidden">
+            {/* Image: Softer transition, slight opacity change on hover */}
+            <div className="overflow-hidden bg-gray-950">
               <img
                 src={project.image}
                 alt={project.name}
                 loading="lazy"
                 width="800"
                 height="450"
-                className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                // Reduced scale, slower transition, and a slight darkening (opacity reduction) on the image itself
+                className="aspect-video w-full object-cover transition-transform duration-700 ease-in-out 
+                 group-hover:scale-105 opacity-90 group-hover:opacity-100"
               />
             </div>
 
-            {/* Content */}
-            <div className="flex flex-col justify-between h-full p-6 z-20">
-              <div className="space-y-4">
-                {/* Project Name - Using the gradient for the main title for emphasis */}
-                <h1 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#8827f7] via-[#9e02bd] to-[#9e02bd] tracking-tight">
-                  {project.name}
-                </h1>
+            {/* Content Area: Clean padding and clear separation */}
+            <div className="flex flex-col p-5 sm:p-6 space-y-4">
+              {/* Project Name: Muted Gradient - less intense color stops */}
+              <h1
+                className="text-xl sm:text-2xl font-bold leading-tight 
+                   text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-fuchsia-600 to-fuchsia-500 tracking-tight"
+              >
+                {project.name}
+              </h1>
 
-                {/* Stack */}
-                <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-gray-400">
-                    Technologies:
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.stack.map((t, idx) => (
-                      <p
-                        key={idx}
-                        // Clean, subtle pill badge
-                        className="px-3 py-1 rounded-full text-xs font-medium text-purple-200 bg-purple-900/30 border border-purple-900"
-                      >
-                        {t}
-                      </p>
-                    ))}
-                  </div>
+              {/* Stack Section */}
+              <div className="space-y-3 pt-1">
+                <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-widest">
+                  Tech Stack
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((t, idx) => (
+                    <p
+                      key={idx}
+                      // Cleaner, soft border/background pill - less saturated color
+                      className="px-3 py-0.5 rounded-lg text-xs font-medium 
+                       text-gray-300 bg-gray-800 border border-gray-700 transition duration-200 
+                       hover:bg-gray-700 hover:text-white"
+                    >
+                      {t}
+                    </p>
+                  ))}
                 </div>
-                <div className="flex justify-start gap-3 mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  {/* Live Demo Button (Gradient Primary) */}
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative flex items-center justify-center py-2 px-6 text-white transition duration-300 rounded-full 
-               bg-gradient-to-r from-[#294deb] via-[#8251f3] to-[#d33ae7] 
-               hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30 active:scale-95 overflow-hidden"
-                  >
-                    {/* Icon with Hover Animation (Slight Jiggle) */}
-                    Preview{" "}
-                    <ScanEye className="transition duration-300 group-hover:rotate-6 group-hover:scale-125 ml-2 " />
-                    {/* Optional: Add a sweeping shine effect (complex but stylish) */}
-                    <span className="absolute top-0 opacity-0 group-hover:opacity-100 w-1/4 h-full -left-[200%] group-hover:bg-white/30 group-hover:blur-sm group-hover:left-[150%] duration-700 transition-all ease-out z-0"></span>
-                  </a>
+              </div>
 
-                  {/* GitHub Button (Secondary) */}
+              {/* Action Buttons: Simplified hover effects, more consistent primary/secondary look */}
+              <div className="flex justify-start gap-3 pt-4 border-t border-gray-800 mt-auto">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center py-2 px-5 text-sm font-semibold transition duration-300 rounded-lg 
+                   text-white bg-indigo-600 
+                   hover:bg-indigo-500 hover:scale-[1.02] active:scale-95 shadow-md shadow-indigo-900/50"
+                >
+                  Preview
+                  <ScanEye className="ml-2 w-3.5 h-3.5" />
+                </a>
+
+                {/* GitHub Button (Secondary) - Subtle outline on hover */}
+                <div
+                  className="border-2 border-transparent bg-gray-800 rounded-lg hover:ring-2 hover:ring-fuchsia-500 transition duration-300"
+                >
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex items-center justify-center p-3 transition duration-300 rounded-full 
-               text-gray-700 bg-gray-100 hover:bg-gray-200 
-               dark:text-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600
-               hover:scale-105 hover:shadow-md active:scale-95"
+                    className="flex items-center justify-center p-3 transition duration-300 text-white hover:scale-[1.02] active:scale-95"
                   >
-                    {/* Icon with Hover Animation (Pulse/Bounce) */}
-                    <FaGithub className="w-4 h-4 transition duration-300 group-hover:translate-y-[-2px]" />
-
-                    {/* Optional: Add a subtle border glow/ring on hover */}
-                    <div className="absolute inset-0 rounded-full ring-2 ring-transparent group-hover:ring-indigo-500 transition duration-300 pointer-events-none"></div>
+                    <FaGithub className="w-4 h-4" />
                   </a>
                 </div>
               </div>
@@ -111,33 +114,6 @@ const Projects = () => {
           </div>
         ))}
       </div>
-
-      {/* Modal */}
-      {selectedProject && (
-        <div className="fixed top-0 left-0 h-screen w-screen bg-black/40 backdrop-blur-xl flex items-center justify-center z-50">
-          <div className="relative p-3 md:p-6 border rounded-xl border-white/40">
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-1 right-1 z-20 px-2 py-2 bg-red-200 border border-red-300 text-red-600 rounded-xl"
-            >
-              <XCircle />
-            </button>
-            <div className="rounded-xl w-full max-w-5xl max-h-[90vh] overflow-y-auto">
-              <ViewDetails
-                id={selectedProject.id}
-                image={selectedProject.image}
-                name={selectedProject.name}
-                stack={selectedProject.stack}
-                description={selectedProject.description}
-                liveLink={selectedProject.liveLink}
-                github={selectedProject.github}
-                challenges={selectedProject.challenges}
-                improvements={selectedProject.improvements}
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
