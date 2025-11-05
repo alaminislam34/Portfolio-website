@@ -49,8 +49,10 @@ const About = () => {
           Building Scalable & Interactive Web Solutions
         </p>
       </div>
-      <div className="flex flex-col-reverse md:flex-row justify-center items-center *:flex-1">
-        <div data-aos="fade-right" className="flex flex-col space-y-6">
+      <br />
+      <br />
+      <div className="flex flex-col-reverse lg:flex-row justify-center items-center *:flex-1">
+        <div data-aos="fade-right" className="flex flex-col space-y-4">
           <div>
             <p
               data-aos="fade-up"

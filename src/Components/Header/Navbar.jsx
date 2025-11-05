@@ -12,10 +12,8 @@ import CommonLink from "../CommonLink";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(false);
-  const lastScrollY = useRef(0);
   const [activeSection, setActiveSection] = useState("home");
-  console.log(scrollY);
+
   useEffect(() => {
     const sections = document.querySelectorAll("[data-section]");
 
@@ -36,25 +34,6 @@ const Navbar = () => {
     sections.forEach((section) => observer.observe(section));
 
     return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY <= 10) {
-        setScrollY(false);
-      } else if (currentScrollY > lastScrollY.current) {
-        setScrollY(true);
-      } else {
-        setScrollY(false);
-      }
-
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const links = [
