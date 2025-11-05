@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const SparkleBadge = () => {
+const SparkleBadge = ({text}) => {
   const badgeRef = useRef(null);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const SparkleBadge = () => {
       <span className="sparkle absolute -bottom-1 right-6 text-sm">✨</span>
 
       {/* Text */}
-      <span className="badge-text relative z-10">Me</span>
+      <span className="badge-text relative z-10">{text}</span>
 
       {/* Glow Background */}
       <span className="bg-gradient-to-r from-[#330091] via-[#580097] to-[#6c0097] rounded-full absolute inset-0 -z-10 blur-xl opacity-90"></span>

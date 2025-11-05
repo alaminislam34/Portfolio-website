@@ -33,10 +33,7 @@ const Projects = () => {
             data-aos="fade-up"
             data-aos-delay={i * 100}
             key={project.id}
-            className="rounded-xl overflow-hidden bg-gray-900 duration-500 
-             shadow-lg shadow-black/40 
-             hover:-translate-y-1 hover:shadow-xl 
-             ring-1 ring-gray-800 transition-all ease-in-out"
+            className="rounded-xl overflow-hidden bg-gray-900 duration-500 shadow-lg shadow-black/40 hover:shadow-xl ring-1 ring-gray-800 transition-all ease-in-out"
           >
             {/* Image: Softer transition, slight opacity change on hover */}
             <div className="overflow-hidden bg-gray-950">
@@ -83,30 +80,28 @@ const Projects = () => {
               </div>
 
               {/* Action Buttons: Simplified hover effects, more consistent primary/secondary look */}
-              <div className="flex justify-start gap-3 pt-4 border-t border-gray-800 mt-auto">
+              <div className="flex justify-between gap-3 pt-4 border-t border-gray-800 mt-auto">
                 <a
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center py-2 px-5 text-sm font-semibold transition duration-300 rounded-lg 
-                   text-white bg-indigo-600 
-                   hover:bg-indigo-500 hover:scale-[1.02] active:scale-95 shadow-md shadow-indigo-900/50"
+                   text-white bg-gradient-to-r from-indigo-600 to-fuchsia-400 
+                    active:scale-95 shadow-md shadow-indigo-900/50 hover:ring-2 ring-fuchsia-500 group"
                 >
                   Preview
-                  <ScanEye className="ml-2 w-3.5 h-3.5" />
+                  <ScanEye className="ml-2 text-2xl group-hover:scale-125 duration-75 ease-out group-hover:rotate-2" />
                 </a>
 
                 {/* GitHub Button (Secondary) - Subtle outline on hover */}
-                <div
-                  className="border-2 border-transparent bg-gray-800 rounded-lg hover:ring-2 hover:ring-fuchsia-500 transition duration-300"
-                >
+                <div className="border-2 border-transparent bg-gray-800 rounded-lg hover:ring-2 hover:ring-fuchsia-500 transition duration-300 group">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center p-3 transition duration-300 text-white hover:scale-[1.02] active:scale-95"
+                    className="flex items-center justify-center p-3 transition duration-300 text-white active:scale-95"
                   >
-                    <FaGithub className="w-4 h-4" />
+                    <FaGithub className="text-xl group-hover:scale-125 group-hover:rotate-6 duration-500" />
                   </a>
                 </div>
               </div>

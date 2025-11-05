@@ -43,7 +43,7 @@ const About = () => {
           className="text-3xl conthrax md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500 py-4 inline-block"
         >
           About
-          <SparkleBadge/>
+          <SparkleBadge text={'Me'}/>
         </h1>
         <p data-aos="fade-up" className="max-w-lg w-full mx-auto text-white">
           Building Scalable & Interactive Web Solutions
