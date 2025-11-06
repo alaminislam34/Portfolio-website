@@ -1,6 +1,5 @@
-import React, { useRef, useLayoutEffect } from "react";
+import  { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
-import { motion } from "framer-motion"; // Keep motion for AOS fallback/initial y-animation
 
 // Assuming 'image' is passed as a prop
 const ModernImageContainer = ({ image }) => {

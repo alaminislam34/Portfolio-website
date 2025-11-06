@@ -43,14 +43,16 @@ const About = () => {
           className="text-3xl conthrax md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-500 py-4 inline-block"
         >
           About
-          <SparkleBadge/>
+          <SparkleBadge text={'Me'}/>
         </h1>
         <p data-aos="fade-up" className="max-w-lg w-full mx-auto text-white">
           Building Scalable & Interactive Web Solutions
         </p>
       </div>
-      <div className="flex flex-col-reverse md:flex-row justify-center items-center *:flex-1">
-        <div data-aos="fade-right" className="flex flex-col space-y-6">
+      <br />
+      <br />
+      <div className="flex flex-col-reverse lg:flex-row justify-center items-center *:flex-1">
+        <div data-aos="fade-right" className="flex flex-col space-y-4">
           <div>
             <p
               data-aos="fade-up"
