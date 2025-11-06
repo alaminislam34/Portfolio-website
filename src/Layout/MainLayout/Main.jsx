@@ -46,7 +46,7 @@ const Main = () => {
   return (
     <div className="overflow-hidden relative">
       <Navbar />
-      <section className="max-w-[1400px] w-11/12 mx-auto min-h-[75vh] mb-12 overflow-hidden">
+      <section className="min-h-[75vh] mb-12 overflow-hidden">
         <Outlet />
       </section>
       <Footer />

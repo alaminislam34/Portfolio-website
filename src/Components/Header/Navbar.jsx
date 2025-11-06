@@ -182,21 +182,21 @@ const Navbar = () => {
 
             {/* Desktop Links */}
             <div className="relative z-50">
-              <ul className="hidden lg:flex items-center gap-4 hover:gap-6 duration-300 text-sm">
+              <ul className="hidden lg:flex items-center duration-300 text-sm group">
                 {links.map(({ name, path }) => (
                   <li
                     key={path}
                     className={`${
                       activeSection === path
                         ? "bg-gradient-to-r from-[#294deb] via-[#8251f3] to-[#d33ae7]"
-                        : ""
-                    } relative transition-colors duration-500 ease-in-out py-2 px-4 rounded-xl group overflow-hidden conthrax`}
+                        : "hover:bg-gradient-to-r hover:from-[#294deb]/30 hover:via-[#8251f3]/30 hover:to-[#d33ae7]/30"
+                    } cursor-pointer relative transition-colors duration-500 ease-in-out rounded overflow-hidden conthrax`}
                   >
                     <Link
                       to={path}
                       smooth={true}
                       duration={500}
-                      className={` 
+                      className={`py-2 px-6 group-hover:px-8 duration-500 inline-block 
                         ${
                           activeSection === path
                             ? "bg-gradient-to-r from-[#ece9f7] via-[#e8e2f5] to-[#e9dfff] bg-clip-text text-transparent shadow-md"

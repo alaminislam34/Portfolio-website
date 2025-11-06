@@ -1,5 +1,5 @@
 import { LuLinkedin, LuFacebook, LuGithub } from "react-icons/lu";
-import image from "../../../assets/Image/amin.png";
+import image from "../../../assets/Image/image.png";
 import { Link } from "react-scroll";
 import { useEffect } from "react";
 import Aos from "aos";
@@ -36,7 +36,7 @@ const Banner = () => {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 lg:grid-cols-7 items-center min-h-[600px] mt-8 md:mt-12 lg:mt-16 text-white relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-7 items-center min-h-[600px] mt-8 md:mt-12 lg:mt-16 text-white relative">
         <div className="flex justify-start items-center relative z-10 lg:col-span-4">
           <div className="space-y-4 md:space-y-6 ">
             <div className="text-left space-y-6 md:space-y-6 ">
@@ -72,7 +72,7 @@ const Banner = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-full h-full text-white inline-block rounded-full border border-white/20 shadow hover:scale-105 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:bg-linear-to-tr from-purple-400 to-purple-600 hover:shadow-[2px_2px_6px_#623ac0]"
+                    className="w-full h-full hover:ring-2 hover:ring-fuchsia-600 text-white inline-block rounded-full ring-2 ring-gray-700 shadow hover:scale-105 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:shadow-[2px_2px_6px_#623ac0]"
                   >
                     <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur">
                       {icon}
@@ -113,7 +113,7 @@ const Banner = () => {
         </div>
 
         {/* Right Image and Animations */}
-        <ModernImageContainer image={image}/>
+        <ModernImageContainer image={image} />
       </div>
     </div>
   );
