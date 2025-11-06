@@ -69,9 +69,9 @@ const ModernImageContainer = ({ image }) => {
       {/* Using ref for GSAP, removed previous Framer Motion 'animate' prop */}
       <div
         ref={codeBubbleRef}
-        className="px-6 py-3 text-sm leading-normal tracking-widest rounded-full backdrop-blur-md border border-purple-400/20 shadow-lg 
-                   bg-gradient-to-r from-purple-700/50 to-pink-500/50 
-                   absolute -left-4 top-12 z-20 transition-shadow hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]"
+        className="px-4 py-2 text-xs leading-normal tracking-widest rounded-full backdrop-blur-md border border-purple-400/20 shadow-lg 
+                   bg-gradient-to-r from-purple-700/30 to-pink-500/30 
+                   absolute left-4 top-14 z-20 transition-shadow hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]"
         style={{ willChange: "transform" }} // Optimization for smooth GSAP animation
       >
         <span>Clean Code</span>
@@ -80,9 +80,9 @@ const ModernImageContainer = ({ image }) => {
       {/* --- Floating Text 2 (Innovation) --- */}
       <div
         ref={innovationBubbleRef}
-        className="px-6 py-3 text-sm leading-normal tracking-widest rounded-full backdrop-blur-md border border-yellow-400/20 shadow-lg 
-                   bg-gradient-to-r from-yellow-700/50 to-amber-500/50 
-                   absolute right-4 bottom-1/4 z-20 transition-shadow hover:shadow-[0_0_20px_rgba(252,211,77,0.5)]"
+        className="px-4 py-2 text-xs leading-normal tracking-widest rounded-full backdrop-blur-md border border-yellow-400/20 shadow-lg 
+                   bg-gradient-to-r from-yellow-700/30 to-amber-500/30 
+                   absolute right-6 bottom-1/4 z-20 transition-shadow hover:shadow-[0_0_20px_rgba(252,211,77,0.5)]"
         style={{ willChange: "transform" }} // Optimization for smooth GSAP animation
       >
         <span>Innovation</span>
@@ -118,7 +118,7 @@ const ModernImageContainer = ({ image }) => {
               <img
                 src={image}
                 alt="alamin"
-                className="w-full h-full object-cover bg-top scale-[1.03] transition-transform duration-500 hover:scale-100"
+                className="w-full h-full object-cover object-top bg-top scale-[1.03] transition-transform duration-500 hover:scale-100"
                 loading="lazy"
               />
               {/* Subtle top/bottom gradient overlay for a richer look */}

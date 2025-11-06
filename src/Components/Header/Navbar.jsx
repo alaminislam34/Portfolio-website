@@ -49,9 +49,9 @@ const Navbar = () => {
       <div className={`w-full fixed left-0 z-50 duration-700 top-0`}>
         <nav
           data-aos="fade-down"
-          className={`my-2 rounded-xl border backdrop-blur-xl duration-300 max-w-[1400px] w-11/12 mx-auto border-white/20`}
+          className={`my-4 rounded-2xl border backdrop-blur-xl duration-300 max-w-[1400px] w-11/12 mx-auto border-white/20`}
         >
-          <div className="flex items-center justify-between py-2 px-4 rounded-xl bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
+          <div className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
             {/*  *******************************Gradient Motion Layers Start****************************** */}
             <div className="absolute inset-0 -z-10 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
             <div
@@ -182,21 +182,21 @@ const Navbar = () => {
 
             {/* Desktop Links */}
             <div className="relative z-50">
-              <ul className="hidden lg:flex items-center gap-4 hover:gap-6 duration-300 text-sm">
+              <ul className="hidden lg:flex items-center duration-300 text-sm group">
                 {links.map(({ name, path }) => (
                   <li
                     key={path}
                     className={`${
                       activeSection === path
                         ? "bg-gradient-to-r from-[#294deb] via-[#8251f3] to-[#d33ae7]"
-                        : ""
-                    } relative transition-colors duration-500 ease-in-out py-2 px-4 rounded-xl group overflow-hidden conthrax`}
+                        : "hover:bg-gradient-to-r hover:from-[#294deb]/30 hover:via-[#8251f3]/30 hover:to-[#d33ae7]/30"
+                    } cursor-pointer relative transition-colors duration-500 ease-in-out rounded overflow-hidden conthrax`}
                   >
                     <Link
                       to={path}
                       smooth={true}
                       duration={500}
-                      className={` 
+                      className={`py-2 px-6 group-hover:px-8 duration-500 inline-block 
                         ${
                           activeSection === path
                             ? "bg-gradient-to-r from-[#ece9f7] via-[#e8e2f5] to-[#e9dfff] bg-clip-text text-transparent shadow-md"

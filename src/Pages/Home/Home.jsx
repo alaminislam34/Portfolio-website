@@ -9,22 +9,38 @@ import Projects from "../Projects/Projects";
 const Home = () => {
   return (
     <main className="space-y-9 md:space-y-12">
-      <section id="home" data-section="home">
+      <section
+        className="max-w-[1400px] w-11/12 mx-auto"
+        id="home"
+        data-section="home"
+      >
         <Banner />
       </section>
-      <section>
+      <section className="max-w-[1400px] w-11/12 mx-auto">
         <Testimonials />
       </section>
-      <section id="about" data-section="about">
+      <section
+        className="max-w-[1400px] w-11/12 mx-auto"
+        id="about"
+        data-section="about"
+      >
         <About />
       </section>
-      <section id="skills" data-section="skills">
+      <section
+        className="max-w-[1400px] w-11/12 mx-auto"
+        id="skills"
+        data-section="skills"
+      >
         <OrbitalSkillsSection />
       </section>
       <section id="projects" data-section="projects">
         <Projects />
       </section>
-      <section id="contact" data-section="contact">
+      <section
+        className="max-w-[1400px] w-11/12 mx-auto"
+        id="contact"
+        data-section="contact"
+      >
         <Contact />
       </section>
       <ToastContainer autoClose={2000} position="bottom-center" />

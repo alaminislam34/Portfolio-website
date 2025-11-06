@@ -13,7 +13,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
+      <div className="absolute top-0 left-0 w-[150%] h-[110%] bg-[#100D1F] blur-2xl border-8 border-[#100D1F]"></div>
       <Title
         title={"My Projects"}
         des={
@@ -21,26 +22,26 @@ const Projects = () => {
         }
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
+      <div className="max-w-[1440px] w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
         {projects?.map((project, i) => (
           <div
             // Container: Very subtle lift, focus on clean borders and shadowless depth
             data-aos="fade-up"
             data-aos-delay={i * 100}
             key={project.id}
-            className="rounded-xl overflow-hidden bg-gray-900 duration-500 shadow-lg shadow-black/40 hover:shadow-xl ring-1 ring-gray-800 transition-all ease-in-out flex justify-between flex-col"
+            className="rounded-xl bg-gray-900 duration-500 transition-all ease-in-out flex justify-between flex-col group overflow-x-hidden"
           >
+            <div className="w-12 h-12 absolute bottom-0 left-0 z-10 rounded-bl-3xl border-l-2 border-b-2 border-gray-900 group-hover:border-l-gray-700 group-hover:border-b-gray-700"></div>
             {/* Image: Softer transition, slight opacity change on hover */}
-            <div className="overflow-hidden bg-gray-950">
+            <div className="overflow-hidden h-[45%] bg-gray-950">
               <img
                 src={project.image}
                 alt={project.name}
                 loading="lazy"
                 width="800"
-                height="450"
                 // Reduced scale, slower transition, and a slight darkening (opacity reduction) on the image itself
-                className="aspect-video w-full object-cover transition-transform duration-700 ease-in-out 
-                 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                className="h-full w-full object-cover object-top transition-transform duration-700 ease-in-out 
+                 group-hover:scale-105 opacity-50 group-hover:opacity-100"
               />
             </div>
 
@@ -76,27 +77,37 @@ const Projects = () => {
             </div>
             {/* Action Buttons: Simplified hover effects, more consistent primary/secondary look */}
             <div className="flex justify-between gap-3 pt-4 border-t border-gray-800 mt-auto p-4">
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center py-2 px-5 text-sm font-semibold transition duration-300 rounded-lg 
-                   text-white bg-gradient-to-r from-indigo-600 to-fuchsia-400 
-                    active:scale-95 shadow-md shadow-indigo-900/50 hover:ring-2 ring-fuchsia-500 group"
-              >
-                Preview
-                <ScanEye className="ml-2 text-2xl group-hover:scale-125 duration-75 ease-out group-hover:rotate-2" />
-              </a>
+              <div></div>
 
               {/* GitHub Button (Secondary) - Subtle outline on hover */}
-              <div className="border-2 border-transparent bg-gray-800 rounded-lg hover:ring-2 hover:ring-fuchsia-500 transition duration-300 group">
+              <div className="border-2 border-transparent bg-gray-800 rounded-lg hover:ring-2 hover:ring-fuchsia-500 transition duration-300">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center p-3 transition duration-300 text-white active:scale-95"
+                  className="flex items-center justify-center p-2 transition duration-300 text-white active:scale-95"
                 >
-                  <FaGithub className="text-xl group-hover:scale-125 group-hover:rotate-6 duration-500" />
+                  <FaGithub className="text-xl duration-500" />
+                </a>
+              </div>
+            </div>
+
+            <div className="absolute shadow-[-6px_6px_0px_5px_#100D1F] top-[82%] md:-top-[30%] rounded-bl-3xl left-0 w-6 h-6 bg-transparent"></div>
+
+            <div className="absolute shadow-[-6px_6px_0px_5px_#100D1F] rounded-bl-3xl bottom-0 right-[32%] w-5 h-5 bg-transparent"></div>
+
+            <div className="flex justify-start items-end absolute rounded-tr-3xl bottom-0 left-0 w-[65%] bg-[#100D1F] h-[14%]">
+              <div className="ml-4 mb-4 w-[88%] md:w-[85%] lg:w-[87%] xl:w-[89%] g">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex w-full items-center justify-center py-2 px-9 text-sm font-semibold transition duration-300 rounded-lg 
+                   text-white bg-gray-900 
+                    active:scale-95 shadow-md shadow-indigo-900/50 hover:ring-2 ring-fuchsia-500"
+                >
+                  Preview
+                  <ScanEye size={18} className="ml-2 text-sm duration-75 ease-out" />
                 </a>
               </div>
             </div>

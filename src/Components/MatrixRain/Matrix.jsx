@@ -48,7 +48,7 @@ const GradientBackground = () => {
       {/*  *******************************Gradient Motion Layers Start****************************** */}
       <div className="absolute inset-0 -z-10 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
       <div
-        className="absolute rounded-full blur-3xl"
+        className="absolute rounded-full blur-3xl -z-50"
         style={{
           width: "40vw",
           height: "40vw",
@@ -59,7 +59,7 @@ const GradientBackground = () => {
         }}
       />
       <div
-        className="absolute rounded-full blur-3xl"
+        className="absolute rounded-full blur-3xl -z-50"
         style={{
           width: "45vw",
           height: "45vw",
@@ -70,7 +70,7 @@ const GradientBackground = () => {
         }}
       />
       <div
-        className="absolute rounded-full blur-3xl"
+        className="absolute rounded-full blur-3xl -z-50"
         style={{
           width: "30vw",
           height: "30vw",
