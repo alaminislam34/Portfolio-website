@@ -89,3 +89,54 @@ textarea,
 select {
   cursor: pointer;
 }
+
+.clipped-card {
+  /* Set the container size based on the path (150x200) but scaled up */
+  width: 300px;
+  height: 400px;
+  /* Scale the path to fit the new dimensions */
+  transform: scale(2);
+  transform-origin: top left;
+
+  /* Apply your original clip-path */
+  clip-path: path("M10,40 L70,40 A10,10 0,0,0 80,30 L80,10 A10,10 0,0,1 90,0 L140,0 A10,10 0,0,1 150,10 L150,190 A10,10 0,0,1 140,200 L10,200 A10,10 0,0,1 0,190 A10,140 0,0,0 0,50 L10,40 Z");
+
+  background-color: #2c3e50;
+  /* Dark background */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 10px;
+  /* Padding inside the clipped area */
+
+  /* Optional: Center the content visually within the clip */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* To keep text legible without being scaled */
+  font-size: 0.5em;
+  /* Since we scaled the container by 2 */
+}
+
+.card-content {
+  /* Ensure the content itself is readable and well-spaced */
+  padding: 15px;
+  max-width: 80%;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #3498db;
+  /* Blue accent */
+  padding-bottom: 5px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}

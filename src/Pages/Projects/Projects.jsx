@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 import Title from "../../Components/Shared/Title";
-import CommonLink from "../../Components/CommonLink";
-import ViewDetails from "../Details/ViewDetails";
-import { ArrowUpRight } from "lucide-react";
-import { XCircle } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { ScanEye } from "lucide-react";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     fetch("projects.json")
