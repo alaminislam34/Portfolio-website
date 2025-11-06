@@ -70,9 +70,9 @@ const Navbar = () => {
       <div className={`w-full fixed left-0 z-50 duration-700 top-0`}>
         <nav
           data-aos="fade-down"
-          className={`my-2 rounded-xl border backdrop-blur-xl duration-300 max-w-[1400px] w-11/12 mx-auto border-white/20`}
+          className={`my-4 rounded-2xl border backdrop-blur-xl duration-300 max-w-[1400px] w-11/12 mx-auto border-white/20`}
         >
-          <div className="flex items-center justify-between py-2 px-4 rounded-xl bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
+          <div className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-[#1f1f2e]/80 via-[#2b1b36]/80 to-[#1f1f2e]/80  shadow-md shadow-purple-800/20 backdrop-blur-md relative">
             {/*  *******************************Gradient Motion Layers Start****************************** */}
             <div className="absolute inset-0 -z-10 bg-[length:20px_20px] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)]" />
             <div
