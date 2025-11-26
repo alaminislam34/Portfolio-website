@@ -66,15 +66,15 @@ const Banner = () => {
               className="flex flex-row gap-6 items-center"
             >
               {socialLinks.map(({ link, icon, label }, i) => (
-                <li key={i} className="w-10 h-10">
+                <li key={i} className="w-12 h-12 rounded-xl">
                   <a
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-full h-full hover:ring-2 hover:ring-fuchsia-600 text-white inline-block rounded-full ring-2 ring-gray-700 shadow hover:scale-105 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:shadow-[2px_2px_6px_#623ac0]"
+                    className="w-full h-full hover:ring-2 shadow-2xl hover:ring-gray-600 rounded-xl text-white inline-block ring-2 ring-gray-700 hover:scale-105 relative group will-change-transform transition-transform duration-500 ease-in-out overflow-hidden hover:shadow-[2px_2px_6px_#623ac0]"
                   >
-                    <div className="w-full h-full flex items-center justify-center text-xl backdrop-blur">
+                    <div className="w-full h-full flex items-center justify-center text-2xl backdrop-blur">
                       {icon}
                     </div>
                   </a>

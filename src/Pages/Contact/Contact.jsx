@@ -80,7 +80,7 @@ export default function ContactSection() {
 
       <div className="relative z-10 my-6 md:my-12">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+          <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl conthrax">
             <SparkleBadge text={"Contact"} /> Me
           </h2>
           <p className="mt-4 text-lg text-gray-400">
