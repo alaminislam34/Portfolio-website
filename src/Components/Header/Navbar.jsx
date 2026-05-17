@@ -4,7 +4,6 @@ import { Link } from "react-scroll";
 import { RiMenu2Fill } from "react-icons/ri";
 import { X } from "lucide-react";
 import logo from "../../assets/logo/logo2.png";
-import CommonLink from "../CommonLink";
 
 const links = [
   { name: "Home", path: "home" },
@@ -18,13 +17,15 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState("home"); // Active state track করার জন্য
+  const [activeNav, setActiveNav] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -41,13 +42,12 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* RIGHT SIDE NAV */}
+          {/* DESKTOP NAV */}
           <div
-            className="flex items-center pointer-events-auto relative"
+            className="hidden md:flex items-center pointer-events-auto relative"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {/* GHOST TRIGGER: To maintain hover state smoothly */}
             <div className="absolute inset-y-[-10px] right-0 w-full min-w-[60px]" />
 
             <motion.nav
@@ -80,12 +80,15 @@ const Navbar = () => {
                             offset={-70}
                             onSetActive={() => setActiveNav(link.path)}
                             className={`relative z-10 px-4 py-2 rounded-full font-bold transition-all duration-300 cursor-pointer block
-                              ${activeNav === link.path ? "text-white" : "text-white/40 hover:text-white/70"}`}
+                            ${
+                              activeNav === link.path
+                                ? "text-white"
+                                : "text-white/40 hover:text-white/70"
+                            }`}
                           >
                             {link.name}
                           </Link>
 
-                          {/* Active Indicator Span */}
                           {activeNav === link.path && (
                             <motion.span
                               layoutId="activeBackground"
@@ -115,8 +118,73 @@ const Navbar = () => {
               </AnimatePresence>
             </motion.nav>
           </div>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setMobileOpen(true)}
+            className="md:hidden pointer-events-auto w-[50px] h-[50px] rounded-full border border-white/10 bg-black/70 backdrop-blur-xl flex items-center justify-center text-white"
+          >
+            <RiMenu2Fill size={22} />
+          </button>
         </header>
       </section>
+
+      {/* MOBILE SIDEBAR */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            {/* OVERLAY */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileOpen(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[200]"
+            />
+
+            {/* SIDEBAR */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed top-0 right-0 w-[280px] h-screen bg-[#0a0a0a] border-l border-white/10 z-[300] p-6"
+            >
+              {/* CLOSE BUTTON */}
+              <div className="flex justify-end mb-10">
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="text-white"
+                >
+                  <X size={28} />
+                </button>
+              </div>
+
+              {/* MOBILE LINKS */}
+              <ul className="flex flex-col gap-6">
+                {links.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      smooth={true}
+                      spy={true}
+                      offset={-70}
+                      onClick={() => setMobileOpen(false)}
+                      onSetActive={() => setActiveNav(link.path)}
+                      className={`text-xl font-semibold cursor-pointer transition-all duration-300
+                      ${
+                        activeNav === link.path ? "text-white" : "text-white/50"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };

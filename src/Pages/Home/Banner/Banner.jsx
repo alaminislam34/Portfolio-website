@@ -36,7 +36,7 @@ const Banner = () => {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 lg:grid-cols-7 items-center min-h-[600px] mt-8 md:mt-12 lg:mt-16 text-white relative">
+      <div className="grid grid-cols-1 lg:grid-cols-7 items-center min-h-[600px] mt-28 text-white relative">
         <div className="flex justify-start items-center relative z-10 lg:col-span-4">
           <div className="space-y-4 md:space-y-6 ">
             <div className="text-left space-y-6 md:space-y-6 ">

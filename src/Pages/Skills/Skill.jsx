@@ -1,221 +1,200 @@
-import React, { useState } from "react";
-import Title from "../../Components/Shared/Title";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // You'll need to install react-icons
+import React from "react";
+import { FaReact, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
 
-// ==== ASSETS (keep your paths) ====
-import html from "../../assets/logo/html.jpg";
-import css from "../../assets/logo/css.jpg";
-import js from "../../assets/logo/js.jpg";
-import tailwind from "../../assets/logo/tailwind-css.jpg";
-import reactImg from "../../assets/logo/react.jpg";
-import redux from "../../assets/logo/redux.png";
-import node from "../../assets/logo/node-js.jpg";
-import express from "../../assets/logo/expressjs.jpg";
-import mongodb from "../../assets/logo/mongodb.jpg";
-import mongoose from "../../assets/logo/mongoose.png";
-import firebase from "../../assets/logo/firebase.jpg";
-import nextjs from "../../assets/logo/nextjs.jpg";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiMongoose,
+  SiPostgresql,
+  SiPrisma,
+} from "react-icons/si";
 
-
-
- const ALL_SKILLS = [
-
-  
+const SKILLS = [
   {
-    name: "HTML",
-    img: html,
-    sum: "Semantic structure & accessible markup for web content.",
-    level: "Advanced",
-  },
-  {
-    name: "CSS",
-    img: css,
-    sum: "Styling with modern techniques like Flexbox & Grid for responsive designs.",
-    level: "Advanced",
-  },
-  {
-    name: "JavaScript",
-    img: js,
-    sum: "Core language fundamentals, ES6+, and DOM manipulation.",
-    level: "Advanced",
-  },
-  {
+    id: "01",
     name: "Tailwind CSS",
-    img: tailwind,
-    sum: "Utility-first CSS framework for rapid UI development.",
-    level: "Advanced",
+    icon: SiTailwindcss,
+    level: "EXPERT",
+    experience: "2 Years",
+    className: "lg:col-span-2",
   },
   {
-    name: "React",
-    img: reactImg,
-    sum: "Building interactive UIs with components, hooks, and state management.",
-    level: "Advanced",
-  },
-  {
-    name: "Redux",
-    img: redux,
-    sum: "Predictable state container for JavaScript apps, often with Redux Toolkit.",
-    level: "Intermediate",
-  },
-  {
-    name: "Node.js",
-    img: node,
-    sum: "JavaScript runtime for building scalable server-side applications.",
-    level: "Intermediate",
-  },
-  {
-    name: "Express.js",
-    img: express,
-    sum: "Minimalist web framework for Node.js to build robust APIs.",
-    level: "Intermediate",
-  },
-  {
-    name: "MongoDB",
-    img: mongodb,
-    sum: "NoSQL database for flexible, document-based data storage.",
-    level: "Intermediate",
-  },
-  {
-    name: "Mongoose",
-    img: mongoose,
-    sum: "MongoDB object data modeling (ODM) for Node.js.",
-    level: "Intermediate",
-  },
-  {
-    name: "Firebase",
-    img: firebase,
-    sum: "Google's mobile and web application development platform.",
-    level: "Intermediate",
-  },
-  {
+    id: "02",
     name: "Next.js",
-    img: nextjs,
-    sum: "React framework for production-grade applications with SSR/SSG.",
-    level: "Intermediate",
+    icon: SiNextdotjs,
+    level: "EXPERT",
+    experience: "2 Years",
+  },
+  {
+    id: "03",
+    name: "React",
+    icon: FaReact,
+    level: "EXPERT",
+    experience: "2 Years",
+    className: "lg:row-span-2 lg:min-h-[420px]",
+    featured: true,
+  },
+  {
+    id: "04",
+    name: "Node.js",
+    icon: FaNodeJs,
+    level: "ADVANCED",
+    experience: "1.5 Years",
+  },
+  {
+    id: "05",
+    name: "Express.js",
+    icon: SiExpress,
+    level: "ADVANCED",
+    experience: "1.5 Years",
+  },
+  {
+    id: "06",
+    name: "MongoDB",
+    icon: SiMongodb,
+    level: "PROFICIENT",
+    experience: "1.5 Years",
+    className: "lg:col-span-2",
+  },
+  {
+    id: "07",
+    name: "Mongoose",
+    icon: SiMongoose,
+    level: "ADVANCED",
+    experience: "1.5 Years",
+  },
+  {
+    id: "08",
+    name: "PostgreSQL",
+    icon: SiPostgresql,
+    level: "PROFICIENT",
+    experience: "1 Years",
+  },
+  {
+    id: "09",
+    name: "Prisma",
+    icon: SiPrisma,
+    level: "ADVANCED",
+    experience: "1 Years",
+  },
+  {
+    id: "10",
+    name: "Docker",
+    icon: FaDocker,
+    level: "ADVANCED",
+    experience: "1 Years",
+    className: "lg:col-span-2",
+  },
+  {
+    id: "11",
+    name: "AWS",
+    icon: FaAws,
+    level: "LEARNING",
+    experience: "1 Years",
   },
 ];
 
-export default function OrbitalSkillsSection() {
-  const [activeSkill, setActiveSkill] = useState(ALL_SKILLS[0]);
-  const [rotationAngle, setRotationAngle] = useState(0);
-
-  const numSkills = ALL_SKILLS.length;
-  const angleIncrement = 360 / numSkills;
-
-  // Change active skill based on click direction
-  const handleRotate = (direction) => {
-    let newIndex;
-    let newAngle;
-
-    // Determine the next skill based on the current active skill's index
-    const currentIndex = ALL_SKILLS.findIndex(
-      (skill) => skill.name === activeSkill.name
-    );
-
-    if (direction === "left") {
-      newIndex = (currentIndex - 1 + numSkills) % numSkills;
-    } else {
-      newIndex = (currentIndex + 1) % numSkills;
-    }
-
-    // Update state to the new skill and calculate the new rotation angle
-    setActiveSkill(ALL_SKILLS[newIndex]);
-
-    // Smoothly transition the angle to place the new active skill at the top center
-    // This is more complex than a simple +/- and ensures a clean, predictable rotation
-    const targetAngle = -newIndex * angleIncrement + 90;
-    setRotationAngle(targetAngle);
-  };
-
-  // To handle hover for individual skill display without affecting the main rotation
-  const handleSkillHover = (skill) => {
-    setActiveSkill(skill);
-  };
-
+export default function SkillsMeshSection() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background radial gradient glow */}
-      <div className="absolute inset-0 z-0 bg-radial-gradient from-[#2a0c4f] via-black to-black opacity-30"></div>
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+      {/* Background */}
+      <div className="absolute inset-0" />
 
-      <Title
-        title="My Skills Arsenal"
-        des="Explore the technologies I wield to craft robust and engaging web experiences. Click the arrows to rotate!"
-        className="relative z-10"
-      />
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:50px_50px]" />
 
-      <div className="relative mx-auto mt-16 flex h-[400px] w-full max-w-7xl items-center justify-center lg:h-[700px]">
-        {/* Central Display Card */}
-        <div className="relative z-20 flex h-[280px] w-[320px] flex-col items-center justify-center rounded-3xl border border-purple-700/30 bg-gradient-to-br from-gray-900/80 to-black/80 p-6 text-center shadow-lg backdrop-blur-md md:h-[300px] md:w-[380px]">
-          <div className="absolute -inset-px rounded-3xl ring-1 ring-purple-500/10" />
-          <img
-            src={activeSkill.img}
-            alt={activeSkill.name}
-            className="mb-4 h-20 w-20 rounded-full object-contain p-2 bg-gray-800 border border-purple-500/20 shadow-xl"
-          />
-          <h3 className="mb-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-indigo-300">
-            {activeSkill.name}
-          </h3>
-          <p className="text-sm text-gray-300 mb-2">{activeSkill.sum}</p>
-          <span className="inline-block rounded-full bg-purple-800/30 px-3 py-1 text-xs text-purple-200">
-            {activeSkill.level}
-          </span>
+      {/* Glow */}
+      <div className="absolute left-1/2 top-0 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-violet-600/20 blur-[120px]" />
+
+      <div className="relative z-10">
+        {/* Header */}
+        <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <span className="mb-4 inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-1 text-[10px] uppercase tracking-[0.25em] text-violet-300">
+              Tech Stack
+            </span>
+
+            <h2 className="max-w-xl text-4xl font-black leading-[0.95] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Skills &
+              <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Technologies
+              </span>
+            </h2>
+          </div>
+
+          <p className="max-w-md text-sm leading-7 text-zinc-400">
+            Modern technologies and tools I use to build scalable and premium
+            digital experiences.
+          </p>
         </div>
 
-        {/* Orbital Path */}
-        <div
-          className="absolute inset-0 flex items-center justify-center transition-transform duration-700 ease-in-out" // Added transition
-          style={{ transform: `rotate(${rotationAngle}deg)` }}
-        >
-          {ALL_SKILLS.map((skill, index) => {
-            const angle = index * angleIncrement;
-            const radius = window.innerWidth < 768 ? 160 : 250;
-            const x = radius * Math.cos((angle * Math.PI) / 180);
-            const y = radius * Math.sin((angle * Math.PI) / 180);
+        {/* Grid */}
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 auto-rows-[200px]">
+          {SKILLS.map((skill) => {
+            const Icon = skill.icon;
 
             return (
               <div
-                key={skill.name}
-                className="absolute"
-                style={{
-                  transform: `translate(${x}px, ${y}px) rotate(-${rotationAngle}deg)`,
-                }}
-                onMouseEnter={() => handleSkillHover(skill)}
+                key={skill.id}
+                className={`group relative overflow-hidden rounded-[28px] border border-violet-500/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-violet-400/30 hover:shadow-[0_0_45px_rgba(139,92,246,0.16)] ${skill.className || ""}`}
               >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/[0.08] via-transparent to-fuchsia-500/[0.04]" />
+
+                {/* Inner Border */}
+                <div className="absolute inset-[1px] rounded-[27px] border border-white/[0.04]" />
+
+                {/* Hover Glow */}
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-violet-500/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                {/* Content */}
                 <div
-                  className={`group relative flex size-16 cursor-pointer items-center justify-center rounded-full border-2 border-transparent bg-gray-800 p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-purple-500/50 hover:bg-purple-900/30 ${
-                    activeSkill.name === skill.name
-                      ? "border-purple-500/50 ring-2 ring-purple-500 bg-purple-900/30 shadow-purple-500/40"
-                      : ""
+                  className={`relative z-10 flex h-full flex-col ${
+                    skill.featured
+                      ? "items-center justify-center text-center"
+                      : "justify-between"
                   }`}
                 >
-                  <img
-                    src={skill.img}
-                    alt={skill.name}
-                    className="size-full object-contain"
-                  />
-                  {activeSkill.name === skill.name && (
-                    <div className="absolute inset-0 rounded-full blur-sm bg-purple-500/30 animate-pulse-slow"></div>
-                  )}
+                  {/* Main */}
+                  <div
+                    className={
+                      skill.featured ? "flex flex-col items-center" : ""
+                    }
+                  >
+                    <div
+                      className={`mb-4 flex items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] transition-all duration-500 group-hover:scale-110 group-hover:border-violet-400/30 group-hover:shadow-[0_0_35px_rgba(139,92,246,0.25)]
+                      
+                      ${skill.featured ? "h-24 w-24" : "h-14 w-14"}`}
+                    >
+                      <Icon
+                        className={`text-white transition-transform duration-500 group-hover:rotate-6
+                        
+                        ${skill.featured ? "text-5xl" : "text-3xl"}`}
+                      />
+                    </div>
+
+                    <h3
+                      className={`font-black tracking-tight text-white
+                      
+                      ${skill.featured ? "text-4xl" : "text-xl sm:text-2xl"}`}
+                    >
+                      {skill.name}
+                    </h3>
+
+                    <p className="mt-2 text-sm text-zinc-400">
+                      {skill.experience} Experience
+                    </p>
+                  </div>
                 </div>
+
+                {/* Shine */}
+                <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-violet-400/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
             );
           })}
-        </div>
-
-        {/* Left and Right Buttons */}
-        <div className="absolute z-30 flex w-full max-w-lg justify-between px-4 sm:px-8">
-          <button
-            className="group size-12 rounded-full bg-gray-800/50 text-white backdrop-blur-sm transition-all duration-300 hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            onClick={() => handleRotate("left")}
-          >
-            <FaChevronLeft className="mx-auto text-xl transition-transform duration-300 group-hover:-translate-x-1" />
-          </button>
-          <button
-            className="group size-12 rounded-full bg-gray-800/50 text-white backdrop-blur-sm transition-all duration-300 hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            onClick={() => handleRotate("right")}
-          >
-            <FaChevronRight className="mx-auto text-xl transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
         </div>
       </div>
     </section>
