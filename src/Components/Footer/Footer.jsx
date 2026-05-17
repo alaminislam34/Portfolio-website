@@ -1,3 +1,5 @@
+import { FaFacebook, FaGithub, FaLinkedinIn } from "react-icons/fa";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -15,7 +17,9 @@ const Footer = () => {
 
           {/* Contact Information Section */}
           <div className="md:col-span-1">
-            <h4 className="text-md font-semibold text-white mb-2">Get in Touch</h4>
+            <h4 className="text-md font-semibold text-white mb-2">
+              Get in Touch
+            </h4>
             <ul className="space-y-2">
               <li className="flex justify-center md:justify-start items-center gap-2">
                 <svg
@@ -66,22 +70,36 @@ const Footer = () => {
 
           {/* Copyright/Socials Section */}
           <div className="md:col-span-1 flex flex-col items-center md:items-end">
-            <h4 className="text-md font-semibold text-white mb-2">Connect with me</h4>
+            <h4 className="text-md font-semibold text-white mb-6">
+              Connect with me
+            </h4>
             {/* Add social media links here */}
-            <div className="flex gap-4">
-              <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors duration-300">
-                <i className="fab fa-linkedin fa-lg"></i>
+            <div className="flex gap-4 *:text-2xl *:lg:text-3xl">
+              <a
+                href="https://www.linkedin.com/in/alamin34"
+                aria-label="LinkedIn"
+                className="hover:-translate-y-1 hover:scale-105 duration-300 ease-out"
+              >
+                <FaLinkedinIn />
               </a>
-              <a href="#" aria-label="GitHub" className="hover:text-white transition-colors duration-300">
-                <i className="fab fa-github fa-lg"></i>
+              <a
+                href="https://github.com/alaminislam34"
+                aria-label="GitHub"
+                className="hover:-translate-y-1 hover:scale-105 duration-300 ease-out"
+              >
+                <FaGithub />
               </a>
-              <a href="#" aria-label="Twitter" className="hover:text-white transition-colors duration-300">
-                <i className="fab fa-twitter fa-lg"></i>
+              <a
+                href="https://www.facebook.com/mrsalamin34"
+                aria-label="Facebook"
+                className="hover:-translate-y-1 hover:scale-105 duration-300 ease-out"
+              >
+                <FaFacebook />
               </a>
             </div>
           </div>
         </div>
-        
+
         {/* Horizontal Divider and Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-700 text-center">
           <p className="text-xs text-gray-500">

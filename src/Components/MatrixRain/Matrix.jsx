@@ -17,11 +17,11 @@ const GradientBackground = () => {
         gradientOffset,
         0,
         canvas.width + gradientOffset,
-        0
+        0,
       );
       gradient.addColorStop(0, "#0d071c");
-      gradient.addColorStop(0.3, "#0f0214");
-      gradient.addColorStop(0.5, "#040113");
+      gradient.addColorStop(0.1, "#0f0214");
+      gradient.addColorStop(0.2, "#040113");
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
